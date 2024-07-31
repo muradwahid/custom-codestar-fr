@@ -1,0 +1,61 @@
+.bPlSettings {
+  display: flex;
+  flex-direction: column;
+
+  .bPlSettingsSection {
+    display: flex;
+
+    .bPlSettingsBody {
+      background: #fff;
+      .field {
+        display: flex;
+        // align-items: baseline;
+        align-items: flex-start;
+        border-top: 1px solid #ccc;
+
+        .fieldLabel {
+          width: 20%;
+          .label {
+            font-size: 14px;
+            font-weight: 500;
+          }
+          p.subTitle{
+            font-size: 13px;
+            color: #999;
+            font-weight: normal;
+            margin:0;
+            margin-top: 4px;
+          }
+        }
+
+        .fieldComponent {
+          width: 80%;
+          .beforeAfterText{
+            font-size: 13px;
+            font-weight: normal;
+            margin:8px 0;
+          }
+          .beforeAfterText:first-child{
+            margin-top:0;
+          }
+        }
+        .pr15{
+          padding-right: 15px;
+        }
+        .fieldComponent.fullWidth {
+          width: 100% !important;
+        }
+      }
+      .fieldPadding{
+        padding: 25px 20px 25px 30px;
+      }
+    }
+  }
+}
+
+.bPlSettingsBody.bPlBodyWidth {
+  width: calc(100% - 255px);
+}
+.bPlSettingsBody.bPlWidthFull {
+  width: 100%;
+}

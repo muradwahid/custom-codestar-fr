@@ -1,0 +1,14 @@
+    .nav-submitBtn {
+      background-color: #2271b1;
+      border-color: #2271b1;
+      padding: 8px 17px;
+      border: none;
+      font-size: 13px;
+      color: white;
+      border-radius: 3px;
+      cursor: pointer;
+      &:hover {
+        background-color: #135e96;
+        border-color: #135e96;
+      }
+    }
