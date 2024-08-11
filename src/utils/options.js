@@ -28,3 +28,37 @@ export const imgSizeOptions = [
   { label: "Cover", value: "cover" },
   { label: "Contain", value: "contain" },
 ];
+export const bgOrigin = [
+  {label:"Background Origin",value:"default"},
+  { label: "Padding Box", value:"padding-box"},
+  { label: "Border Box", value:"border-box"},
+  { label: "Content Box", value:"content-box"}
+]
+export const bgClip = [
+  {label:"Background Clip",value:"default"},
+  { label: "Padding Box", value:"padding-box"},
+  { label: "Border Box", value:"border-box"},
+  { label: "Content Box", value:"content-box"}
+]
+
+export const gradientDirection = [
+  {label:"Gradient Direction",value:"default"},
+  { label:"⇓ top to bottom",value:"top bottom"},
+  { label:"⇒ left to right",value:"left right"},
+  { label:"⇘ corner top to right",value:"top right"},
+  { label:"⇙ corner top to left",value:"top left"}
+]
+
+export const bgBlendMode = [
+  {label:"Background Blend Mode",value:"default"},
+  {label:"Normal",value:"normal"},
+  {label:"Multiply",value:"multiply"},
+  {label:"Screen",value:"screen"},
+  {label:"Overlay",value:"overlay"},
+  {label:"Darken",value:"darken"},
+  {label:"Lighten",value:"lighten"},
+  {label:"Color Doge",value:"color-doge"},
+  {label:"Saturation",value:"saturation"},
+  {label:"Color",value:"color"},
+  {label:"Luminosity",value:"luminosity"},
+]

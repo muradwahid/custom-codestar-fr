@@ -23,7 +23,7 @@ const Body = (props) => {
     {description && <p className='description' dangerouslySetInnerHTML={{ __html: description }} />}
 
     <div className='fields'>
-      {fields.map((field,i) => <Field key={i} {...{ saveType: options.saveType, data, activeSection, activeChild, field, updateData }} />)}
+      {fields.map((field, i) => <Field key={i} {...{ saveType: options.saveType, data, activeSection, activeChild, field, updateData }} />)}
     </div>
   </>;
 };
@@ -46,7 +46,7 @@ const Field = ({ saveType = 'nested', data, activeSection, activeChild, field, u
     }
   }, [data, activeSection, activeChild]);
 
-  return <div className={`field ${fieldProps === "notice" ? "" :"fieldPadding"}`}>
+  return <div className={`field ${fieldProps === "notice" ? "" : "fieldPadding"}`}>
     {
       title && <div className={`fieldLabel ${fieldProps === "notice" ? "" : "pr15"}`}>
         <label className='label'>{title}</label>

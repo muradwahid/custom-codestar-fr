@@ -8,14 +8,14 @@ const InlineMediaUpload = ({ value, onChange = () => { } }) => {
   return (
     <div style={{ display: "flex", alignItems: "center", gap: "3px" }}>
       <div style={{ width: "100%" }}>
-        <InputControl style={{ borderRadius: "3px" }} value={value ? value?.url : ""} onChange={val => onChange({ ...value, url: val })} />
+        <InputControl style={{ borderRadius: "3px" }} value={value ? value : ""} onChange={val => onChange({ val })} />
       </div>
       <div>
         <BMediaUpload
           gallery={false}
           multiple={false}
-          onSelect={(value) => onChange(value)}
-          value={value}
+          onSelect={(val) => onChange(val.url)}
+          value={{ url: value }}
           render={({ open }) => (
             <Button onClick={open}>Upload</Button>
           )}

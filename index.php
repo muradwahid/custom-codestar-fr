@@ -50,1174 +50,1171 @@ $faCaretLeft = "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 512' he
 
 
 define( 'BPL_OPTIONS', array(
-  'id' => 'bplData',
-  'title' => 'bPlugins Settings',
+	'id' => 'bplData',
+	'title' => 'bPlugins Settings',
   // 'saveType' => '', // 'serialized' : 'nested'
-  'sections' => array(
-      array(
-          'name' => 'overview',
-          'title' => 'Overview',
-          'icon' => $faRocketIcon,
-          'fields' => array(
-              array(
-                  'id' => 'text',
-                  'title' => 'Text',
-                  'field' => 'text',
-                  'attributes'=>array(
-                    'style'=>array('width'=>'50%')
-                  )
-              ),
-              array(
-                  'id' => 'textarea',
-                  'title' => 'Textarea',
-                  'field' => 'textarea',
-              ),
-              array(
-                  'id' => 'upload',
-                  'title' => 'Upload',
-                  'field' => 'inlineupload',
-              ),
-              array(
-                  'id' => 'switcher',
-                  'title' => 'Switcher',
-                  'field' => 'switch',
-                  'label' => 'The label text of the switcher.',
-                  'labelPosition'=>'right'
-              ),
-              array(
-                  'id' => 'color',
-                  'title' => 'Color',
-                  'field' => 'color'
-              ),
-              array(
-                  'id' => 'checkbox',
-                  'title' => 'Checkbox',
-                  'field' => 'checkbox',
-                  'options'=>array(
-                    array(
-                      'label'=>'The label text for the checkbox.',
-                      'value'=>'first',
-                    ),
-                  )
-              ),
-              array(
-                  'id' => 'radio',
-                  'title' => 'Radio',
-                  'field' => 'radio',
-                  'options'=>array(
-                    array(
-                      'label'=>'Yes, Please.',
-                      'value'=>'yes',
-                    ),
-                    array(
-                      'label'=>'No, Thank you.',
-                      'value'=>'no',
-                    ),
-                  )
-              ),
-              array(
-                  'id' => 'select',
-                  'title' => 'Select',
-                  'field' => 'select',
-                  'options'=>array(
-                    array(
-                      'label'=>'Select an option',
-                      'value'=>'default',
-                    ),
-                    array(
-                      'label'=>'Option 1',
-                      'value'=>'one',
-                    ),
-                    array(
-                      'label'=>'Option 2',
-                      'value'=>'two',
-                    ),
-                    array(
-                      'label'=>'Option 3',
-                      'value'=>'three',
-                    ),
-                  )
-              ),
-              array(
-                'id'=>'selectImage',
-                'title'=>'Select Image',
-                'field'=>'selectImage',
-                'options'=>array(
-                  array('value'=>'http://codestarframework.com/assets/images/placeholder/100x80-2ecc71.gif'),
-                  array('value'=>'http://codestarframework.com/assets/images/placeholder/100x80-e74c3c.gif'),
-                  array('value'=>'http://codestarframework.com/assets/images/placeholder/100x80-ffbc00.gif'),
-                  array('value'=>'http://codestarframework.com/assets/images/placeholder/100x80-3498db.gif'),
-                  array('value'=>'http://codestarframework.com/assets/images/placeholder/100x80-555555.gif')
-              )
-                ),
-              array(
-                'id'=>'background',
-                'title'=>'Background',
-                'field'=>'background'
-            )
-          ),
-      ),
-      array(
-          'name' => 'basic-fields',
-          'title' => 'Basic Fields',
-          'icon' => $circlePlus,
-          'children' => array(
-              array(
-                  'name' => 'text',
-                  'title' => 'Text',
-                  'icon' => $rectangle,
-                  'fields' => array(
-                      array(
-                          'id' => 'text',
-                          'title' => 'Text',
-                          'field' => 'text',
-                          'attributes'=>array(
-                            'style'=>array('width'=>'50%')
-                          )
-                      ),
-                      array(
-                          'id' => 'defaultText',
-                          'title' => 'Text with default',
-                          'field' => 'text',
-                          'default' => 'Default Text',
-                          'attributes'=>array(
-                            'style'=>array('width'=>'50%')
-                          )
-                      ),
-                      array(
-                          'id' => 'ingenuity',
-                          'title' => 'Text field ingenuity',
-                          'subtitle'=>'The field of subtitle text.',
-                          'before'=>'The field of before text',
-                          'after'=>'The field of after text',
-                          'field' => 'text',
-                          'attributes'=>array(
-                            'style'=>array('width'=>'50%')
-                          )
-                      ),
-                      array(
-                          'id' => 'placeholder',
-                          'title' => 'Text with placeholder',
-                          'placeholder'=>'Typed something...',
-                          'field' => 'text',
-                          'attributes'=>array(
-                            'style'=>array('width'=>'50%')
-                          )
-                      ),
-                      array(
-                          'id' => 'readonly',
-                          'title' => 'Text readonly',
-                          'default'=>'Readonly text field, can not be changed',
-                          'field' => 'text',
-                          'attributes'=>array(
-                            'style'=>array('width'=>'50%'),
-                            'readOnly'=>true,
-                          ),
-                      ),
-                      array(
-                          'id' => 'maxLength',
-                          'title' => 'Text with maxlength (5)',
-                          'default'=>'abc',
-                          'attributes'=>array(
-                            'maxLength'=>5,
-                            'style'=>array('width'=>'50%'),
-                          ),
-                          'field' => 'text',
-                          
-                      ),
-                      array(
-                          'id' => 'customStyle',
-                          'title' => 'Text using custom styles',
-                          'attributes'=>array(
-                            'style'=>array('borderColor'=>'#93C054','padding'=>'8px 8px'),
-                            'outline'=>'#93C054'
-                          ),
-                          'field' => 'text',
-                      ),
-                      array(
-                          'id' => 'fullWidth',
-                          'after'=>'It shows full width if there is no field of title.',
-                          'attributes'=>array(
-                            'style'=>array('width'=>'50%')
-                          ),
-                          'field' => 'text',
-                      ),
-                  ),
-              ),
-              array(
-                  'name' => 'textarea',
-                  'title' => 'Textarea',
-                  'icon' => $rectangle,
-                  'fields' => array(
-                      array(
-                          'id' => 'textarea',
-                          'title'=>'Textarea',
-                          'field' => 'textarea',
-                      ),
-                      array(
-                          'id' => 'default',
-                          'title'=>'Textarea with default',
-                          'field' => 'textarea',
-                          'default'=>'This is default value'
-                      ),
-                      array(
-                          'id' => 'placeholder',
-                          'title'=>'Text with placeholder',
-                          'field' => 'textarea',
-                          'placeholder'=>'Typed something...'
-                      ),
-                      array(
-                          'id' => 'ingenuity',
-                          'title'=>'Textarea field ingenuity',
-                          'subtitle'=>'The field of subtitle text.',
-                          'before'=>'The field of before text',
-                          'after'=>'The field of after text',
-                          'field' => 'textarea',
-                          'placeholder'=>'Typed something...'
-                      ),
-                      array(
-                          'id' => 'fullWidth',
-                          'after'=>'It shows full width if there is no field of title.',
-                          'field' => 'textarea'
-                      ),
-                  ),
-              ),
-              array(
-                  'name' => 'select',
-                  'title' => 'Select',
-                  'icon' => $faList,
-                  'fields' => array(
-                      array(
-                          'id' => 'select',
-                          'title' => 'Select',
-                          'field' => 'select',
-                          'options'=>array(
-                              array(
-                                'label'=>'Select an option',
-                                'value'=>'default',
-                              ),
-                              array(
-                                'label'=>'Option 1',
-                                'value'=>'one',
-                              ),
-                              array(
-                                'label'=>'Option 2',
-                                'value'=>'two',
-                              ),
-                              array(
-                                'label'=>'Option 3',
-                                'value'=>'three',
-                              ),
-                          )
-                      ),
-                      array(
-                          'id' => 'default',
-                          'title' => 'Select with default',
-                          'field' => 'select',
-                          'options'=>array(
-                              array(
-                                'label'=>'Select an option',
-                                'value'=>'default',
-                              ),
-                              array(
-                                'label'=>'Option 1',
-                                'value'=>'one',
-                              ),
-                              array(
-                                'label'=>'Option 2',
-                                'value'=>'two',
-                              ),
-                              array(
-                                'label'=>'Option 3',
-                                'value'=>'three',
-                              ),
-                          )
-                      ),
-                      array(
-                          'id' => 'multipleSelect',
-                          'title' => 'Select with multiple choice',
-                          'field' => 'select',
-                          'attributes'=>array(
-                            'multiple'=>true,
-                          ),
-                          'options'=>array(
-                              array(
-                                'label'=>'Option 1',
-                                'value'=>'one',
-                              ),
-                              array(
-                                'label'=>'Option 2',
-                                'value'=>'two',
-                              ),
-                              array(
-                                'label'=>'Option 3',
-                                'value'=>'three',
-                              ),
-                              array(
-                                'label'=>'Option 4',
-                                'value'=>'four',
-                              ),
-                              array(
-                                'label'=>'Option 5',
-                                'value'=>'five',
-                              ),
-                              array(
-                                'label'=>'Option 6',
-                                'value'=>'six',
-                              ),
-                          )
-                      ),
-                      array(
-                        'field'=>'notice',
-                        'content'=>'Select with <b>chosen</b> style.',
-                        'variant'=>'info'
-                      ),
-                      array(
-                        'id'=>'chosen',
-                        'title'=>'Select with chosen',
-                        'field'=>'chosen',
-                        'options'=>array(
-                          array('label'=>'Option 1','value'=>'one'),
-                          array('label'=>'Option 2','value'=>'two'),
-                          array('label'=>'Option 3','value'=>'three'),
-                          array('label'=>'Option 4','value'=>'four'),
-                          array('label'=>'Option 5','value'=>'five'),
-                        )
-                      ),
-                      array(
-                        'id'=>'chosenMultiple',
-                        'title'=>'Select with multiple chosen',
-                        'field'=>'chosen',
-                        'attributes'=>array(
-                          'multiple'=>true,
-                        ),
-                        'options'=>array(
-                          array('label'=>'Option 1','value'=>'one'),
-                          array('label'=>'Option 2','value'=>'two'),
-                          array('label'=>'Option 3','value'=>'three'),
-                          array('label'=>'Option 4','value'=>'four'),
-                          array('label'=>'Option 5','value'=>'five'),
-                        )
-                      ),
+	'sections' => array(
+		array(
+			'name' => 'overview',
+			'title' => 'Overview',
+			'icon' => $faRocketIcon,
+			'fields' => array(
+				array(
+					'id' => 'text',
+					'title' => 'Text',
+					'field' => 'text',
+					'attributes'=>array(
+						'style'=>array('width'=>'50%')
+					)
+				),
+				array(
+					'id' => 'textarea',
+					'title' => 'Textarea',
+					'field' => 'textarea',
+				),
+				array(
+					'id' => 'upload',
+					'title' => 'Upload',
+					'field' => 'inlineupload',
+				),
+				array(
+					'id' => 'switcher',
+					'title' => 'Switcher',
+					'field' => 'switch',
+					'label' => 'The label text of the switcher.',
+					'labelPosition'=>'right'
+				),
+				array(
+					'id' => 'color',
+					'title' => 'Color',
+					'field' => 'color'
+				),
+				array(
+					'id' => 'checkbox',
+					'title' => 'Checkbox',
+					'field' => 'checkbox',
+					'options'=>array(
+						array(
+						'label'=>'The label text for the checkbox.',
+						'value'=>'first',
+						),
+					)
+				),
+				array(
+					'id' => 'radio',
+					'title' => 'Radio',
+					'field' => 'radio',
+					'options'=>array(
+						array(
+						'label'=>'Yes, Please.',
+						'value'=>'yes',
+						),
+						array(
+						'label'=>'No, Thank you.',
+						'value'=>'no',
+						),
+					)
+				),
+				array(
+					'id' => 'select',
+					'title' => 'Select',
+					'field' => 'select',
+					'options'=>array(
+						array(
+						'label'=>'Select an option',
+						'value'=>'default',
+						),
+						array(
+						'label'=>'Option 1',
+						'value'=>'one',
+						),
+						array(
+						'label'=>'Option 2',
+						'value'=>'two',
+						),
+						array(
+						'label'=>'Option 3',
+						'value'=>'three',
+						),
+					)
+				),
+				array(
+					'id'=>'selectImage',
+					'title'=>'Select Image',
+					'field'=>'selectImage',
+					'options'=>array(
+					array('value'=>'http://codestarframework.com/assets/images/placeholder/100x80-2ecc71.gif'),
+					array('value'=>'http://codestarframework.com/assets/images/placeholder/100x80-e74c3c.gif'),
+					array('value'=>'http://codestarframework.com/assets/images/placeholder/100x80-ffbc00.gif'),
+					array('value'=>'http://codestarframework.com/assets/images/placeholder/100x80-3498db.gif'),
+					array('value'=>'http://codestarframework.com/assets/images/placeholder/100x80-555555.gif')
+				)
+					),
+				array(
+					'id'=>'background',
+					'title'=>'Background',
+					'field'=>'background'
+				)
+			),
+		),
+		array(
+			'name' => 'basic-fields',
+			'title' => 'Basic Fields',
+			'icon' => $circlePlus,
+			'children' => array(
+				array(
+					'name' => 'text',
+					'title' => 'Text',
+					'icon' => $rectangle,
+					'fields' => array(
+						array(
+							'id' => 'text',
+							'title' => 'Text',
+							'field' => 'text',
+							'attributes'=>array(
+								'style'=>array('width'=>'50%')
+							)
+						),
+						array(
+							'id' => 'defaultText',
+							'title' => 'Text with default',
+							'field' => 'text',
+							'default' => 'Default Text',
+							'attributes'=>array(
+								'style'=>array('width'=>'50%')
+							)
+						),
+						array(
+							'id' => 'ingenuity',
+							'title' => 'Text field ingenuity',
+							'subtitle'=>'The field of subtitle text.',
+							'before'=>'The field of before text',
+							'after'=>'The field of after text',
+							'field' => 'text',
+							'attributes'=>array(
+								'style'=>array('width'=>'50%')
+							)
+						),
+						array(
+							'id' => 'placeholder',
+							'title' => 'Text with placeholder',
+							'placeholder'=>'Typed something...',
+							'field' => 'text',
+							'attributes'=>array(
+								'style'=>array('width'=>'50%')
+							)
+						),
+						array(
+							'id' => 'readonly',
+							'title' => 'Text readonly',
+							'default'=>'Readonly text field, can not be changed',
+							'field' => 'text',
+							'attributes'=>array(
+								'style'=>array('width'=>'50%'),
+								'readOnly'=>true,
+							),
+						),
+						array(
+							'id' => 'maxLength',
+							'title' => 'Text with maxlength (5)',
+							'default'=>'abc',
+							'attributes'=>array(
+								'maxLength'=>5,
+								'style'=>array('width'=>'50%'),
+							),
+							'field' => 'text',
+							
+						),
+						array(
+							'id' => 'customStyle',
+							'title' => 'Text using custom styles',
+							'attributes'=>array(
+								'style'=>array('borderColor'=>'#93C054','padding'=>'8px 8px'),
+								'outline'=>'#93C054'
+							),
+							'field' => 'text',
+						),
+						array(
+							'id' => 'fullWidth',
+							'after'=>'It shows full width if there is no field of title.',
+							'attributes'=>array(
+								'style'=>array('width'=>'50%')
+							),
+							'field' => 'text',
+						),
+					),
+				),
+				array(
+					'name' => 'textarea',
+					'title' => 'Textarea',
+					'icon' => $rectangle,
+					'fields' => array(
+						array(
+							'id' => 'textarea',
+							'title'=>'Textarea',
+							'field' => 'textarea',
+						),
+						array(
+							'id' => 'default',
+							'title'=>'Textarea with default',
+							'field' => 'textarea',
+							'default'=>'This is default value'
+						),
+						array(
+							'id' => 'placeholder',
+							'title'=>'Text with placeholder',
+							'field' => 'textarea',
+							'placeholder'=>'Typed something...'
+						),
+						array(
+							'id' => 'ingenuity',
+							'title'=>'Textarea field ingenuity',
+							'subtitle'=>'The field of subtitle text.',
+							'before'=>'The field of before text',
+							'after'=>'The field of after text',
+							'field' => 'textarea',
+							'placeholder'=>'Typed something...'
+						),
+						array(
+							'id' => 'fullWidth',
+							'after'=>'It shows full width if there is no field of title.',
+							'field' => 'textarea'
+						),
+					),
+				),
+				array(
+					'name' => 'select',
+					'title' => 'Select',
+					'icon' => $faList,
+					'fields' => array(
+						array(
+							'id' => 'select',
+							'title' => 'Select',
+							'field' => 'select',
+							'options'=>array(
+								array(
+									'label'=>'Select an option',
+									'value'=>'default',
+								),
+								array(
+									'label'=>'Option 1',
+									'value'=>'one',
+								),
+								array(
+									'label'=>'Option 2',
+									'value'=>'two',
+								),
+								array(
+									'label'=>'Option 3',
+									'value'=>'three',
+								),
+							)
+						),
+						array(
+							'id' => 'default',
+							'title' => 'Select with default',
+							'field' => 'select',
+							'options'=>array(
+								array(
+									'label'=>'Select an option',
+									'value'=>'default',
+								),
+								array(
+									'label'=>'Option 1',
+									'value'=>'one',
+								),
+								array(
+									'label'=>'Option 2',
+									'value'=>'two',
+								),
+								array(
+									'label'=>'Option 3',
+									'value'=>'three',
+								),
+							)
+						),
+						array(
+							'id' => 'multipleSelect',
+							'title' => 'Select with multiple choice',
+							'field' => 'select',
+							'attributes'=>array(
+								'multiple'=>true,
+							),
+							'options'=>array(
+								array(
+									'label'=>'Option 1',
+									'value'=>'one',
+								),
+								array(
+									'label'=>'Option 2',
+									'value'=>'two',
+								),
+								array(
+									'label'=>'Option 3',
+									'value'=>'three',
+								),
+								array(
+									'label'=>'Option 4',
+									'value'=>'four',
+								),
+								array(
+									'label'=>'Option 5',
+									'value'=>'five',
+								),
+								array(
+									'label'=>'Option 6',
+									'value'=>'six',
+								),
+							)
+						),
+						array(
+							'field'=>'notice',
+							'content'=>'Select with <b>chosen</b> style.',
+							'variant'=>'info'
+						),
+						array(
+							'id'=>'chosen',
+							'title'=>'Select with chosen',
+							'field'=>'chosen',
+							'options'=>array(
+							array('label'=>'Option 1','value'=>'one'),
+							array('label'=>'Option 2','value'=>'two'),
+							array('label'=>'Option 3','value'=>'three'),
+							array('label'=>'Option 4','value'=>'four'),
+							array('label'=>'Option 5','value'=>'five'),
+							)
+						),
+						array(
+							'id'=>'chosenMultiple',
+							'title'=>'Select with multiple chosen',
+							'field'=>'chosen',
+							'attributes'=>array(
+							'multiple'=>true,
+							),
+							'options'=>array(
+							array('label'=>'Option 1','value'=>'one'),
+							array('label'=>'Option 2','value'=>'two'),
+							array('label'=>'Option 3','value'=>'three'),
+							array('label'=>'Option 4','value'=>'four'),
+							array('label'=>'Option 5','value'=>'five'),
+							)
+						),
 
-                      array(
-                        'id'=>'searchPage',
-                        'title'=>'Select with multiple AJAX search Pages',
-                        'field'=>'searchPage',
-                        'type'=>'pages'
-                      ),
-                      array(
-                        'id'=>'searchPage',
-                        'title'=>'Select with multiple AJAX search Posts',
-                        'field'=>'searchPage',
-                        'type'=>'posts'
-                      ),
-                      array(
-                        'field'=>'notice',
-                        'content'=>'Select with <b>predefined wp query</b> options.',
-                        'variant'=>'info'
-                      ),
-                      array(
-                        'id'=>'selectPage',
-                        'title'=>'Select with pages',
-                        'field'=>'pages'
-                      ),
-                      array(
-                        'id'=>'selectPost',
-                        'title'=>'Select with posts',
-                        'field'=>'posts',
-                      ),
-                      array(
-                        'id'=>'selectCategory',
-                        'title'=>'Select with categories',
-                        'field'=>'categories'
-                      ),
-                      array(
-                        'id'=>'selectRole',
-                        'title'=>'Select with roles',
-                        'field'=>'roles'
-                      ),
-                      array(
-                        'id'=>'selectUser',
-                        'title'=>'Select with users',
-                        'field'=>'users'
-                      ),
-                      array(
-                        'id'=>'selectPostType',
-                        'title'=>'Select with postTypes',
-                        'field'=>'postTypes'
-                      ),
-                      array(
-                        'id'=>'selectMenu',
-                        'title'=>'Select with menu',
-                        'field'=>'menus'
-                      ),
-                      // array(
-                      //   'id'=>'selectTaxonomies',
-                      //   'title'=>'Select with taxonomies',
-                      //   'field'=>'taxonomies'
-                      // ),
-                  ),
-              ),
-              array(
-                  'name' => 'checkbox',
-                  'title' => 'Checkbox',
-                  'icon' => $faCheckbox,
-                  'fields' => array(
-                      array(
-                          'id' => 'checkbox',
-                          'title' => 'Checkbox',
-                          'field' => 'checkbox',
-                          'options'=>array(
-                            array(
-                              'label'=>'The label text for the checkbox.',
-                              'value'=>'check',
-                            ),
-                          )
-                      ),
-                      array(
-                          'id' => 'default',
-                          'title' => 'Checkbox with default.',
-                          'field' => 'checkbox',
-                          'default'=>array('first'),
-                          'options'=>array(
-                            array(
-                              'label'=>'The label text for the checkbox.',
-                              'value'=>'first',
-                            )
-                          )
-                      ),
-                      array(
-                          'id' => 'multipleChoice',
-                          'title' => 'Checkbox with multiple choice.',
-                          'field' => 'checkbox',
-                          'options'=>array(
-                            array(
-                              'label'=>'Option 1',
-                              'value'=>'option-1',
-                            ),
-                            array(
-                              'label'=>'Option 2',
-                              'value'=>'option-2',
-                            ),
-                            array(
-                              'label'=>'Option 3',
-                              'value'=>'option-3',
-                            )
-                          )
-                      ),
-                      array(
-                          'id' => 'inlineCheckbox',
-                          'title' => 'Checkbox inline with multiple choice.',
-                          'field' => 'checkbox',
-                          'attributes'=>array(
-                            'direction'=>'row',
-                          ),
-                          'options'=>array(
-                            array(
-                              'label'=>'Option 1',
-                              'value'=>'option-1',
-                            ),
-                            array(
-                              'label'=>'Option 2',
-                              'value'=>'option-2',
-                            ),
-                            array(
-                              'label'=>'Option 3',
-                              'value'=>'option-3',
-                            )
-                          )
-                      ),
-                      array(
-                          'id' => 'multipleDefault',
-                          'title' => 'Checkbox multiple choice with default.',
-                          'field' => 'checkbox',
-                          'default'=>array('option-1','option-2'),
-                          'options'=>array(
-                            array(
-                              'label'=>'Option 1',
-                              'value'=>'option-1',
-                            ),
-                            array(
-                              'label'=>'Option 2',
-                              'value'=>'option-2',
-                            ),
-                            array(
-                              'label'=>'Option 3',
-                              'value'=>'option-3',
-                            )
-                          )
-                      ),
-                      array(
-                          'id' => 'manyItems',
-                          'title' => 'Checkbox testing on many items.',
-                          'field' => 'checkbox',
-                          'after'=>'Vertical scroll showing automatically after add many items',
-                          'options'=>array(
-                            array(
-                              'label'=>'Option 1',
-                              'value'=>'option-1',
-                            ),
-                            array(
-                              'label'=>'Option 2',
-                              'value'=>'option-2',
-                            ),
-                            array(
-                              'label'=>'Option 3',
-                                'value'=>'option-3',
-                            ),
-                            array(
-                              'label'=>'Option 4',
-                              'value'=>'option-4',
-                            ),
-                            array(
-                              'label'=>'Option 5',
-                              'value'=>'option-5',
-                            ),
-                            array(
-                              'label'=>'Option 6',
-                              'value'=>'option-6',
-                            ),
-                            array(
-                              'label'=>'Option 7',
-                              'value'=>'option-7',
-                            ),
-                            array(
-                              'label'=>'Option 8',
-                              'value'=>'option-8',
-                            ),
-                            array(
-                              'label'=>'Option 9',
-                              'value'=>'option-9',
-                            ),
-                            array(
-                              'label'=>'Option 10',
-                              'value'=>'option-10',
-                            ),
-                            array(
-                              'label'=>'Option 11',
-                              'value'=>'option-11',
-                            ),
-                            array(
-                              'label'=>'Option 12',
-                              'value'=>'option-12',
-                            ),
-                            array(
-                              'label'=>'Option 13',
-                              'value'=>'option-13',
-                            ),
-                            array(
-                              'label'=>'Option 14',
-                              'value'=>'option-14',
-                            ),
-                            array(
-                              'label'=>'Option 15',
-                              'value'=>'option-15',
-                            ),
-                          )
-                      ),
-                      array(
-                        'field'=>'notice',
-                        'content'=>'Checkbox with <b>predefined wp query</b> options similar like <b>select</b> field. (see select field for all options models.)',
-                        'variant'=>'info'
-                      ),
-                      array(
-                        'id'=>'categories',
-                        'title'=>'Checkbox with categories',
-                        'field'=>'checkbox',
-                        'categories'=>true
-                      ),
+						array(
+							'id'=>'searchPage',
+							'title'=>'Select with multiple AJAX search Pages',
+							'field'=>'searchPage',
+							'type'=>'pages'
+						),
+						array(
+							'id'=>'searchPage',
+							'title'=>'Select with multiple AJAX search Posts',
+							'field'=>'searchPage',
+							'type'=>'posts'
+						),
+						array(
+							'field'=>'notice',
+							'content'=>'Select with <b>predefined wp query</b> options.',
+							'variant'=>'info'
+						),
+						array(
+							'id'=>'selectPage',
+							'title'=>'Select with pages',
+							'field'=>'pages'
+						),
+						array(
+							'id'=>'selectPost',
+							'title'=>'Select with posts',
+							'field'=>'posts',
+						),
+						array(
+							'id'=>'selectCategory',
+							'title'=>'Select with categories',
+							'field'=>'categories'
+						),
+						array(
+							'id'=>'selectRole',
+							'title'=>'Select with roles',
+							'field'=>'roles'
+						),
+						array(
+							'id'=>'selectUser',
+							'title'=>'Select with users',
+							'field'=>'users'
+						),
+						array(
+							'id'=>'selectPostType',
+							'title'=>'Select with postTypes',
+							'field'=>'postTypes'
+						),
+						array(
+							'id'=>'selectMenu',
+							'title'=>'Select with menu',
+							'field'=>'menus'
+						),
+						// array(
+						//   'id'=>'selectTaxonomies',
+						//   'title'=>'Select with taxonomies',
+						//   'field'=>'taxonomies'
+						// ),
+					),
+				),
+				array(
+					'name' => 'checkbox',
+					'title' => 'Checkbox',
+					'icon' => $faCheckbox,
+					'fields' => array(
+						array(
+							'id' => 'checkbox',
+							'title' => 'Checkbox',
+							'field' => 'checkbox',
+							'options'=>array(
+								array(
+								'label'=>'The label text for the checkbox.',
+								'value'=>'check',
+								),
+							)
+						),
+						array(
+							'id' => 'default',
+							'title' => 'Checkbox with default.',
+							'field' => 'checkbox',
+							'default'=>array('first'),
+							'options'=>array(
+								array(
+								'label'=>'The label text for the checkbox.',
+								'value'=>'first',
+								)
+							)
+						),
+						array(
+							'id' => 'multipleChoice',
+							'title' => 'Checkbox with multiple choice.',
+							'field' => 'checkbox',
+							'options'=>array(
+								array(
+								'label'=>'Option 1',
+								'value'=>'option-1',
+								),
+								array(
+								'label'=>'Option 2',
+								'value'=>'option-2',
+								),
+								array(
+								'label'=>'Option 3',
+								'value'=>'option-3',
+								)
+							)
+						),
+						array(
+							'id' => 'inlineCheckbox',
+							'title' => 'Checkbox inline with multiple choice.',
+							'field' => 'checkbox',
+							'attributes'=>array(
+								'direction'=>'row',
+							),
+							'options'=>array(
+								array(
+								'label'=>'Option 1',
+								'value'=>'option-1',
+								),
+								array(
+								'label'=>'Option 2',
+								'value'=>'option-2',
+								),
+								array(
+								'label'=>'Option 3',
+								'value'=>'option-3',
+								)
+							)
+						),
+						array(
+							'id' => 'multipleDefault',
+							'title' => 'Checkbox multiple choice with default.',
+							'field' => 'checkbox',
+							'default'=>array('option-1','option-2'),
+							'options'=>array(
+								array(
+								'label'=>'Option 1',
+								'value'=>'option-1',
+								),
+								array(
+								'label'=>'Option 2',
+								'value'=>'option-2',
+								),
+								array(
+								'label'=>'Option 3',
+								'value'=>'option-3',
+								)
+							)
+						),
+						array(
+							'id' => 'manyItems',
+							'title' => 'Checkbox testing on many items.',
+							'field' => 'checkbox',
+							'after'=>'Vertical scroll showing automatically after add many items',
+							'options'=>array(
+								array(
+								'label'=>'Option 1',
+								'value'=>'option-1',
+								),
+								array(
+								'label'=>'Option 2',
+								'value'=>'option-2',
+								),
+								array(
+								'label'=>'Option 3',
+									'value'=>'option-3',
+								),
+								array(
+								'label'=>'Option 4',
+								'value'=>'option-4',
+								),
+								array(
+								'label'=>'Option 5',
+								'value'=>'option-5',
+								),
+								array(
+								'label'=>'Option 6',
+								'value'=>'option-6',
+								),
+								array(
+								'label'=>'Option 7',
+								'value'=>'option-7',
+								),
+								array(
+								'label'=>'Option 8',
+								'value'=>'option-8',
+								),
+								array(
+								'label'=>'Option 9',
+								'value'=>'option-9',
+								),
+								array(
+								'label'=>'Option 10',
+								'value'=>'option-10',
+								),
+								array(
+								'label'=>'Option 11',
+								'value'=>'option-11',
+								),
+								array(
+								'label'=>'Option 12',
+								'value'=>'option-12',
+								),
+								array(
+								'label'=>'Option 13',
+								'value'=>'option-13',
+								),
+								array(
+								'label'=>'Option 14',
+								'value'=>'option-14',
+								),
+								array(
+								'label'=>'Option 15',
+								'value'=>'option-15',
+								),
+							)
+						),
+						array(
+							'field'=>'notice',
+							'content'=>'Checkbox with <b>predefined wp query</b> options similar like <b>select</b> field. (see select field for all options models.)',
+							'variant'=>'info'
+						),
+						array(
+							'id'=>'categories',
+							'title'=>'Checkbox with categories',
+							'field'=>'checkbox',
+							'categories'=>true
+						),
 
-                  ),
-              ),
-              array(
-                  'name' => 'radio',
-                  'title' => 'Radio',
-                  'icon' => $faRadio,
-                  'fields' => array(
-                      array(
-                          'id' => 'radio',
-                          'title' => 'Radio',
-                          'field' => 'radio',
-                          'options'=>array(
-                            array('label'=>'Option 1','value'=>'option-1'),
-                            array('label'=>'Option 2','value'=>'option-2'),
-                            array('label'=>'Option 3','value'=>'option-3'),
-                          )
-                      ),
-                      array(
-                          'id' => 'default',
-                          'title' => 'Radio with default',
-                          'field' => 'radio',
-                          'default'=>'option-2',
-                          'options'=>array(
-                            array('label'=>'Option 1','value'=>'option-1'),
-                            array('label'=>'Option 2','value'=>'option-2'),
-                            array('label'=>'Option 3','value'=>'option-3'),
-                          )
-                      ),
-                      array(
-                          'id' => 'inline',
-                          'title' => 'Radio with inline style',
-                          'field' => 'radio',
-                          'attributes'=>array(
-                            'direction'=>'row',
-                          ),
-                          'options'=>array(
-                            array('label'=>'Option 1','value'=>'option-1'),
-                            array('label'=>'Option 2','value'=>'option-2'),
-                            array('label'=>'Option 3','value'=>'option-3'),
-                          )
-                      ),
-                      array(
-                          'id' => 'manyItems',
-                          'title' => 'Radio testing on many items',
-                          'field' => 'radio',
-                          'after'=>'Vertical scroll showing automatically after add many items',
-                          'options'=>array(
-                            array('label'=>'Option 1','value'=>'option-1'),
-                            array('label'=>'Option 2','value'=>'option-2'),
-                            array('label'=>'Option 3','value'=>'option-3'),
-                            array('label'=>'Option 4','value'=>'option-4'),
-                            array('label'=>'Option 5','value'=>'option-5'),
-                            array('label'=>'Option 6','value'=>'option-6'),
-                            array('label'=>'Option 7','value'=>'option-7'),
-                            array('label'=>'Option 8','value'=>'option-8'),
-                            array('label'=>'Option 9','value'=>'option-9'),
-                            array('label'=>'Option 10','value'=>'option-10'),
-                            array('label'=>'Option 11','value'=>'option-11'),
-                            array('label'=>'Option 12','value'=>'option-12'),
-                            array('label'=>'Option 13','value'=>'option-13'),
-                            array('label'=>'Option 14','value'=>'option-14'),
-                            array('label'=>'Option 15','value'=>'option-15'),
-                          )
-                      ),
-                      array(
-                        'field'=>'notice',
-                        'content'=>'Radio with <b>predefined wp query</b> options similar like <b>select</b> field. (see select field for all options models.)',
-                        'variant'=>'info'
-                      ),
-                      array(
-                        'id'=>'categories',
-                        'title'=>'Radio with categories',
-                        'field'=>'radio',
-                        'categories'=>true
-                      ),
-                  ),
-              ),
-          ),
-      ),
-      array(
-          'name' => 'repeaterFields',
-          'title' => 'Repeater Fields',
-          'icon' => $faClone,
-          'children' => array(
-            array(
-                  'name' => 'repeater',
-                  'title' => 'Repeater',
-                  'fields' => array(
-                      array(
-                          'id' => 'wpEditorName',
-                          'label' => 'WP Editor Name',
-                          'help' => 'Enter your wp editor name here',
-                          'field' => 'textarea',
-                      ),
-                  ),
-              ),
-            array(
-                  'name' => 'group',
-                  'title' => 'Group',
-                  'fields' => array(
-                      array(
-                          'id' => 'wpEditorName',
-                          'label' => 'WP Editor Name',
-                          'help' => 'Enter your wp editor name here',
-                          'field' => 'textarea',
-                      ),
-                  ),
-              ),
-          )
-      ),
-      array(
-        'name' => 'combineFields',
-        'title' => 'Combine Fields',
-        'icon' => $faBar,
-        'children' => array(
-          array(
-                'name' => 'accordion',
-                'title' => 'Accordion',
-                'fields' => array(
-                    array(
-                        'id' => 'wpEditorName',
-                        'label' => 'WP Editor Name',
-                        'help' => 'Enter your wp editor name here',
-                        'field' => 'textarea',
-                    ),
-                ),
-          ),
-          array(
-                    'name' => 'tabbed',
-                    'title' => 'Tabbed',
-                    'fields' => array(
-                        array(
-                            'id' => 'wpEditorName',
-                            'label' => 'WP Editor Name',
-                            'help' => 'Enter your wp editor name here',
-                            'field' => 'textarea',
-                        ),
-                    ),
-          ),
-          array(
-                'name' => 'fieldset',
-                'title' => 'Fieldset',
-                'fields' => array(
-                    array(
-                        'id' => 'wpEditorName',
-                        'label' => 'WP Editor Name',
-                        'help' => 'Enter your wp editor name here',
-                        'field' => 'textarea',
-                    ),
-                ),
-          ),
-        )
-        ),
-      array(
-        'name' => 'mediauploadfields',
-        'title' => 'Media and Upload Fields',
-        'icon' => $faUpload,
-        'children' => array(
-          array(
-            'name' => 'media',
-            'title' => 'media',
-            'fields' => array(
-              array(
-                  'id' => 'wpEditorName',
-                  'label' => 'WP Editor Name',
-                  'help' => 'Enter your wp editor name here',
-                  'field' => 'textarea',
-              ),
-            ),
-          ),
-          array(
-            'name' => 'upload',
-            'title' => 'upload',
-            'fields' => array(
-              array(
-                  'id' => 'wpEditorName',
-                  'label' => 'WP Editor Name',
-                  'help' => 'Enter your wp editor name here',
-                  'field' => 'textarea',
-              ),
-            ),
-          ),
-          array(
-            'name' => 'gallery',
-            'title' => 'Gallery',
-            'fields' => array(
-              array(
-                  'id' => 'wpEditorName',
-                  'label' => 'WP Editor Name',
-                  'help' => 'Enter your wp editor name here',
-                  'field' => 'textarea',
-              ),
-            ),
-          ),
-        )
-      ),
-      array(
-        'name' => 'editorFields',
-        'title' => 'Editor Fields',
-        'icon' => $faCode,
-        'children' => array(
-          array(
-            'name' => 'codeeditor',
-            'title' => 'Code Editor',
-            'fields' => array(
-              array(
-                  'id' => 'wpEditorName',
-                  'label' => 'WP Editor Name',
-                  'help' => 'Enter your wp editor name here',
-                  'field' => 'textarea',
-              ),
-            ),
-          ),
-          array(
-            'name' => 'wpEditor',
-            'title' => 'WP Editor',
-            'fields' => array(
-              array(
-                  'id' => 'wpEditorName',
-                  'label' => 'WP Editor Name',
-                  'help' => 'Enter your wp editor name here',
-                  'field' => 'textarea',
-              ),
-            ),
-          ),
-        )
-      ),
-      array(
-        'name' => 'colorFields',
-        'title' => 'Color Fields',
-        'icon' => $faDroplet,
-        'children' => array(
-          array(
-            'name' => 'color',
-            'title' => 'Color',
-            'fields' => array(
-              array(
-                  'id' => 'wpEditorName',
-                  'label' => 'WP Editor Name',
-                  'help' => 'Enter your wp editor name here',
-                  'field' => 'textarea',
-              ),
-            ),
-          ),
-          array(
-            'name' => 'linkColor',
-            'title' => 'Link Color',
-            'fields' => array(
-              array(
-                  'id' => 'wpEditorName',
-                  'label' => 'WP Editor Name',
-                  'help' => 'Enter your wp editor name here',
-                  'field' => 'textarea',
-              ),
-            ),
-          ),
-          array(
-            'name' => 'colorGroup',
-            'title' => 'Color Group',
-            'fields' => array(
-              array(
-                  'id' => 'wpEditorName',
-                  'label' => 'WP Editor Name',
-                  'help' => 'Enter your wp editor name here',
-                  'field' => 'textarea',
-              ),
-            ),
-          ),
-          array(
-            'name' => 'colorPalette',
-            'title' => 'Color Palette',
-            'fields' => array(
-              array(
-                  'id' => 'wpEditorName',
-                  'label' => 'WP Editor Name',
-                  'help' => 'Enter your wp editor name here',
-                  'field' => 'textarea',
-              ),
-            ),
-          ),
-        )
-        ),
-      array(
-        'name' => 'designFields',
-        'title' => 'Design Fields',
-        'icon' => $circleHalfStroke,
-        'children' => array(
-          array(
-            'name' => 'background',
-            'title' => 'Background',
-            'fields' => array(
-              array(
-                  'id' => 'wpEditorName',
-                  'label' => 'WP Editor Name',
-                  'help' => 'Enter your wp editor name here',
-                  'field' => 'textarea',
-              ),
-            ),
-          ),
-          array(
-            'name' => 'typography',
-            'title' => 'Typography',
-            'fields' => array(
-              array(
-                  'id' => 'wpEditorName',
-                  'label' => 'WP Editor Name',
-                  'help' => 'Enter your wp editor name here',
-                  'field' => 'textarea',
-              ),
-            ),
-          ),
-          array(
-            'name' => 'dimension',
-            'title' => 'Dimension',
-            'fields' => array(
-              array(
-                  'id' => 'wpEditorName',
-                  'label' => 'WP Editor Name',
-                  'help' => 'Enter your wp editor name here',
-                  'field' => 'textarea',
-              ),
-            ),
-          ),
-          array(
-            'name' => 'Spacing',
-            'title' => 'Spacing',
-            'fields' => array(
-              array(
-                  'id' => 'wpEditorName',
-                  'label' => 'WP Editor Name',
-                  'help' => 'Enter your wp editor name here',
-                  'field' => 'textarea',
-              ),
-            ),
-          ),
-          array(
-            'name' => 'border',
-            'title' => 'Border',
-            'fields' => array(
-              array(
-                  'id' => 'wpEditorName',
-                  'label' => 'WP Editor Name',
-                  'help' => 'Enter your wp editor name here',
-                  'field' => 'textarea',
-              ),
-            ),
-          ),
-          array(
-            'name' => 'spinner',
-            'title' => 'Spinner',
-            'fields' => array(
-              array(
-                  'id' => 'wpEditorName',
-                  'label' => 'WP Editor Name',
-                  'help' => 'Enter your wp editor name here',
-                  'field' => 'textarea',
-              ),
-            ),
-          ),
-          array(
-            'name' => 'number',
-            'title' => 'Number',
-            'fields' => array(
-              array(
-                  'id' => 'wpEditorName',
-                  'label' => 'WP Editor Name',
-                  'help' => 'Enter your wp editor name here',
-                  'field' => 'textarea',
-              ),
-            ),
-          ),
-        )
-      ),
-      array(
-        'name' => 'additionalFields',
-        'title' => 'Additional Fields',
-        'icon' => $faAsterisk,
-        'children' => array(
-          array(
-            'name' => 'slider',
-            'title' => 'Slider',
-            'icon'=>$faSliders,
-            'fields' => array(
-              array(
-                  'id' => 'wpEditorName',
-                  'label' => 'WP Editor Name',
-                  'help' => 'Enter your wp editor name here',
-                  'field' => 'textarea',
-              ),
-            ),
-          ),
-          array(
-            'name' => 'sorter',
-            'title' => 'Sorter',
-            'icon'=>$sortNumericDown,
-            'fields' => array(
-              array(
-                  'id' => 'wpEditorName',
-                  'label' => 'WP Editor Name',
-                  'help' => 'Enter your wp editor name here',
-                  'field' => 'textarea',
-              ),
-            ),
-          ),
-          array(
-            'name' => 'sortable',
-            'title' => 'Sortable',
-            'icon'=>$arrowAlt,
-            'fields' => array(
-              array(
-                  'id' => 'wpEditorName',
-                  'label' => 'WP Editor Name',
-                  'help' => 'Enter your wp editor name here',
-                  'field' => 'textarea',
-              ),
-            ),
-          ),
-          array(
-            'name' => 'switcher',
-            'title' => 'Switcher',
-            'icon'=>$faSwitch,
-            'fields' => array(
-              array(
-                  'id' => 'wpEditorName',
-                  'label' => 'WP Editor Name',
-                  'help' => 'Enter your wp editor name here',
-                  'field' => 'textarea',
-              ),
-            ),
-          ),
-          array(
-            'name' => 'icons',
-            'title' => 'Icons',
-            'icon'=>$faStar,
-            'fields' => array(
-              array(
-                  'id' => 'wpEditorName',
-                  'label' => 'WP Editor Name',
-                  'help' => 'Enter your wp editor name here',
-                  'field' => 'textarea',
-              ),
-            ),
-          ),
-          array(
-            'name' => 'map',
-            'title' => 'Map',
-            'icon'=>$faMap,
-            'fields' => array(
-              array(
-                  'id' => 'wpEditorName',
-                  'label' => 'WP Editor Name',
-                  'help' => 'Enter your wp editor name here',
-                  'field' => 'textarea',
-              ),
-            ),
-          ),
-          array(
-            'name' => 'link',
-            'title' => 'Link',
-            'icon'=>$faLink,
-            'fields' => array(
-              array(
-                  'id' => 'wpEditorName',
-                  'label' => 'WP Editor Name',
-                  'help' => 'Enter your wp editor name here',
-                  'field' => 'textarea',
-              ),
-            ),
-          ),
-          array(
-            'name' => 'date',
-            'title' => 'Date',
-            'icon'=>$faCalender,
-            'fields' => array(
-              array(
-                  'id' => 'wpEditorName',
-                  'label' => 'WP Editor Name',
-                  'help' => 'Enter your wp editor name here',
-                  'field' => 'textarea',
-              ),
-            ),
-          ),
-          array(
-            'name' => 'dateAndTime',
-            'title' => 'Date and Time',
-            'icon'=>$faCalender,
-            'fields' => array(
-              array(
-                  'id' => 'wpEditorName',
-                  'label' => 'WP Editor Name',
-                  'help' => 'Enter your wp editor name here',
-                  'field' => 'textarea',
-              ),
-            ),
-          ),
-          array(
-            'name' => 'imageSelect',
-            'title' => 'Image Select',
-            'icon'=>$faGrid,
-            'fields' => array(
-              array(
-                  'id' => 'wpEditorName',
-                  'label' => 'WP Editor Name',
-                  'help' => 'Enter your wp editor name here',
-                  'field' => 'textarea',
-              ),
-            ),
-          ),
-          array(
-            'name' => 'buttonSet',
-            'title' => 'Button Set',
-            'icon'=>$faEllipsis,
-            'fields' => array(
-              array(
-                  'id' => 'wpEditorName',
-                  'label' => 'WP Editor Name',
-                  'help' => 'Enter your wp editor name here',
-                  'field' => 'textarea',
-              ),
-            ),
-          ),
-        )
-        ),
-      array(
-        'name' => 'dependencies',
-        'title' => 'Dependencies',
-        'icon' => $faBranch,
-        'fields' => array(
-          array(
-              'id' => 'wpEditorName',
-              'label' => 'WP Editor Name',
-              'help' => 'Enter your wp editor name here',
-              'field' => 'textarea',
-          ),
-        ),
-      ),
-      array(
-        'name' => 'validate',
-        'title' => 'Validate',
-        'icon' => $faCircleCheck,
-        'fields' => array(
-          array(
-              'id' => 'wpEditorName',
-              'label' => 'WP Editor Name',
-              'help' => 'Enter your wp editor name here',
-              'field' => 'textarea',
-          ),
-        ),
-      ),
-      array(
-        'name' => 'sanitize',
-        'title' => 'Sanitize',
-        'icon' => $faRotateRight,
-        'fields' => array(
-          array(
-              'id' => 'wpEditorName',
-              'label' => 'WP Editor Name',
-              'help' => 'Enter your wp editor name here',
-              'field' => 'textarea',
-          ),
-        ),
-      ),
-      array(
-        'name' => 'backup',
-        'title' => 'Backup',
-        'icon' => $faShieldHalf,
-        'fields' => array(
-          array(
-              'id' => 'wpEditorName',
-              'label' => 'WP Editor Name',
-              'help' => 'Enter your wp editor name here',
-              'field' => 'textarea',
-          ),
-        ),
-      ),
-      array(
-        'name' => 'other',
-        'title' => 'Other',
-        'icon' => $faBold,
-        'fields' => array(
-          array(
-              'id' => 'wpEditorName',
-              'label' => 'WP Editor Name',
-              'help' => 'Enter your wp editor name here',
-              'field' => 'textarea',
-          ),
-        ),
-      ),
-    ),
-  ) 
+					),
+				),
+				array(
+					'name' => 'radio',
+					'title' => 'Radio',
+					'icon' => $faRadio,
+					'fields' => array(
+						array(
+							'id' => 'radio',
+							'title' => 'Radio',
+							'field' => 'radio',
+							'options'=>array(
+								array('label'=>'Option 1','value'=>'option-1'),
+								array('label'=>'Option 2','value'=>'option-2'),
+								array('label'=>'Option 3','value'=>'option-3'),
+							)
+						),
+						array(
+							'id' => 'default',
+							'title' => 'Radio with default',
+							'field' => 'radio',
+							'default'=>'option-2',
+							'options'=>array(
+								array('label'=>'Option 1','value'=>'option-1'),
+								array('label'=>'Option 2','value'=>'option-2'),
+								array('label'=>'Option 3','value'=>'option-3'),
+							)
+						),
+						array(
+							'id' => 'inline',
+							'title' => 'Radio with inline style',
+							'field' => 'radio',
+							'attributes'=>array(
+								'direction'=>'row',
+							),
+							'options'=>array(
+								array('label'=>'Option 1','value'=>'option-1'),
+								array('label'=>'Option 2','value'=>'option-2'),
+								array('label'=>'Option 3','value'=>'option-3'),
+							)
+						),
+						array(
+							'id' => 'manyItems',
+							'title' => 'Radio testing on many items',
+							'field' => 'radio',
+							'after'=>'Vertical scroll showing automatically after add many items',
+							'options'=>array(
+								array('label'=>'Option 1','value'=>'option-1'),
+								array('label'=>'Option 2','value'=>'option-2'),
+								array('label'=>'Option 3','value'=>'option-3'),
+								array('label'=>'Option 4','value'=>'option-4'),
+								array('label'=>'Option 5','value'=>'option-5'),
+								array('label'=>'Option 6','value'=>'option-6'),
+								array('label'=>'Option 7','value'=>'option-7'),
+								array('label'=>'Option 8','value'=>'option-8'),
+								array('label'=>'Option 9','value'=>'option-9'),
+								array('label'=>'Option 10','value'=>'option-10'),
+								array('label'=>'Option 11','value'=>'option-11'),
+								array('label'=>'Option 12','value'=>'option-12'),
+								array('label'=>'Option 13','value'=>'option-13'),
+								array('label'=>'Option 14','value'=>'option-14'),
+								array('label'=>'Option 15','value'=>'option-15'),
+							)
+						),
+						array(
+							'field'=>'notice',
+							'content'=>'Radio with <b>predefined wp query</b> options similar like <b>select</b> field. (see select field for all options models.)',
+							'variant'=>'info'
+						),
+						array(
+							'id'=>'categories',
+							'title'=>'Radio with categories',
+							'field'=>'radio',
+							'categories'=>true
+						),
+					),
+				),
+			),
+		),
+		array(
+			'name' => 'repeaterFields',
+			'title' => 'Repeater Fields',
+			'icon' => $faClone,
+			'children' => array(
+				array(
+					'name' => 'repeater-1',
+					'title' => 'Repeater',
+					'icon' => $rectangle,
+					'fields' => array(
+						array(
+							'id' => 'singleRepeater',
+							'title' => 'Single Repeater',
+							'help' => 'My Single repeater here. drag and drop to sort',
+							'field' => 'repeater',
+							'fields' => array(
+								array(
+									'id' => 'repeatName1',
+									'title' => 'Repeat Name 1',
+									'help' => 'Enter your repeat name here here',
+									'field' => 'text'
+								)
+							),	
+						)
+					),
+				)
+			)
+		),
+		array(
+			'name' => 'combineFields',
+			'title' => 'Combine Fields',
+			'icon' => $faBar,
+			'children' => array(
+			array(
+					'name' => 'accordion',
+					'title' => 'Accordion',
+					'fields' => array(
+						array(
+							'id' => 'wpEditorName',
+							'title' => 'WP Editor Name',
+							'help' => 'Enter your wp editor name here',
+							'field' => 'textarea',
+						),
+					),
+			),
+			array(
+						'name' => 'tabbed',
+						'title' => 'Tabbed',
+						'fields' => array(
+							array(
+								'id' => 'wpEditorName',
+								'title' => 'WP Editor Name',
+								'help' => 'Enter your wp editor name here',
+								'field' => 'textarea',
+							),
+						),
+			),
+			array(
+					'name' => 'fieldset',
+					'title' => 'Fieldset',
+					'fields' => array(
+						array(
+							'id' => 'wpEditorName',
+							'title' => 'WP Editor Name',
+							'help' => 'Enter your wp editor name here',
+							'field' => 'textarea',
+						),
+					),
+			),
+			)
+			),
+		array(
+			'name' => 'mediauploadfields',
+			'title' => 'Media and Upload Fields',
+			'icon' => $faUpload,
+			'children' => array(
+			array(
+				'name' => 'media',
+				'title' => 'media',
+				'fields' => array(
+				array(
+					'id' => 'wpEditorName',
+					'title' => 'WP Editor Name',
+					'help' => 'Enter your wp editor name here',
+					'field' => 'textarea',
+				),
+				),
+			),
+			array(
+				'name' => 'upload',
+				'title' => 'upload',
+				'fields' => array(
+				array(
+					'id' => 'wpEditorName',
+					'title' => 'WP Editor Name',
+					'help' => 'Enter your wp editor name here',
+					'field' => 'textarea',
+				),
+				),
+			),
+			array(
+				'name' => 'gallery',
+				'title' => 'Gallery',
+				'fields' => array(
+				array(
+					'id' => 'wpEditorName',
+					'title' => 'WP Editor Name',
+					'help' => 'Enter your wp editor name here',
+					'field' => 'textarea',
+				),
+				),
+			),
+			)
+		),
+		array(
+			'name' => 'editorFields',
+			'title' => 'Editor Fields',
+			'icon' => $faCode,
+			'children' => array(
+			array(
+				'name' => 'codeeditor',
+				'title' => 'Code Editor',
+				'fields' => array(
+				array(
+					'id' => 'wpEditorName',
+					'title' => 'WP Editor Name',
+					'help' => 'Enter your wp editor name here',
+					'field' => 'textarea',
+				),
+				),
+			),
+			array(
+				'name' => 'wpEditor',
+				'title' => 'WP Editor',
+				'fields' => array(
+				array(
+					'id' => 'wpEditorName',
+					'title' => 'WP Editor Name',
+					'help' => 'Enter your wp editor name here',
+					'field' => 'textarea',
+				),
+				),
+			),
+			)
+		),
+		array(
+			'name' => 'colorFields',
+			'title' => 'Color Fields',
+			'icon' => $faDroplet,
+			'children' => array(
+			array(
+				'name' => 'color',
+				'title' => 'Color',
+				'fields' => array(
+				array(
+					'id' => 'wpEditorName',
+					'title' => 'WP Editor Name',
+					'help' => 'Enter your wp editor name here',
+					'field' => 'textarea',
+				),
+				),
+			),
+			array(
+				'name' => 'linkColor',
+				'title' => 'Link Color',
+				'fields' => array(
+				array(
+					'id' => 'wpEditorName',
+					'title' => 'WP Editor Name',
+					'help' => 'Enter your wp editor name here',
+					'field' => 'textarea',
+				),
+				),
+			),
+			array(
+				'name' => 'colorGroup',
+				'title' => 'Color Group',
+				'fields' => array(
+				array(
+					'id' => 'wpEditorName',
+					'title' => 'WP Editor Name',
+					'help' => 'Enter your wp editor name here',
+					'field' => 'textarea',
+				),
+				),
+			),
+			array(
+				'name' => 'colorPalette',
+				'title' => 'Color Palette',
+				'fields' => array(
+				array(
+					'id' => 'wpEditorName',
+					'title' => 'WP Editor Name',
+					'help' => 'Enter your wp editor name here',
+					'field' => 'textarea',
+				),
+				),
+			),
+			)
+			),
+		array(
+			'name' => 'designFields',
+			'title' => 'Design Fields',
+			'icon' => $circleHalfStroke,
+			'children' => array(
+			array(
+				'name' => 'background',
+				'title' => 'Background',
+				'fields' => array(
+				array(
+					'id' => 'wpEditorName',
+					'title' => 'WP Editor Name',
+					'help' => 'Enter your wp editor name here',
+					'field' => 'textarea',
+				),
+				),
+			),
+			array(
+				'name' => 'typography',
+				'title' => 'Typography',
+				'fields' => array(
+				array(
+					'id' => 'wpEditorName',
+					'title' => 'WP Editor Name',
+					'help' => 'Enter your wp editor name here',
+					'field' => 'textarea',
+				),
+				),
+			),
+			array(
+				'name' => 'dimension',
+				'title' => 'Dimension',
+				'fields' => array(
+				array(
+					'id' => 'wpEditorName',
+					'title' => 'WP Editor Name',
+					'help' => 'Enter your wp editor name here',
+					'field' => 'textarea',
+				),
+				),
+			),
+			array(
+				'name' => 'Spacing',
+				'title' => 'Spacing',
+				'fields' => array(
+				array(
+					'id' => 'wpEditorName',
+					'title' => 'WP Editor Name',
+					'help' => 'Enter your wp editor name here',
+					'field' => 'textarea',
+				),
+				),
+			),
+			array(
+				'name' => 'border',
+				'title' => 'Border',
+				'fields' => array(
+				array(
+					'id' => 'wpEditorName',
+					'title' => 'WP Editor Name',
+					'help' => 'Enter your wp editor name here',
+					'field' => 'textarea',
+				),
+				),
+			),
+			array(
+				'name' => 'spinner',
+				'title' => 'Spinner',
+				'fields' => array(
+				array(
+					'id' => 'wpEditorName',
+					'title' => 'WP Editor Name',
+					'help' => 'Enter your wp editor name here',
+					'field' => 'textarea',
+				),
+				),
+			),
+			array(
+				'name' => 'number',
+				'title' => 'Number',
+				'fields' => array(
+				array(
+					'id' => 'wpEditorName',
+					'title' => 'WP Editor Name',
+					'help' => 'Enter your wp editor name here',
+					'field' => 'textarea',
+				),
+				),
+			),
+			)
+		),
+		array(
+			'name' => 'additionalFields',
+			'title' => 'Additional Fields',
+			'icon' => $faAsterisk,
+			'children' => array(
+			array(
+				'name' => 'slider',
+				'title' => 'Slider',
+				'icon'=>$faSliders,
+				'fields' => array(
+				array(
+					'id' => 'wpEditorName',
+					'title' => 'WP Editor Name',
+					'help' => 'Enter your wp editor name here',
+					'field' => 'textarea',
+				),
+				),
+			),
+			array(
+				'name' => 'sorter',
+				'title' => 'Sorter',
+				'icon'=>$sortNumericDown,
+				'fields' => array(
+				array(
+					'id' => 'wpEditorName',
+					'title' => 'WP Editor Name',
+					'help' => 'Enter your wp editor name here',
+					'field' => 'textarea',
+				),
+				),
+			),
+			array(
+				'name' => 'sortable',
+				'title' => 'Sortable',
+				'icon'=>$arrowAlt,
+				'fields' => array(
+				array(
+					'id' => 'wpEditorName',
+					'title' => 'WP Editor Name',
+					'help' => 'Enter your wp editor name here',
+					'field' => 'textarea',
+				),
+				),
+			),
+			array(
+				'name' => 'switcher',
+				'title' => 'Switcher',
+				'icon'=>$faSwitch,
+				'fields' => array(
+				array(
+					'id' => 'wpEditorName',
+					'title' => 'WP Editor Name',
+					'help' => 'Enter your wp editor name here',
+					'field' => 'textarea',
+				),
+				),
+			),
+			array(
+				'name' => 'icons',
+				'title' => 'Icons',
+				'icon'=>$faStar,
+				'fields' => array(
+				array(
+					'id' => 'wpEditorName',
+					'title' => 'WP Editor Name',
+					'help' => 'Enter your wp editor name here',
+					'field' => 'textarea',
+				),
+				),
+			),
+			array(
+				'name' => 'map',
+				'title' => 'Map',
+				'icon'=>$faMap,
+				'fields' => array(
+				array(
+					'id' => 'wpEditorName',
+					'title' => 'WP Editor Name',
+					'help' => 'Enter your wp editor name here',
+					'field' => 'textarea',
+				),
+				),
+			),
+			array(
+				'name' => 'link',
+				'title' => 'Link',
+				'icon'=>$faLink,
+				'fields' => array(
+				array(
+					'id' => 'wpEditorName',
+					'title' => 'WP Editor Name',
+					'help' => 'Enter your wp editor name here',
+					'field' => 'textarea',
+				),
+				),
+			),
+			array(
+				'name' => 'date',
+				'title' => 'Date',
+				'icon'=>$faCalender,
+				'fields' => array(
+				array(
+					'id' => 'wpEditorName',
+					'title' => 'WP Editor Name',
+					'help' => 'Enter your wp editor name here',
+					'field' => 'textarea',
+				),
+				),
+			),
+			array(
+				'name' => 'dateAndTime',
+				'title' => 'Date and Time',
+				'icon'=>$faCalender,
+				'fields' => array(
+				array(
+					'id' => 'wpEditorName',
+					'title' => 'WP Editor Name',
+					'help' => 'Enter your wp editor name here',
+					'field' => 'textarea',
+				),
+				),
+			),
+			array(
+				'name' => 'imageSelect',
+				'title' => 'Image Select',
+				'icon'=>$faGrid,
+				'fields' => array(
+				array(
+					'id' => 'wpEditorName',
+					'title' => 'WP Editor Name',
+					'help' => 'Enter your wp editor name here',
+					'field' => 'textarea',
+				),
+				),
+			),
+			array(
+				'name' => 'buttonSet',
+				'title' => 'Button Set',
+				'icon'=>$faEllipsis,
+				'fields' => array(
+				array(
+					'id' => 'wpEditorName',
+					'title' => 'WP Editor Name',
+					'help' => 'Enter your wp editor name here',
+					'field' => 'textarea',
+				),
+				),
+			),
+			)
+			),
+		array(
+			'name' => 'dependencies',
+			'title' => 'Dependencies',
+			'icon' => $faBranch,
+			'fields' => array(
+			array(
+				'id' => 'wpEditorName',
+				'title' => 'WP Editor Name',
+				'help' => 'Enter your wp editor name here',
+				'field' => 'textarea',
+			),
+			),
+		),
+		array(
+			'name' => 'validate',
+			'title' => 'Validate',
+			'icon' => $faCircleCheck,
+			'fields' => array(
+			array(
+				'id' => 'wpEditorName',
+				'title' => 'WP Editor Name',
+				'help' => 'Enter your wp editor name here',
+				'field' => 'textarea',
+			),
+			),
+		),
+		array(
+			'name' => 'sanitize',
+			'title' => 'Sanitize',
+			'icon' => $faRotateRight,
+			'fields' => array(
+			array(
+				'id' => 'wpEditorName',
+				'title' => 'WP Editor Name',
+				'help' => 'Enter your wp editor name here',
+				'field' => 'textarea',
+			),
+			),
+		),
+		array(
+			'name' => 'backup',
+			'title' => 'Backup',
+			'icon' => $faShieldHalf,
+			'fields' => array(
+			array(
+				'id' => 'wpEditorName',
+				'title' => 'WP Editor Name',
+				'help' => 'Enter your wp editor name here',
+				'field' => 'textarea',
+			),
+			),
+		),
+		array(
+			'name' => 'other',
+			'title' => 'Other',
+			'icon' => $faBold,
+			'fields' => array(
+			array(
+				'id' => 'wpEditorName',
+				'title' => 'WP Editor Name',
+				'help' => 'Enter your wp editor name here',
+				'field' => 'textarea',
+			),
+			),
+		),
+		),
+	) 
 );
 
 require_once CCFR_DIR_PATH . 'inc/Settings.php';

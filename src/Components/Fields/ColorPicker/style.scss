@@ -5,17 +5,18 @@
       padding-left: 30px;
       padding-right: 0;
       font-size: 11px;
-      border: 1px solid #4527a4;
       border-radius: 2px;
+      border: none;
+      outline: 1px solid #4527a4;
       cursor: pointer;
       &:focus {
-        outline: 1.4px solid #4527a4;
+        outline: 2px solid #4527a4;
         border: none;
       }
       div {
         display: flex;
         align-items: center;
-        padding:0 5px;
+        padding: 0 5px;
         background-color: #f6f7f7;
         height: inherit;
       }

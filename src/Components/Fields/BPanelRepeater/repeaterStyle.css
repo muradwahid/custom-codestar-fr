@@ -1,0 +1,130 @@
+.panel-repeater-wrapper {
+  margin-bottom: 10px;
+  .panel-without-group-wrapper {
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    .panelChildrenWrapper {
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      border-top: 1px solid #ccc;
+      &:first-child{
+        border: none;
+      }
+      label{
+        width: 20%;
+      }
+      div{
+        width:80%
+      }
+    }
+    .panel-repeater-icon-group {
+      display: flex;
+      gap: 5px;
+      padding: 0 10px;
+      align-items: center;
+      height: inherit;
+      background: #ccccccb0;
+      .panel-repeater-icon {
+        svg {
+          height: 18px;
+          transition: all 0.2s ease-in-out;
+          cursor: pointer;
+          fill: #2e2e2e;
+          &:hover {
+            fill: rgb(136, 136, 136);
+          }
+        }
+      }
+    }
+  }
+}
+
+.panel-repeater-wrapper .panel-repeater-header-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 37px;
+  border: 1px solid #ccc;
+}
+/* .panel-repeater-wrapper
+  .panel-repeater-header-wrapper
+  .panel-repeater-header-title {
+  margin: 0;
+  font-size: 13px;
+  padding-left: 10px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+} */
+.panel-repeater-wrapper
+  .panel-repeater-header-wrapper
+  .panel-repeater-header-title
+  p {
+  width: calc(100% -25px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.panel-repeater-wrapper
+  .panel-repeater-header-wrapper
+  .panel-repeater-header-title
+  span {
+  width: 25px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .panel-repeater-wrapper
+  .panel-repeater-header-wrapper
+  .panel-repeater-header-title:hover {
+  background: #ccccccb0;
+} */
+
+.panel-repeater-wrapper
+  .panel-repeater-header-wrapper
+  .panel-repeater-icon-group {
+  display: flex;
+  gap: 5px;
+  padding: 0 10px;
+  align-items: center;
+  height: inherit;
+  background: #ccccccb0;
+}
+
+.panel-repeater-wrapper
+  .panel-repeater-header-wrapper
+  .panel-repeater-icon-group
+  .panel-repeater-icon {
+  /* border-left: 1px solid #ccc; */
+  height: inherit;
+  /* padding: 0 8px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  cursor: pointer;
+  svg {
+    height: 18px;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      fill: rgb(136, 136, 136);
+    }
+  }
+}
+
+/* .panel-repeater-wrapper
+  .panel-repeater-header-wrapper
+  .panel-repeater-icon-group
+  .panel-repeater-icon:hover {
+  background: #ccccccb0;
+} */
