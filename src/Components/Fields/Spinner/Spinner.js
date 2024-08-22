@@ -1,27 +1,45 @@
-import React, { useState } from "react";
+import React from "react";
 import "./style.scss";
 const Spinner = ({
   value,
   onChange,
-  max,
-  min,
+  max = 100,
+  min = 0,
   step = 1,
   unit,
   defaultValue,
 }) => {
-  const def = value || defaultValue;
+  const def = value || { spinner: defaultValue || 0 };
+
+  const roundToPrecision = (num, precision) => {
+    return Number((Math.round(num * Math.pow(10, precision)) / Math.pow(10, precision)).toFixed(precision));
+  };
+
+  const currentValue = roundToPrecision(def.spinner, 1);
   return (
     <div className="bPl-spinner-main-wrapper">
       <div className="bPl-spinner-field-main-wrapper">
         <div className="bPl-spinner-wrapper">
           <div
+            // onClick={() => {
+            //   if ( min < def?.["spinner"]) {
+            //     if (unit) {
+            //       onChange({ ...def, spinner: Number(def?.["spinner"]) - Number(step), unit })
+            //     } else {
+            //       onChange({ ...def, spinner: Number(def?.["spinner"]) - Number(step) })
+            //     }
+            //   }
+            // }}
             onClick={() => {
-              if (unit) {
-                onChange({ ...value, spinner: Number(value?.["spinner"])-step, unit })
-              } else {
-                onChange({ ...value, spinner: Number(value?.["spinner"]) - step })
+              if (min < currentValue) {
+                const newValue = roundToPrecision(currentValue - step, 1);
+                if (unit) {
+                  onChange({ ...def, spinner: newValue, unit });
+                } else {
+                  onChange({ ...def, spinner: newValue });
+                }
               }
-            }}
+            }}  
             className="bPl-spinner-button"
           >
             <svg
@@ -35,24 +53,37 @@ const Spinner = ({
           </div>
           <div className="bPl-spinner-inputField-wrapper">
             <input
-              value={spinner}
+              value={def?.["spinner"]}
               type="number"
               min={min}
               max={max}
               step={step}
               className="bPl-spinner-input"
-              onChange={(e) => setSpinner(e.target.value)}
+              onChange={(e) => onChange(e.target.value)}
             />
           </div>
           {unit && <div className="bPl-spinner-unit">{unit}</div>}
           <div
+            // onClick={() => {
+            //   if (max > def?.["spinner"]) {
+                
+            //     if (unit) {
+            //       onChange({ ...def, spinner: Number(def?.["spinner"]) + step, unit })
+            //     } else {
+            //       onChange({ ...def, spinner: Number(def?.["spinner"]) + step })
+            //     }
+            //   }
+            // }}
             onClick={() => {
-              if (unit) {
-                onChange({ ...value, spinner: Number(value?.["spinner"]) + step, unit })
-              } else {
-                onChange({ ...value, spinner: Number(value?.["spinner"]) + step })
+              if (max > currentValue) {
+                const newValue = roundToPrecision(currentValue + step, 1);
+                if (unit) {
+                  onChange({ ...def, spinner: newValue, unit });
+                } else {
+                  onChange({ ...def, spinner: newValue });
+                }
               }
-            }}
+            }}  
             className="bPl-spinner-button"
           >
             <svg

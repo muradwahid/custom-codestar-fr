@@ -12,9 +12,10 @@ const BTextControl = ({
   min,
   minLength,
   max,
-  maxLength
+  maxLength,
+  padding="0 8px"
 }) => {
-  const [inputVal,setInputVal]=useState(defaultValue)
+  const [inputVal, setInputVal] = useState(defaultValue);
   const id = Math.floor(Math.random() * 999999);
   return (
     <div>
@@ -24,7 +25,7 @@ const BTextControl = ({
         }
         .bPl-textControl-${id}>.bPl-textControl-${id}-input {
           width:inherit;
-          padding: 0 8px;
+          padding: ${padding};
           line-height: 2;
           min-height: 30px;
           box-shadow: 0 0 0 transparent;
@@ -42,17 +43,19 @@ const BTextControl = ({
           background:#ccc;
         }
       `}</style>
+
       <div className={`bPl-textControl-${id}`}>
         <input
           className={`bPl-textControl-${id}-input`}
-          style={{...style}}
+          style={{ ...style }}
           type={type}
           min={min}
           minLength={minLength}
           max={max}
           maxLength={maxLength}
-          value={value ? value:inputVal}
-          defaultValue={inputVal}
+          value={value}
+          {...(!value ? { defaultValue: inputVal }:{})}
+          
           placeholder={placeholder}
           readOnly={readOnly}
           onChange={(e) => {

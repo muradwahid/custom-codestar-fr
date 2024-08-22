@@ -9,6 +9,7 @@ export const BMediaUpload = ({ onSelect, render, value, multiple = true, gallery
     },
     multiple,
     gallery,
+    
   });
   React.useEffect(() => {
     mediaUploader.on("select", () => {

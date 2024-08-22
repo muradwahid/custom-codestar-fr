@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import "./style.scss"
+import ColorPicker from '../ColorPicker/ColorPicker';
 const Border = ({
   value = {},
   top = true,
@@ -79,17 +80,17 @@ const Border = ({
     { label: "None", value: "none" },
   ]
   return (
-    <div className="bPl-space-main-wrapper">
+    <div className="bPl-border-main-wrapper">
       {all ? (
-        <div className="bPl-space-field-main-wrapper">
-          <div className="bPl-space-wrapper">
-            <div className="bPl-space-title">{arrowAltIcon}</div>
-            <div className="bPl-space-inputField-wrapper">
+        <div className="bPl-border-field-main-wrapper">
+          <div className="bPl-border-wrapper">
+            <div className="bPl-border-title">{arrowAltIcon}</div>
+            <div className="bPl-border-inputField-wrapper">
               <input
                 value={def?.["top"]}
                 type="number"
                 placeholder="all"
-                className="bPl-space-input"
+                className="bPl-border-input"
                 onChange={(e) =>
                   onChange({
                     ...def,
@@ -102,7 +103,7 @@ const Border = ({
               />
             </div>
 
-            <div className="bPl-space-unit">{unit}</div>
+            <div className="bPl-border-unit">{unit}</div>
 
           </div>
         </div>
@@ -110,20 +111,20 @@ const Border = ({
         <Fragment>
           {/* top section */}
           {top && (
-            <div className="bPl-space-field-main-wrapper">
-              <div className="bPl-space-wrapper">
-                <div className="bPl-space-title">{topIcon}</div>
-                <div className="bPl-space-inputField-wrapper">
+            <div className="bPl-border-field-main-wrapper">
+              <div className="bPl-border-wrapper">
+                <div className="bPl-border-title">{topIcon}</div>
+                <div className="bPl-border-inputField-wrapper">
                   <input
                     value={def?.["top"]}
                     type="number"
                     placeholder="top"
-                    className="bPl-space-input"
+                    className="bPl-border-input"
                     onChange={(e) => onChange({ ...def, top: e.target.value })}
                   />
                 </div>
 
-                <div className="bPl-space-unit">{unit}</div>
+                <div className="bPl-border-unit">{unit}</div>
 
               </div>
             </div>
@@ -131,22 +132,22 @@ const Border = ({
 
           {/* right section */}
           {right && (
-            <div className="bPl-space-field-main-wrapper">
-              <div className="bPl-space-wrapper">
-                <div className="bPl-space-title">{rightIcon}</div>
-                <div className="bPl-space-inputField-wrapper">
+            <div className="bPl-border-field-main-wrapper">
+              <div className="bPl-border-wrapper">
+                <div className="bPl-border-title">{rightIcon}</div>
+                <div className="bPl-border-inputField-wrapper">
                   <input
                     value={def?.["right"]}
                     type="number"
                     placeholder="right"
-                    className="bPl-space-input"
+                    className="bPl-border-input"
                     onChange={(e) =>
                       onChange({ ...def, right: e.target.value })
                     }
                   />
                 </div>
 
-                <div className="bPl-space-unit">{unit}</div>
+                <div className="bPl-border-unit">{unit}</div>
 
               </div>
             </div>
@@ -154,42 +155,42 @@ const Border = ({
 
           {/* bottom section */}
           {bottom && (
-            <div className="bPl-space-field-main-wrapper">
-              <div className="bPl-space-wrapper">
-                <div className="bPl-space-title">{bottomIcon}</div>
-                <div className="bPl-space-inputField-wrapper">
+            <div className="bPl-border-field-main-wrapper">
+              <div className="bPl-border-wrapper">
+                <div className="bPl-border-title">{bottomIcon}</div>
+                <div className="bPl-border-inputField-wrapper">
                   <input
                     value={def?.["bottom"]}
                     type="number"
                     placeholder="bottom"
-                    className="bPl-space-input"
+                    className="bPl-border-input"
                     onChange={(e) =>
                       onChange({ ...def, bottom: e.target.value })
                     }
                   />
                 </div>
 
-                <div className="bPl-space-unit">{unit}</div>
+                <div className="bPl-border-unit">{unit}</div>
 
               </div>
             </div>
           )}
           {/* left section */}
           {left && (
-            <div className="bPl-space-field-main-wrapper">
-              <div className="bPl-space-wrapper">
-                <div className="bPl-space-title">{leftIcon}</div>
-                <div className="bPl-space-inputField-wrapper">
+            <div className="bPl-border-field-main-wrapper">
+              <div className="bPl-border-wrapper">
+                <div className="bPl-border-title">{leftIcon}</div>
+                <div className="bPl-border-inputField-wrapper">
                   <input
                     type="number"
                     value={def?.["left"]}
                     placeholder="left"
-                    className="bPl-space-input"
+                    className="bPl-border-input"
                     onChange={(e) => onChange({ ...def, left: e.target.value })}
                   />
                 </div>
 
-                <div className="bPl-space-unit">{unit}</div>
+                <div className="bPl-border-unit">{unit}</div>
 
               </div>
             </div>
@@ -212,6 +213,7 @@ const Border = ({
           ))}
         </select>
       </div>
+      <ColorPicker value={def?.["color"]} defaultValue={defaultValue ? defaultValue?.["color"] : ""} onChange={val => onChange({ ...def, color: val })} />
     </div>
   );
 };

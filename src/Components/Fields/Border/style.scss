@@ -8,7 +8,7 @@
       align-items: center;
       border: 1px solid #ccc;
       border-radius: 3px;
-      height: 28px;
+      height: 30px;
       .bPl-border-title {
         color: #999;
         font-size: 12px;
@@ -24,7 +24,7 @@
       .bPl-border-inputField-wrapper {
         z-index: 9;
         .bPl-border-input {
-          width: 55px !important;
+          width: 70px !important;
           height: 26px !important;
           text-align: center;
           border-radius: 3px;
@@ -57,12 +57,13 @@
   .bPl-unit-control-wrapper {
     height: inherit !important;
     select {
-      height: 30px;
+      height: 32px;
       border-radius: 3px;
       border: 1px solid #ccc;
       cursor: pointer;
       color: #777;
-      padding: 0 3px;
+      padding: 0 8px;
+      min-width: 80px;
       &:focus {
         outline: 2px solid #4527a4;
         box-shadow: none;

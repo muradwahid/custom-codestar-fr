@@ -18,6 +18,7 @@ if( !class_exists('BPLSettings') ){
 			if( strpos( $hook, 'bplugins-settings' ) ){
 				wp_enqueue_media();
 				wp_enqueue_style( 'bpl-settings', CCFR_DIR_URL . 'dist/bpl-settings.css', [], CCFR_VERSION );
+				wp_enqueue_style( 'bpl-settings', CCFR_DIR_URL . 'assets/css/font-awesome.min.css', ['bpl-settings'], CCFR_VERSION );
         wp_enqueue_script( 'bpl-settings', CCFR_DIR_URL . 'dist/bpl-settings.js', [ 'react', 'react-dom', 'wp-api', 'wp-block-editor', 'wp-components', 'wp-data', 'wp-i18n', 'wp-media-utils', 'wp-util', 'lodash',"wp-compose" ], CCFR_VERSION, true );
 			}
 		}
@@ -52,7 +53,8 @@ if( !class_exists('BPLSettings') ){
 			$postsList = array_map(function($post) {
 				return [
 					'value' => $post->ID,
-					'label' => $post->post_title
+					'label' => $post->post_title,
+					'url'   => $post->guid
 				];
 			}, get_posts([
 				'post_type'				=> 'pages' === $dataType ? 'page' : 'post',

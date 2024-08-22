@@ -6,7 +6,7 @@ import './Main.scss';
 import Navbar from './NavBar/Navbar';
 import Sidebar from './SideBar/SideBar';
 
-const Main = ({ options, data, setData, onSaveData }) => {
+const Main = ({ options, data, setData, onSaveData, isLoading }) => {
   const { sections, saveType = 'nested' } = options;
 
   // const items = [
@@ -149,8 +149,8 @@ const Main = ({ options, data, setData, onSaveData }) => {
 
   // const [activeSection, setActiveSection] = useState(sections[0].name);
   // const [activeChild, setActiveChild] = useState(sections[0].children ? sections[0].children[0].name : null);
-  const [activeSection, setActiveSection] = useState("repeaterFields");
-  const [activeChild, setActiveChild] = useState('repeater-1');
+  const [activeSection, setActiveSection] = useState("additionalFields");
+  const [activeChild, setActiveChild] = useState('imageSelect'); 
 
   const activeProps = { activeSection, setActiveSection, activeChild, setActiveChild };
   // const updateData = (id, val) => {

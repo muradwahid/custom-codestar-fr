@@ -4,12 +4,20 @@ const ToggleControl = ({
   radius = "3px",
   activeBg = "#7ad03a",
   inActiveBg = "#ED6F6F",
-  checked = false,
+  checked = null,
+  text_off = "On",
+  text_on = "Off",
   onChange = () => { },
   label,
-  labelPosition = "left"
+  labelPosition = "right",
+  text_width = "55",
+  defaultValue,
 }) => {
   const uniqId = Math.floor(Math.random() * 99999999);
+  const def =
+    checked === null || checked === undefined || checked === ""
+      ? defaultValue
+      : checked;
   return (
     <div style={{ display: "flex" }}>
       <style>{`
@@ -25,7 +33,7 @@ const ToggleControl = ({
       .toggleControl-wrapper-${uniqId} .switch {
         position: relative;
         display: inline-block;
-        width: 55px;
+        width: ${text_width}px;
         height: 24px;
       }
     .toggleControl-wrapper-${uniqId} .switch .toggle-input { 
@@ -66,9 +74,7 @@ const ToggleControl = ({
 }
 
 .toggleControl-wrapper-${uniqId} .toggle-input:checked + .slider:before {
-  -webkit-transform: translateX(27px);
-  -ms-transform: translateX(27px);
-  transform: translateX(27px);
+left: calc(100% - 24px);
 }
 .toggleControl-wrapper-${uniqId} .switch .toggleOn{
   position: absolute;
@@ -77,7 +83,8 @@ const ToggleControl = ({
   font-weight:600;
   color:#fff;
   top: 50%;
-  transform:translateY(-50%)
+  transform:translateY(-50%);
+  text-transform:uppercase;
 }
 .toggleControl-wrapper-${uniqId} .switch .toggleOff{
   position: absolute;
@@ -86,7 +93,8 @@ const ToggleControl = ({
   font-weight:600;
   color:#fff;
   top: 50%;
-  transform:translateY(-50%)
+  transform:translateY(-50%);
+  text-transform:uppercase;
 }
 
       `}</style>
@@ -98,12 +106,16 @@ const ToggleControl = ({
           <input
             className="toggle-input"
             type="checkbox"
-            onChange={() => onChange(!checked)}
-            checked={checked}
+            checked={def}
+            onChange={(e) => {
+              console.log(e.target.value);
+              onChange(!def);
+            }}
+            value={def}
           />
           <span className="slider"></span>
-          {checked && <span className="toggleOn">ON</span>}
-          {!checked && <span className="toggleOff">OFF</span>}
+          {def && <span className="toggleOn">{text_on}</span>}
+          {!def && <span className="toggleOff"> {text_off}</span>}
         </label>
       </div>
     </div>

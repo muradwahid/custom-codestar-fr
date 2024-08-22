@@ -76,8 +76,9 @@ const BPLSettings = props => {
 	// 	]
 	// }
 
+
 	return <>
-		<Main options={options} data={data} setData={setData} onSaveData={onSaveData} />
+		<Main options={options} data={data} setData={setData} onSaveData={onSaveData} isLoading={isLoading} />
 		{/* <Modal /> */}
 	</>;
 }

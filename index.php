@@ -47,7 +47,9 @@ $faRotateRight = "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' 
 $faShieldHalf = "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' height='15px'><path d='M256 0c4.6 0 9.2 1 13.4 2.9L457.7 82.8c22 9.3 38.4 31 38.3 57.2c-.5 99.2-41.3 280.7-213.6 363.2c-16.7 8-36.1 8-52.8 0C57.3 420.7 16.5 239.2 16 140c-.1-26.2 16.3-47.9 38.3-57.2L242.7 2.9C246.8 1 251.4 0 256 0zm0 66.8V444.8C394 378 431.1 230.1 432 141.4L256 66.8l0 0z' /></svg>";
 $faBold = "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512' height='15px'><path d='M349.4 44.6c5.9-13.7 1.5-29.7-10.6-38.5s-28.6-8-39.9 1.8l-256 224c-10 8.8-13.6 22.9-8.9 35.3S50.7 288 64 288H175.5L98.6 467.4c-5.9 13.7-1.5 29.7 10.6 38.5s28.6 8 39.9-1.8l256-224c10-8.8 13.6-22.9 8.9-35.3s-16.6-20.7-30-20.7H272.5L349.4 44.6z' /></svg>";
 $faCaretLeft = "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 512' height='15px'><path d='M9.4 278.6c-12.5-12.5-12.5-32.8 0-45.3l128-128c9.2-9.2 22.9-11.9 34.9-6.9s19.8 16.6 19.8 29.6l0 256c0 12.9-7.8 24.6-19.8 29.6s-25.7 2.2-34.9-6.9l-128-128z' /></svg>";
-
+$faCheckIcon ="<svg xmlns='http://www.w3.org/2000/svg' height='15px' viewBox='0 0 448 512'><path d='M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z'/></svg>";
+$faStarIcon ="<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512' height='15px' ><path d='M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z'/></svg>";
+$faGearIcon ="<svg xmlns='http://www.w3.org/2000/svg' height='15px' viewBox='0 0 512 512'><path d='M495.9 166.6c3.2 8.7 .5 18.4-6.4 24.6l-43.3 39.4c1.1 8.3 1.7 16.8 1.7 25.4s-.6 17.1-1.7 25.4l43.3 39.4c6.9 6.2 9.6 15.9 6.4 24.6c-4.4 11.9-9.7 23.3-15.8 34.3l-4.7 8.1c-6.6 11-14 21.4-22.1 31.2c-5.9 7.2-15.7 9.6-24.5 6.8l-55.7-17.7c-13.4 10.3-28.2 18.9-44 25.4l-12.5 57.1c-2 9.1-9 16.3-18.2 17.8c-13.8 2.3-28 3.5-42.5 3.5s-28.7-1.2-42.5-3.5c-9.2-1.5-16.2-8.7-18.2-17.8l-12.5-57.1c-15.8-6.5-30.6-15.1-44-25.4L83.1 425.9c-8.8 2.8-18.6 .3-24.5-6.8c-8.1-9.8-15.5-20.2-22.1-31.2l-4.7-8.1c-6.1-11-11.4-22.4-15.8-34.3c-3.2-8.7-.5-18.4 6.4-24.6l43.3-39.4C64.6 273.1 64 264.6 64 256s.6-17.1 1.7-25.4L22.4 191.2c-6.9-6.2-9.6-15.9-6.4-24.6c4.4-11.9 9.7-23.3 15.8-34.3l4.7-8.1c6.6-11 14-21.4 22.1-31.2c5.9-7.2 15.7-9.6 24.5-6.8l55.7 17.7c13.4-10.3 28.2-18.9 44-25.4l12.5-57.1c2-9.1 9-16.3 18.2-17.8C227.3 1.2 241.5 0 256 0s28.7 1.2 42.5 3.5c9.2 1.5 16.2 8.7 18.2 17.8l12.5 57.1c15.8 6.5 30.6 15.1 44 25.4l55.7-17.7c8.8-2.8 18.6-.3 24.5 6.8c8.1 9.8 15.5 20.2 22.1 31.2l4.7 8.1c6.1 11 11.4 22.4 15.8 34.3zM256 336a80 80 0 1 0 0-160 80 80 0 1 0 0 160z'/></svg>";
 
 define( 'BPL_OPTIONS', array(
 	'id' => 'bplData',
@@ -75,12 +77,12 @@ define( 'BPL_OPTIONS', array(
 				array(
 					'id' => 'upload',
 					'title' => 'Upload',
-					'field' => 'inlineupload',
+					'field' => 'media',
 				),
 				array(
 					'id' => 'switcher',
 					'title' => 'Switcher',
-					'field' => 'switch',
+					'field' => 'switcher',
 					'label' => 'The label text of the switcher.',
 					'labelPosition'=>'right'
 				),
@@ -141,15 +143,16 @@ define( 'BPL_OPTIONS', array(
 				array(
 					'id'=>'selectImage',
 					'title'=>'Select Image',
-					'field'=>'selectImage',
+					'field'=>'image_select',
 					'options'=>array(
-					array('value'=>'http://codestarframework.com/assets/images/placeholder/100x80-2ecc71.gif'),
-					array('value'=>'http://codestarframework.com/assets/images/placeholder/100x80-e74c3c.gif'),
-					array('value'=>'http://codestarframework.com/assets/images/placeholder/100x80-ffbc00.gif'),
-					array('value'=>'http://codestarframework.com/assets/images/placeholder/100x80-3498db.gif'),
-					array('value'=>'http://codestarframework.com/assets/images/placeholder/100x80-555555.gif')
-				)
+						array('label'=>'http://codestarframework.com/assets/images/placeholder/100x80-2ecc71.gif','value'=>'opt_1'),
+						array('label'=>'http://codestarframework.com/assets/images/placeholder/100x80-e74c3c.gif','value'=>'opt_2'),
+						array('label'=>'http://codestarframework.com/assets/images/placeholder/100x80-ffbc00.gif','value'=>'opt_3'),
+						array('label'=>'http://codestarframework.com/assets/images/placeholder/100x80-3498db.gif','value'=>'opt_4'),
+						array('label'=>'http://codestarframework.com/assets/images/placeholder/100x80-555555.gif','value'=>'opt_5')
 					),
+					'default'=>'opt_1'
+				),
 				array(
 					'id'=>'background',
 					'title'=>'Background',
@@ -708,12 +711,12 @@ define( 'BPL_OPTIONS', array(
 			),
 		),
 		array(
-			'name' => 'repeaterFields',
+			'name' => 'repeater-fields',
 			'title' => 'Repeater Fields',
 			'icon' => $faClone,
 			'children' => array(
 				array(
-					'name' => 'repeater-1',
+					'name' => 'repeater',
 					'title' => 'Repeater',
 					'icon' => $rectangle,
 					'fields' => array(
@@ -728,6 +731,38 @@ define( 'BPL_OPTIONS', array(
 									'title' => 'Repeat Name 1',
 									'help' => 'Enter your repeat name here here',
 									'field' => 'text'
+								),
+								array(
+									'id' => 'repeatName4',
+									'title' => 'Repeat Name 1',
+									'help' => 'Enter your repeat name here here',
+									'field' => 'repeater',
+									'fields'=>array(
+									'id' => 'repeatName3',
+									'title' => 'Repeat Name 1',
+									'help' => 'Enter your repeat name here here',
+									'field' => 'text'
+									)
+								)
+							),	
+						),
+						array(
+							'id' => 'dual',
+							'title' => 'Dual',
+							'help' => 'My Single repeater here. drag and drop to sort',
+							'field' => 'repeater',
+							'fields' => array(
+								array(
+									'id' => 'name',
+									'title' => 'Name',
+									'help' => 'Enter your repeat name here here',
+									'field' => 'text'
+								),
+								array(
+									'id' => 'bio',
+									'title' => 'Bio',
+									'help' => 'Enter your repeat name here here',
+									'field' => 'textarea'
 								)
 							),	
 						)
@@ -740,28 +775,284 @@ define( 'BPL_OPTIONS', array(
 			'title' => 'Combine Fields',
 			'icon' => $faBar,
 			'children' => array(
-			array(
+					array(
 					'name' => 'accordion',
 					'title' => 'Accordion',
 					'fields' => array(
 						array(
-							'id' => 'wpEditorName',
-							'title' => 'WP Editor Name',
-							'help' => 'Enter your wp editor name here',
-							'field' => 'textarea',
+							'title'  => 'Accordion',
+							'id'=>'accordion',
+							'field'=>'accordion',
+							'fields' => array(
+									array(
+									'title'=>'Accordion 1',
+									'id'=>'accordion1',
+									'fields'=>array(
+										array(
+											'id'    => 'opt-text-1',
+											'field'  => 'text',
+											'title' => 'Text',
+											'attributes'=>array(
+												'style'=>array('width'=>'50%')
+											)
+										),
+										array(
+											'id'    => 'opt-switcher-1',
+											'field'  => 'switcher',
+											'title' => 'Switcher',
+										),
+										array(
+											'id'    => 'opt-textarea-1',
+											'field'  => 'textarea',
+											'title' => 'Textarea',
+										),
+									)
+								),
+									array(
+									'title'=>'Accordion 2',
+									'id'=>'accordion2',
+									'fields'=>array(
+										array(
+											'id'    => 'opt-text-1',
+											'field'  => 'text',
+											'title' => 'Text',
+											'attributes'=>array(
+                        'style'=>array('width'=>'50%')
+                      )
+										),
+										array(
+											'id'    => 'opt-switcher-1',
+											'field'  => 'color',
+											'title' => 'Color',
+										)
+									)
+								)
+							)
 						),
-					),
+						array(
+							'title'=>'Accordion with default',
+							'id'=>'default',
+							'field'=>'accordion',
+							'fields'=>array(
+								array(
+									'title'=>'Fields 1',
+									'id'=>'fields1',
+									'fields'=>array(
+										array(
+											'title'=>'Text 1',
+											'id'=>'text1',
+											'field'=>'text',
+											'default'=>'This is text 1 default value',
+																						'attributes'=>array(
+												'style'=>array('width'=>'50%')
+											)
+										),
+										array(
+											'title'=>'Text 2',
+											'id'=>'text2',
+											'field'=>'text',
+											'default'=>'This is text 2 default value',
+																						'attributes'=>array(
+												'style'=>array('width'=>'50%')
+											)
+										),
+									)
+									),
+								array(
+									'title'=>'Fields 2',
+									'id'=>'fields2',
+									'fields'=>array(
+										array(
+											'title'=>'Color 1',
+											'id'=>'color1',
+											'field'=>'color',
+											'default'=>'#1e73be'
+										),
+										array(
+											'title'=>'Color 2',
+											'id'=>'color2',
+											'field'=>'color',
+											'default'=>'#ffbc00'
+										),
+									)
+								),
+								array(
+									'title'=>'Fields 3',
+									'id'=>'fields3',
+									'fields'=>array(
+										array(
+											'title'=>'Textarea 1',
+											'id'=>'textarea1',
+											'field'=>'textarea',
+											'default'=>'This is textarea 1 default value'
+										),
+										array(
+											'title'=>'Textarea 2',
+											'id'=>'textarea2',
+											'field'=>'textarea',
+											'default'=>'This is textarea 2 default value'
+										),
+									)
+								),
+							)
+							),
+							array(
+								'title'=>'Accordion with custom icons',
+								'id'=>'customIcons',
+                'field'=>'accordion',
+                'fields'=>array(
+                  array(
+										'title'=>'Other 1',
+										'icon'=>$faCheckIcon,
+										'id'=>'other1',
+										'fields'=>array(
+											array(
+												'title'=>'Text 1',
+												'id'=>'text1',
+												'field'=>'text',
+												'attributes'=>array(
+													'style'=>array('width'=>'50%')
+												)
+											),
+										)
+										),
+										array(
+											'title'=>'Other 2',
+											'icon'=>$faStarIcon,
+											'id'=>'other2',
+											'fields'=>array(
+												array(
+													'title'=>'Text 2',
+													'id'=>'text2',
+													'field'=>'text',
+													'attributes'=>array(
+														'style'=>array('width'=>'50%')
+													)
+												)
+											)
+										)
+								)
+							)
+					)
 			),
 			array(
 						'name' => 'tabbed',
 						'title' => 'Tabbed',
 						'fields' => array(
 							array(
-								'id' => 'wpEditorName',
-								'title' => 'WP Editor Name',
+								'id' => 'tabbed',
+								'title' => 'Tabbed',
 								'help' => 'Enter your wp editor name here',
-								'field' => 'textarea',
+								'field' => 'tabbed',
+								'fields'=>array(
+									array(
+										'id'=>'tabbed1',
+										'title'=>'Tabbed 1',
+										'fields'=>array(
+											array('id'=>'text1',
+											'title'=>'Text 1',
+											'field'=>'text',
+											'attributes'=>array(
+												'style'=>array('width'=>'50%')
+											)
+										),
+											array('id'=>'textarea1',
+											'title'=>'Textarea 1',
+											'field'=>'textarea'
+											),
+										),
+									),
+									array(
+										'id'=>'tabbed2',
+										'title'=>'Tabbed 2',
+										'fields'=>array(
+											array(
+												'id'=>'text1',
+												'title'=>'Text 2',
+												'field'=>'text',
+												'attributes'=>array(
+												'style'=>array('width'=>'50%')
+											)
+											),
+											array(
+												'id'=>'textarea2',
+												'title'=>'Textarea 2',
+												'field'=>'textarea'
+												)
+										)
+									)
+								)
 							),
+							array(
+								'id'=>'icon',
+								'title'=>'Tabbed with default and icons',
+								'field'=>'tabbed',
+								'fields'=>array(
+									array(
+										'id'=>'fields1',
+										'title'=>'Fields 1',
+										'icon'=>$faCheckIcon,
+										'fields'=>array(
+											array(
+												'id'=>'text1',
+												'title'=>'Text 1',
+												'field'=>'text',
+												'attributes'=>array(
+													'style'=>array('width'=>'50%')
+												),
+												'default'=>'This is text 1 default value'
+											),
+											array(
+												'id'=>'text2',
+												'title'=>'Text 2',
+												'field'=>'text',
+												'attributes'=>array(
+													'style'=>array('width'=>'50%')
+												),
+												'default'=>'This is text 2 default value'
+											)
+										)
+									),
+									array(
+										'id'=>'fields2',
+										'title'=>'Fields 2',
+										'icon'=>$faStarIcon,
+										'fields'=>array(
+											array(
+												'id'=>'color1',
+												'title'=>'Color 1',
+												'field'=>'color',
+												'default'=>'#1e73be'
+											),
+											array(
+												'id'=>'color2',
+												'title'=>'Color 2',
+												'field'=>'color',
+												'default'=>'#ffbc00'
+											),
+										)
+									),
+									array(
+										'id'=>'fields3',
+										'title'=>'Fields 3',
+										'icon'=>$faGearIcon,
+										'fields'=>array(
+											array(
+												'id'=>'textarea1',
+												'title'=>'Textarea 1',
+												'field'=>'textarea',
+												'default'=>'This is textarea 1 default value'
+											),
+											array(
+												'id'=>'textarea2',
+												'title'=>'Textarea 2',
+												'field'=>'textarea',
+												'default'=>'This is textarea 2 default value'
+											),
+										)
+									),
+								)
+							)
 						),
 			),
 			array(
@@ -769,11 +1060,59 @@ define( 'BPL_OPTIONS', array(
 					'title' => 'Fieldset',
 					'fields' => array(
 						array(
-							'id' => 'wpEditorName',
-							'title' => 'WP Editor Name',
+							'id' => 'fieldset',
+							'title' => 'Fieldset',
 							'help' => 'Enter your wp editor name here',
-							'field' => 'textarea',
+							'field' => 'fieldset',
+							'fields'=>array(
+								array(
+									'id'=>'color',
+									'title'=>'Color',
+									'field'=>'color'
+								),
+								array(
+									'id'=>'text',
+									'title'=>'Text',
+									'field'=>'text',
+									'attributes'=>array(
+										'style'=>array('width'=>'50%')
+									)
+								),
+								array(
+									'id'=>'textarea',
+									'title'=>'Textarea',
+									'field'=>'textarea'
+								),
+							)
 						),
+						array(
+							'id'=>'default',
+							'title'=>'Fieldset with default',
+							'field'=>'fieldset',
+							'fields'=>array(
+								array(
+									'content'=>'Title of the fieldset'
+								),
+								array(
+									'id'=>'color',
+									'title'=>'Color',
+									'field'=>'color',
+									'default'=>'#1e73be'
+								),
+								array(
+									'id'=>'text',
+									'title'=>'Text',
+									'field'=>'text',
+									'default'=>'This is text default value'
+								),
+								array(
+									'id'=>'textarea',
+									'title'=>'Textarea',
+									'field'=>'textarea',
+									'default'=>'This is textarea default value'
+								),
+							)
+						)
 					),
 			),
 			)
@@ -785,26 +1124,94 @@ define( 'BPL_OPTIONS', array(
 			'children' => array(
 			array(
 				'name' => 'media',
-				'title' => 'media',
+				'title' => 'Media',
 				'fields' => array(
-				array(
-					'id' => 'wpEditorName',
-					'title' => 'WP Editor Name',
-					'help' => 'Enter your wp editor name here',
-					'field' => 'textarea',
-				),
+						array(
+							'id' => 'media',
+							'title' => 'Media',
+							'field' => 'media',
+						),
+						array(
+							'id' => 'without_preview',
+							'title' => 'Media without preview',
+							'field' => 'media',
+							'preview'=>false
+						),
+						array(
+							'id' => 'without_url',
+							'title' => 'Media without url',
+							'field' => 'media',
+							'url'=>false
+						),
+						array(
+							'id' => 'imageType',
+							'title' => 'Media with only image type',
+							'field' => 'media',
+							'type'=>'image'
+						),
+						array(
+							'id' => 'video',
+							'title' => 'Media with only video type',
+							'field' => 'media',
+							'type'=>'video'
+						),
+						array(
+							'id' => 'audio',
+							'title' => 'Media with only video type',
+							'field' => 'media',
+							'type'=>'audio'
+						),
 				),
 			),
 			array(
 				'name' => 'upload',
-				'title' => 'upload',
+				'title' => 'Upload',
 				'fields' => array(
-				array(
-					'id' => 'wpEditorName',
-					'title' => 'WP Editor Name',
-					'help' => 'Enter your wp editor name here',
-					'field' => 'textarea',
-				),
+						array(
+							'id' => 'upload',
+							'title' => 'Upload',
+							'field' => 'media',
+							'preview' => false
+						),
+						array(
+							'id' => 'preview',
+							'title' => 'Upload with preview',
+							'field' => 'media',
+							'preview' => true
+						),
+						array(
+							'id' => 'placeholder',
+							'title' => 'Upload with placeholder',
+							'field' => 'media',
+							'preview' => false,
+							'attributes'=>array(
+								'placeholder'=>'http://'
+							)
+						),
+						array(
+							'id' => 'image',
+							'title' => 'Upload with only image type',
+							'field' => 'media',
+							'preview' => false,
+							'button_title' => 'Upload Image',
+							'type'=>'image',
+						),
+						array(
+							'id' => 'video',
+							'title' => 'Upload with only video type',
+							'field' => 'media',
+							'button_title' => 'Upload Video',
+							'preview' => false,
+							'type'=>'video',
+						),
+						array(
+							'id' => 'audio',
+							'title' => 'Upload with only audio type',
+							'field' => 'media',
+							'button_title' => 'Upload audio',
+							'preview' => false,
+							'type'=>'audio',
+						),
 				),
 			),
 			array(
@@ -812,10 +1219,17 @@ define( 'BPL_OPTIONS', array(
 				'title' => 'Gallery',
 				'fields' => array(
 				array(
-					'id' => 'wpEditorName',
-					'title' => 'WP Editor Name',
-					'help' => 'Enter your wp editor name here',
-					'field' => 'textarea',
+					'id' => 'gallery',
+					'title' => 'Gallery',
+					'field' => 'gallery',
+				),
+				array(
+					'id' => 'gallery',
+					'title' => 'Gallery with custom button names',
+					'field' => 'gallery',
+					'add_title'   => 'Add Image(s)',
+					'edit_title'  => 'Edit Images',
+					'clear_title' => 'Remove Images',
 				),
 				),
 			),
@@ -827,27 +1241,85 @@ define( 'BPL_OPTIONS', array(
 			'icon' => $faCode,
 			'children' => array(
 			array(
-				'name' => 'codeeditor',
+				'name' => 'codeEditor',
 				'title' => 'Code Editor',
 				'fields' => array(
 				array(
-					'id' => 'wpEditorName',
-					'title' => 'WP Editor Name',
+					'id' => 'code_editor_1',
+					'title' => 'Code Editor',
+					'subtitle'=>'<strong>Default Editor</strong> Using: theme: default and mode: html',
 					'help' => 'Enter your wp editor name here',
-					'field' => 'textarea',
+					'field' => 'code_editor',
 				),
+				array(
+					'id' => 'code_editor_2',
+					'title' => 'Code Editor',
+					'subtitle'=>'<strong>HTML Editor</strong> Using: theme: solarized_dark and mode: html',
+					'settings'=>array(
+						'theme'=>'solarized_dark',
+					),
+					'field' => 'code_editor',
+					'default'  =>'<div class="wrapper">
+  <h1>Hello world</h1>
+  <p>Lorem <strong>ipsum</strong> dollar.</p>
+</div>',
+				),
+				array(
+					'id' => 'code_editor_3',
+					'title' => 'Code Editor',
+					'subtitle'=>'<strong>JS Editor</strong> Using: theme: dracula and mode: javascript',
+					'settings'=>array(
+						'theme'  => 'dracula',
+        		'mode'   => 'javascript',
+				  ),
+					'field' => 'code_editor',
+							'default' =>';(function( $, window, document, undefined ) {
+  "use strict";
+
+  $(document).ready( function() {
+
+    // do stuff
+
+  });
+
+})( jQuery, window, document );',
+				),
+				array(
+					'id'=>'code_editor_4',
+					'field'=>'code_editor',
+					'after'=>'<strong>CSS Editor</strong> It shows full width if there is no field of title and using: theme: merbivore and mode: css',
+					'settings' => array(
+						'theme'  => 'merbivore',
+						'mode'   => 'css',
+					),
+					'default' =>'.wrapper {
+	font-family: "Open Sans";
+	font-size: 13px;
+	width: 250px;
+	height: 100px;
+	color: #fff;
+	background-color: #555;
+}',
+				)
 				),
 			),
 			array(
 				'name' => 'wpEditor',
 				'title' => 'WP Editor',
 				'fields' => array(
-				array(
-					'id' => 'wpEditorName',
-					'title' => 'WP Editor Name',
-					'help' => 'Enter your wp editor name here',
-					'field' => 'textarea',
-				),
+					array(
+						'id' => 'wp_editor_1',
+						'title' => 'WP Editor',
+						'field' => 'wp_editor',
+					),
+					array(
+						'id' => 'wp_editor_2',
+						'title' => 'WP Editor with Custom Height and No Media Buttons',
+						'subtitle'      => 'Settings:<br />height => 250px,<br />media_buttons => false',
+						'field' => 'wp_editor',
+						'height' => '250px',
+						'media_button'=>false,
+					),
 				),
 			),
 			)
@@ -861,48 +1333,149 @@ define( 'BPL_OPTIONS', array(
 				'name' => 'color',
 				'title' => 'Color',
 				'fields' => array(
-				array(
-					'id' => 'wpEditorName',
-					'title' => 'WP Editor Name',
-					'help' => 'Enter your wp editor name here',
-					'field' => 'textarea',
-				),
+					array(
+						'id' => 'color',
+						'title' => 'Color',
+						'field' => 'color',
+					),
+					array(
+						'id'      => 'opt-color-2',
+						'field'    => 'color',
+						'title'   => 'Color with default (hex)',
+						'default' => '#3498db',
+					),
+					array(
+						'id'      => 'opt-color-3',
+						'field'    => 'color',
+						'title'   => 'Color with default (rgba)',
+						'default' => 'rgba(255,255,0,0.25)',
+					),
+					array(
+						'id'      => 'opt-color-4',
+						'field'    => 'color',
+						'title'   => 'Color with default (transparent)',
+						'default' => 'transparent',
+					),
 				),
 			),
 			array(
 				'name' => 'linkColor',
 				'title' => 'Link Color',
 				'fields' => array(
-				array(
-					'id' => 'wpEditorName',
-					'title' => 'WP Editor Name',
-					'help' => 'Enter your wp editor name here',
-					'field' => 'textarea',
-				),
+					array(
+						'id' => 'link_color',
+						'title' => 'Link Color',
+						'field' => 'link_color',
+					),
+					array(
+						'id' => 'link_color_2',
+						'field' => 'link_color',
+						'title'   => 'Link Color with default',
+						'default' => array(
+							'color' => '#1e73be',
+							'hover' => '#259ded',
+						),
+					),
+					array(
+						'id' => 'link_color_3',
+						'field' => 'link_color',
+						'title'   => 'Link Color with more color options',
+						'color'   => true,
+						'hover'   => true,
+						'visited' => true,
+						'active'  => true,
+						'focus'   => true,
+					),
 				),
 			),
 			array(
 				'name' => 'colorGroup',
 				'title' => 'Color Group',
 				'fields' => array(
-				array(
-					'id' => 'wpEditorName',
-					'title' => 'WP Editor Name',
-					'help' => 'Enter your wp editor name here',
-					'field' => 'textarea',
-				),
+					array(
+						'id' => 'color_group_1',
+						'title' => 'Color Group',
+						'field' => 'color_group',
+						'options'=> array(
+							'color_1'=>'Color 1',
+							'color_2'=>'Color 2'
+						)
+					),
+					array(
+						'id' => 'color_group_2',
+						'title' => 'Color Group',
+						'field' => 'color_group',
+						'options'=> array(
+							'color_1'=>'Color 1',
+							'color_2'=>'Color 2',
+							'color_3'=>'Color 3'
+						)
+					),
+					array(
+						'id' => 'color_group_2',
+						'title' => 'Color Group with default',
+						'subtitle'=>'Can be add unlimited color options.',
+						'field' => 'color_group',
+						'options'=> array(
+							'color_1'=>'Color 1',
+							'color_2'=>'Color 2',
+							'color_3'=>'Color 3',
+							'color_4'=>'Color 4',
+							'color_5'=>'Color 5',
+						),
+						'default'=>array(
+							'color_1' => '#000100',
+							'color_2' => '#002642',
+							'color_3' => '#ffce4b',
+							'color_4' => '#ff595e',
+							'color_5' => '#0052cc',
+						)
+					),
 				),
 			),
 			array(
 				'name' => 'colorPalette',
 				'title' => 'Color Palette',
 				'fields' => array(
-				array(
-					'id' => 'wpEditorName',
-					'title' => 'WP Editor Name',
-					'help' => 'Enter your wp editor name here',
-					'field' => 'textarea',
-				),
+					array(
+						'id' => 'palette_1',
+						'title' => 'Palette',
+						'subtitle'=>'Three set colors',
+						'field' => 'palette',
+						'options'=>array(
+							array('colors'=>array('#f36e27', '#f3d430', '#ed1683' ),'value'=>'set-1'),
+							array('colors'=>array( '#4153ab', '#6e86c7', '#211f27' ),'value'=>'set-2'),
+							array('colors'=>array('#162526', '#508486', '#C8C6CE' ),'value'=>'set-3'),
+							array('colors'=>array('#ccab5e', '#fff55f', '#197c5d' ),'value'=>'set-4')
+						),
+						'default'=>'set-1'
+					),
+					array(
+						'id' => 'palette_2',
+						'title' => 'Palette',
+						'subtitle'=>'Four set colors',
+						'field' => 'palette',
+						'options'=>array(
+							array('colors'=>array('#f04e36', '#f36e27', '#f3d430', '#ed1683'),'value'=>'set-1'),
+							array('colors'=>array( '#f9ca06', '#b5b546', '#2f4d48', '#212b2f' ),'value'=>'set-2'),
+							array('colors'=>array('#4153ab', '#6e86c7', '#211f27', '#d69762' ),'value'=>'set-3'),
+							array('colors'=>array('#162526', '#508486', '#C8C6CE', '#B45F1A' ),'value'=>'set-4'),
+							array('colors'=>array('#bbd5ff', '#ccab5e', '#fff55f', '#197c5d' ),'value'=>'set-5')
+						),
+						'default'=>'set-3'
+					),
+					array(
+						'id' => 'palette_3',
+						'title' => 'Palette',
+						'subtitle'=>'Five set colors',
+						'field' => 'palette',
+						'options'=>array(
+							array('colors'=>array( '#bbd5ff', '#ccab5e', '#fff55f', '#197c5d', '#bce2c4' ),'value'=>'set-1'),
+							array('colors'=>array('#6d3264', '#edf7f6', '#fde8e9', '#006675', '#e49ab0' ),'value'=>'set-2'),
+							array('colors'=>array('#000100', '#002642', '#ffce4b', '#ff595e', '#0052cc'  ),'value'=>'set-3')
+						),
+						'default'=>'set-1'
+					),
 				),
 			),
 			)
@@ -916,84 +1489,330 @@ define( 'BPL_OPTIONS', array(
 				'name' => 'background',
 				'title' => 'Background',
 				'fields' => array(
-				array(
-					'id' => 'wpEditorName',
-					'title' => 'WP Editor Name',
-					'help' => 'Enter your wp editor name here',
-					'field' => 'textarea',
-				),
+					array(
+						'id' => 'background',
+						'title' => 'Background',
+						'field' => 'background',
+					),
+					array(
+						'id' => 'background_2',
+						'title' => 'Background with default',
+						'field' => 'background',
+						'default' => array(
+							'background_color'      => '#e80000',
+							'background_position'   => 'center center',
+							'background_repeat'     => 'repeat-x',
+							'background_attachment' => 'fixed',
+							'background_size'       => 'cover',
+						)
+					),
+					array(
+						'id' => 'background_3',
+						'title' => 'Background with all features',
+						'field' => 'background',
+						'background_color'      => true,
+						'background_image'      => true,
+						'background_position'   => true,
+						'background_repeat'     => true,
+						'background_attachment' => true,
+						'background_size'       => true,
+						'background_origin'     => true,
+						'background_clip'       => true,
+						'background_blend_mode' => true,
+						'background_gradient'   => true,
+						'default' => array(
+								'background_color'              => '#009e44',
+								'background_gradient_color'     => '#81d742',
+								'background_gradient_direction' => '135deg',
+								'background_position'           => 'center center',
+								'background_repeat'             => 'repeat-x',
+								'background_attachment'         => 'fixed',
+								'background_size'               => 'cover',
+								'background_origin'             => 'border-box',
+								'background_clip'               => 'padding-box',
+								'background_blend_mode'         => 'normal',
+						)
+					),
 				),
 			),
 			array(
 				'name' => 'typography',
 				'title' => 'Typography',
 				'fields' => array(
-				array(
-					'id' => 'wpEditorName',
-					'title' => 'WP Editor Name',
-					'help' => 'Enter your wp editor name here',
-					'field' => 'textarea',
-				),
+					array(
+						'id' => 'typography',
+						'title' => 'Typography',
+						'field' => 'typography',
+					),
+					array(
+						'id' => 'typography_2',
+						'title' => 'Typography with default',
+						'field' => 'typography',
+						'default'          => array(
+							'font-family'    => 'Barlow',
+							'font-weight'    => '600',
+							'text-align'     => 'center',
+							'text-transform' => 'capitalize',
+							'font-size'      => '18px',
+							'line-height'    => '20px',
+							'letter-spacing' => '-1px',
+							'color'          => '#009e44',
+						),
+					),
+					array(
+						'id' => 'typography_3',
+						'title' => 'Typography with few features',
+						'field' => 'typography',
+						'text_align'     => false,
+						'text_transform' => false,
+						'font_size'      => false,
+						'line_height'    => false,
+						'letter_spacing' => false,
+						'color'          => false,
+						'default'        => array(
+							'font-family'  => 'Lato',
+							'font-weight'  => '900',
+						),
+					),
+					array(
+						'id' => 'typography_4',
+						'title' => 'Typography with all features',
+						'field' => 'typography',
+						'font_family'        => true,
+						'font_weight'        => true,
+						'font_style'         => true,
+						'font_size'          => true,
+						'line_height'        => true,
+						'letter_spacing'     => true,
+						'text_align'         => true,
+						'text-transform'     => true,
+						'color'              => true,
+						'font_variant'       => true,
+						'word_spacing'       => true,
+						'text_decoration'    => true,
+						'default'        => array(
+							'font-family'  => 'Old Standard TT',
+						),
+					),
 				),
 			),
 			array(
-				'name' => 'dimension',
-				'title' => 'Dimension',
+				'name' => 'dimensions',
+				'title' => 'Dimensions',
 				'fields' => array(
-				array(
-					'id' => 'wpEditorName',
-					'title' => 'WP Editor Name',
-					'help' => 'Enter your wp editor name here',
-					'field' => 'textarea',
-				),
+					array(
+						'id' => 'dimensions',
+						'title' => 'Dimensions',
+						'field' => 'dimensions',
+					),
+					array(
+						'id' => 'dimensions_2',
+						'title' => 'Dimensions with default',
+						'field' => 'dimensions',
+						'default'=>array(
+							'width'=>'100',
+							'height'=>'250',
+							'unit'=>'px'
+						)
+					),
+					array(
+						'id' => 'dimensions_3',
+						'title' => 'Dimensions with custom text and units',
+						'field' => 'dimensions',
+						'width_icon' => 'width',
+						'height_icon' => 'height',
+						'units'       => array( 'px', '%', 'em', 'rem', 'pt' ),
+						'default'=>array(
+							'width'=>'100',
+							'height'=>'50',
+							'unit'=>'%'
+						)
+					),
+					array(
+						'id' => 'dimensions_4',
+						'title' => 'Dimensions with single unit',
+						'field' => 'dimensions',
+						'units' => array('px')
+					),
+					array(
+						'id'    => 'dimensions-5',
+						'field'  => 'dimensions',
+						'title' => 'Dimensions without unit selector',
+						'unit'  => false,
+					),
+					array(
+						'id'    => 'dimensions-6',
+						'field'  => 'dimensions',
+						'title' => 'Dimensions with only width',
+						'height'  => false,
+					),
+					array(
+						'id'    => 'dimensions-7',
+						'field'  => 'dimensions',
+						'title' => 'Dimensions with only width and single unit',
+						'height' => false,
+						'units' => array('px')
+					),
 				),
 			),
 			array(
-				'name' => 'Spacing',
+				'name' => 'spacing',
 				'title' => 'Spacing',
 				'fields' => array(
-				array(
-					'id' => 'wpEditorName',
-					'title' => 'WP Editor Name',
-					'help' => 'Enter your wp editor name here',
-					'field' => 'textarea',
-				),
+					array(
+						'id' => 'spacing_1',
+						'title' => 'Spacing',
+						'field' => 'spacing',
+					),
+					array(
+						'id' => 'spacing_2',
+						'title' => 'Spacing with default',
+						'field' => 'spacing',
+						'default'  => array(
+							'top'    => '50',
+							'right'  => '100',
+							'bottom' => '50',
+							'left'   => '100',
+							'unit'   => 'px',
+						),
+					),
+					array(
+						'id' => 'spacing_3',
+						'title' => 'Spacing without unit selector',
+						'field' => 'spacing',
+						'units'    => array( 'px' ),
+						'default'  => array(
+							'top'    => '50',
+							'right'  => '100',
+							'bottom' => '50',
+							'left'   => '100',
+							'unit'   => 'px',
+						),
+					),
+					array(
+						'id' => 'spacing_4',
+						'title' => 'Spacing with only left and right',
+						'field' => 'spacing',
+						'top'    => false,
+						'bottom' => false,
+					),
+					array(
+						'id' => 'spacing_5',
+						'title' => 'Spacing with only top and bottom',
+						'field' => 'spacing',
+						'left'  => false,
+						'right' => false,
+					),
+					array(
+						'id' => 'spacing_6',
+						'title' => 'Spacing with all directions',
+						'field' => 'spacing',
+						'all'  => true
+					),
 				),
 			),
 			array(
 				'name' => 'border',
 				'title' => 'Border',
 				'fields' => array(
-				array(
-					'id' => 'wpEditorName',
-					'title' => 'WP Editor Name',
-					'help' => 'Enter your wp editor name here',
-					'field' => 'textarea',
-				),
+					array(
+						'id' => 'border_1',
+						'title' => 'Border',
+						'field' => 'border',
+					),
+					array(
+						'id' => 'border_2',
+						'title' => 'Border with default',
+						'field' => 'border',
+						'default'  => array(
+							'top'    => '4',
+							'right'  => '8',
+							'bottom' => '4',
+							'left'   => '8',
+							'style'  => 'dashed',
+							'color'  => '#1e73be',
+						)
+					),
+					array(
+						'id' 			=> 'border_3',
+						'title' 	=> 'Border with only left and right',
+						'field' 	=> 'border',
+						'top'   	=>false,
+						'bottom'	=>false
+					),
+					array(
+						'id' 			=> 'border_4',
+						'title' 	=> 'Border with only top and bottom',
+						'field' 	=> 'border',
+						'left'   	=>false,
+						'right'		=>false
+					),
+					array(
+						'id' 			=> 'border_5',
+						'title' 	=> 'Border with all directions',
+						'field' 	=> 'border',
+						'all'   	=>true
+					),
 				),
 			),
 			array(
 				'name' => 'spinner',
 				'title' => 'Spinner',
 				'fields' => array(
-				array(
-					'id' => 'wpEditorName',
-					'title' => 'WP Editor Name',
-					'help' => 'Enter your wp editor name here',
-					'field' => 'textarea',
-				),
+					array(
+						'id' 				=> 'spinner_1',
+						'title' 		=> 'Spinner',
+						'subtitle'	=> 'max:100 | min:0 | step:1',
+						'field'		  => 'spinner',
+						'max'				=> 100,
+						'min'				=>0,
+						'step'			=>1,
+						'default'		=>25
+					),
+					array(
+						'id'       => 'opt-spinner-2',
+						'field'     => 'spinner',
+						'title'    => 'Spinner',
+						'subtitle' => 'max:200 | min:100 | step:10',
+						'max'      => 200,
+						'min'      => 100,
+						'step'     => 10,
+						'default'  => 100,
+					),
+					array(
+						'id'       => 'spinner-3',
+						'field'     => 'spinner',
+						'title'    => 'Spinner',
+						'subtitle' => 'max:1 | min:0 | step:0.1 | unit:px',
+						'max'      => 1,
+						'min'      => 0,
+						'step'     => 0.1,
+						'unit'     => 'px',
+					),
 				),
 			),
 			array(
 				'name' => 'number',
 				'title' => 'Number',
 				'fields' => array(
-				array(
-					'id' => 'wpEditorName',
-					'title' => 'WP Editor Name',
-					'help' => 'Enter your wp editor name here',
-					'field' => 'textarea',
-				),
+					array(
+						'id' => 'number_1',
+						'title' => 'Number',
+						'field' => 'number',
+					),
+					array(
+						'id' => 'number_2',
+						'title' => 'Number with unit',
+						'field' => 'number',
+						'unit' => 'px'
+					),
+					array(
+						'id' => 'number_3',
+						'title' => 'Number with default',
+						'field' => 'number',
+						'unit' => 'width',
+						'default' => 100
+					),
 				),
 			),
 			)
@@ -1008,12 +1827,35 @@ define( 'BPL_OPTIONS', array(
 				'title' => 'Slider',
 				'icon'=>$faSliders,
 				'fields' => array(
-				array(
-					'id' => 'wpEditorName',
-					'title' => 'WP Editor Name',
-					'help' => 'Enter your wp editor name here',
-					'field' => 'textarea',
-				),
+					array(
+						'id' => 'slider',
+						'title' => 'Slider',
+						'field' => 'slider',
+					),
+					array(
+						'id' => 'slider_2',
+						'title' => 'Slider with default',
+						'field' => 'slider',
+						'default' => 50
+					),
+					array(
+						'id' => 'slider_3',
+						'title' => 'Slider with unit text',
+						'field' => 'slider',
+						'unit' => '%',
+						'default' => 50
+					),
+					array(
+						'id' => 'slider_4',
+						'title' => 'Slider with min/max allowed value',
+						'subtitle' => 'Min: 1 | Max: 10 | Step: 0.1 | Default: 5.5',
+						'field' => 'slider',
+						'unit'     => 'px',
+						'min'      => 1,
+						'max'      => 10,
+						'step'     => 0.1,
+						'default'  => 5.5,
+					),
 				),
 			),
 			array(
@@ -1047,12 +1889,38 @@ define( 'BPL_OPTIONS', array(
 				'title' => 'Switcher',
 				'icon'=>$faSwitch,
 				'fields' => array(
-				array(
-					'id' => 'wpEditorName',
-					'title' => 'WP Editor Name',
-					'help' => 'Enter your wp editor name here',
-					'field' => 'textarea',
-				),
+					array(
+						'id' => 'switcher',
+						'title' => 'Switcher',
+						'field' => 'switcher',
+					),
+					array(
+						'id' => 'switcher_2',
+						'title' => 'Switcher with default',
+						'field' => 'switcher',
+						'default' => true
+					),
+					array(
+						'id' => 'switcher_3',
+						'title' => 'Switcher with label',
+						'field' => 'switcher',
+						'label' => 'The label text of the switcher.',
+					),
+					array(
+						'id' => 'switcher_4',
+						'title' => 'Switcher with Yes/No',
+						'field' => 'switcher',
+						'text_on' => 'Yes',
+						'text_off' => 'No'
+					),
+					array(
+						'id' => 'switcher_5',
+						'title' => 'Switcher with custom text Enabled/Disabled',
+						'field' => 'switcher',
+						'text_on' => 'Enabled',
+						'text_off' => 'Disabled',
+						'text_width'=>'100'
+					),
 				),
 			),
 			array(
@@ -1086,12 +1954,21 @@ define( 'BPL_OPTIONS', array(
 				'title' => 'Link',
 				'icon'=>$faLink,
 				'fields' => array(
-				array(
-					'id' => 'wpEditorName',
-					'title' => 'WP Editor Name',
-					'help' => 'Enter your wp editor name here',
-					'field' => 'textarea',
-				),
+					array(
+						'id' => 'link',
+						'title' => 'Link',
+						'field' => 'link',
+					),
+					array(
+						'id' => 'link_2',
+						'title' => 'Link with default',
+						'field' => 'link',
+						'default' => array(
+							'url' => 'http://bplugins.com',
+							'text' => 'B Plugins',
+							'target' => '_blank'
+						)
+					),
 				),
 			),
 			array(
@@ -1099,12 +1976,36 @@ define( 'BPL_OPTIONS', array(
 				'title' => 'Date',
 				'icon'=>$faCalender,
 				'fields' => array(
-				array(
-					'id' => 'wpEditorName',
-					'title' => 'WP Editor Name',
-					'help' => 'Enter your wp editor name here',
-					'field' => 'textarea',
-				),
+					array(
+						'id' => 'date',
+						'title' => 'Date',
+						'field' => 'date',
+					),
+					array(
+						'id' => 'date_2',
+						'title' => 'Date with custom settings',
+						'field' => 'date',
+						'settings' =>array(
+							'changeMonth'=>true,
+							'changeYear' =>true,
+							'showWeek' 	 =>true,
+							'weekHeader' =>'Week'
+						)
+					),
+					array(
+						'id' => 'date_3',
+						'title' => 'Date with From &amp; To',
+						'field' => 'date',
+						'from_to' =>true
+					),
+					array(
+						'id' => 'date_4',
+						'title' => 'Date with custom texts Begin &amp; End',
+						'field' => 'date',
+						'from_to' =>true,
+						'text_from' => 'Begin',
+						'text_to'   => 'End',
+					),
 				),
 			),
 			array(
@@ -1112,12 +2013,114 @@ define( 'BPL_OPTIONS', array(
 				'title' => 'Date and Time',
 				'icon'=>$faCalender,
 				'fields' => array(
-				array(
-					'id' => 'wpEditorName',
-					'title' => 'WP Editor Name',
-					'help' => 'Enter your wp editor name here',
-					'field' => 'textarea',
-				),
+					array(
+						'id' => 'datetime_11',
+						'title' => 'Date',
+						'field' => 'datetime',
+						'settings'=>array(
+							'changeMonth'=>true,
+							'changeYear' =>true,
+						)
+					),
+					array(
+						'id' => 'datetime_12',
+						'title' => 'Date',
+						'subtitle'=>'Human-friendly Dates',
+						'field' => 'datetime',
+						'settings'=>array(
+							'dateFormat' => 'yyyy-MM-dd',
+							'changeMonth'=>true,
+							'changeYear' =>true,
+						),
+					),
+					array(
+						'id' => 'datetime_13',
+						'title' => 'Date',
+						'subtitle'=>'Start week on Monday',
+						'field' => 'datetime',
+						'settings'=>array(
+							'startWeek' => 1,
+							'changeMonth'=>true,
+							'changeYear' =>true,
+						),
+					),
+					array(
+						'id' => 'datetime_14',
+						'title' => 'Date and Time',
+						'subtitle'=>'Date and Time Both',
+						'field' => 'datetime',
+						'settings'=>array(
+							'enableTime' => true,
+							'dateFormat' => 'yyyy-MM-dd',
+							'changeMonth'=>true,
+							'changeYear' =>true,
+						),
+					),
+					array(
+						'id' => 'datetime_15',
+						'title' => 'Time',
+						'subtitle'=>'Only Time',
+						'field' => 'datetime',
+						'settings'=>array(
+							'calender' => false,
+							'enableTime' => true
+						),
+					),
+					array(
+						'id' => 'datetime_16',
+						'title' => 'Time',
+						'subtitle'=>'24-hour Time without PM:AM',
+						'field' => 'datetime',
+						'settings'=>array(
+							'calender' => false,
+							'enableTime' => true,
+							'time_24hr' =>true
+						),
+					),
+					array(
+						'id' => 'datetime_17',
+						'title' => 'Date Range',
+						'subtitle'=>'Range Mode',
+						'field' => 'datetime',
+						'settings'=>array(
+							'mode' => 'range',
+							'changeMonth'=>true,
+							'changeYear' =>true,
+						),
+					),
+					array(
+						'id' => 'datetime_18',
+						'title' => 'Date From - To',
+						'subtitle'=>'Date with "From" and "To"',
+						'field' => 'datetime',
+						'from_to' => true,
+						'settings' =>array(
+							'changeMonth'=>true,
+							'changeYear' =>true,
+						)
+					),
+					array(
+						'id' => 'datetime_19',
+						'title' => 'Date Begin - End',
+						'subtitle'=>'Date with "Begin" and "End" Custom Text',
+						'field' => 'datetime',
+						'from_to' => true,
+						'text_from' => 'Begin',
+						'text_to' => 'End',
+						'settings' =>array(
+							'changeMonth'=>true,
+							'changeYear' =>true,
+						)
+					),
+					array(
+						'id' => 'datetime_20',
+						'title' => 'Date',
+						'subtitle'=>'Ready-Only Input',
+						'field' => 'datetime',
+						'settings' => array(
+							'readOnly' => true
+						)
+					),
 				),
 			),
 			array(
@@ -1125,12 +2128,44 @@ define( 'BPL_OPTIONS', array(
 				'title' => 'Image Select',
 				'icon'=>$faGrid,
 				'fields' => array(
-				array(
-					'id' => 'wpEditorName',
-					'title' => 'WP Editor Name',
-					'help' => 'Enter your wp editor name here',
-					'field' => 'textarea',
-				),
+					array(
+						'id' => 'selectImage_1',
+						'title' => 'Image Select',
+						'field' => 'image_select',
+						'options' => array(
+							array('label'=>'http://codestarframework.com/assets/images/placeholder/150x125-2ecc71.gif','value'=>'opt_1'),
+							array('label'=>'http://codestarframework.com/assets/images/placeholder/150x125-e74c3c.gif','value'=>'opt_2'),
+							array('label'=>'http://codestarframework.com/assets/images/placeholder/150x125-ffbc00.gif','value'=>'opt_3'),
+							array('label'=>'http://codestarframework.com/assets/images/placeholder/150x125-3498db.gif','value'=>'opt_4'),
+						),
+					),
+					array(
+						'id' => 'selectImage_2',
+						'title' => 'Image Select with default',
+						'field' => 'image_select',
+						'options' => array(
+							array('label'=>'http://codestarframework.com/assets/images/placeholder/80x80-2c3e50.gif','value'=>'opt_1'),
+							array('label'=>'http://codestarframework.com/assets/images/placeholder/80x80-2c3e50.gif','value'=>'opt_2'),
+							array('label'=>'http://codestarframework.com/assets/images/placeholder/80x80-2c3e50.gif','value'=>'opt_3'),
+							array('label'=>'http://codestarframework.com/assets/images/placeholder/80x80-2c3e50.gif','value'=>'opt_4'),
+							array('label'=>'http://codestarframework.com/assets/images/placeholder/80x80-2c3e50.gif','value'=>'opt_5'),
+							array('label'=>'http://codestarframework.com/assets/images/placeholder/80x80-2c3e50.gif','value'=>'opt_6'),
+							array('label'=>'http://codestarframework.com/assets/images/placeholder/80x80-2c3e50.gif','value'=>'opt_7'),
+						),
+						'default'=>'opt_4'
+					),
+					array(
+						'id' => 'selectImage_3',
+						'title' => 'Image Select with multiple choice',
+						'field' => 'image_select',
+						'multiple' => true,
+						'options' => array(
+							array('label'=>'http://codestarframework.com/assets/images/placeholder/80x80-e74c3c.gif','value'=>'opt_1'),
+							array('label'=>'http://codestarframework.com/assets/images/placeholder/80x80-ffbc00.gif','value'=>'opt_2'),
+							array('label'=>'http://codestarframework.com/assets/images/placeholder/80x80-3498db.gif','value'=>'opt_3'),
+							array('label'=>'http://codestarframework.com/assets/images/placeholder/80x80-2ecc71.gif','value'=>'opt_4')
+						)
+					),
 				),
 			),
 			array(

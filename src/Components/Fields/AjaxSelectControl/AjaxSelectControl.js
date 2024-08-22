@@ -2,26 +2,9 @@ import { Spinner } from '@wordpress/components';
 import { useEffect } from 'react';
 
 import useDynamicData from '../../../hooks/useDynamicData';
-// import useWPAjax from '../../../hooks/useWPAjax';
 import "./style.scss";
 const AjaxSelectControl = ({ field = "posts", value, onChange }) => {
-  // const settingsEl = document.getElementById('bPlSettings');
-  // const nonce = bPlSettingsEl.dataset.nonce;
-  // const { data: dbData = null, saveData, isLoading, error, refetch } = useWPAjax(type === "category" ? 'getCategories' : 'getPageList', { _wpnonce: nonce, type }, true);
-
   const { data: content = null, isLoading } = useDynamicData(field);
-
-  // useEffect(() => {
-  //   console.log(content);
-  // }, [content]);
-
-  // const options = dbData?.map((item) => {
-  //   return {
-  //     label: item.post_title,
-  //     value: item.ID
-  //   }
-  // });
-
   if (isLoading) {
     return <Spinner />
   }

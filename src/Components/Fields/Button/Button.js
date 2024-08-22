@@ -1,8 +1,8 @@
 import React from 'react';
 import "./style.scss";
-const Button = ({ children, ...rest }) => {
+const Button = ({ children,variant="primary", ...rest }) => {
   return (
-    <button {...rest} className="nav-submitBtn">{children}</button>
+    <button className={`bPl-button ${variant}`} {...rest}>{children}</button>
   );
 };
 

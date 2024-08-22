@@ -1,25 +1,24 @@
-import { ColorPicker } from "@wordpress/components";
 import React, { useState } from "react";
 import "./style.scss";
-const BColorGroup = ({ value, onChange, options, default: defaultValue }) => {
-  const [isOpen, setIsOpen] = useState(null);
-
+import ColorPicker from "../ColorPicker/ColorPicker";
+const BColorGroup = ({ value, onChange, options, defaultValue }) => {
+  const def =value || defaultValue
   const [internalValue, setInternalValue] = useState(value || defaultValue || {});
-
-  const handleColorChange = (newColor, id) => {
-    const updatedValue = { ...internalValue };
-    updatedValue[id] = newColor;
-    setInternalValue(updatedValue);
-    onChange(updatedValue);
-  };
-
+  console.log(options);
+  // const handleColorChange = (newColor, id) => {
+  //   const updatedValue = { ...internalValue };
+  //   updatedValue[id] = newColor;
+  //   setInternalValue(updatedValue);
+  //   onChange(updatedValue);
+  // };
   return (
     <div className="color-group-container">
-      {options?.map((option, index) => {
+      {Object.keys(options)?.map((option, index) => {
         return (
           <div key={index} className="colorGroupWrapper-main">
-            <div className="colorGroupLabel">{option.label}</div>
-            <div className="colorGroupWrapper">
+            <div className="colorGroupLabel">{options?.[option]}</div>
+            <ColorPicker value={def?.[option]} onChange={val => onChange({ ...def, [option]: val })} defaultValue={defaultValue ? defaultValue?.[option] : ""} />
+            {/* <div className="colorGroupWrapper">
               <button
                 className="colorGroupBtn"
                 style={{ background: internalValue[option.id] || 'transparent' }}
@@ -39,7 +38,7 @@ const BColorGroup = ({ value, onChange, options, default: defaultValue }) => {
                   onChange={(newColor) => handleColorChange(newColor, option.id)}
                 />
               </div>
-            )}
+            )} */}
           </div>
         );
       })}

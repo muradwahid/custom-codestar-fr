@@ -18,12 +18,11 @@ const Body = (props) => {
   }, [activeSection, activeChild])
 
   const { name, fields = [], description = '' } = item;
-
   return <>
     {description && <p className='description' dangerouslySetInnerHTML={{ __html: description }} />}
 
     <div className='fields'>
-      {fields.map((field, i) => <Field key={i} {...{ saveType: options.saveType, data, activeSection, activeChild, field, updateData }} />)}
+      {fields.map((field, i) => <Field key={i} {...{ saveType: options.saveType, data, activeSection, activeChild, field, updateData,fields }} />)}
     </div>
   </>;
 };
@@ -45,19 +44,18 @@ const Field = ({ saveType = 'nested', data, activeSection, activeChild, field, u
       setValue(data?.[id] || '');
     }
   }, [data, activeSection, activeChild]);
-
   return <div className={`field ${fieldProps === "notice" ? "" : "fieldPadding"}`}>
     {
       title && <div className={`fieldLabel ${fieldProps === "notice" ? "" : "pr15"}`}>
         <label className='label'>{title}</label>
-        {subtitle && <p className='subTitle'>{subtitle}</p>}
+        {subtitle && <p className='subTitle' dangerouslySetInnerHTML={{__html:subtitle}}/>}
       </div>
     }
 
     <div className={`fieldComponent ${!title ? "fullWidth" : ""}`} >
-      {before && <div className="beforeAfterText">{before}</div>}
+      {before && <div className="beforeAfterText" dangerouslySetInnerHTML={{__html:before}}/>}
       <FieldSwitch {...field} extraFields={field} value={value} onChange={val => updateData(id, val)} />
-      {after && <div className="beforeAfterText">{after}</div>}
+      {after && <div className="beforeAfterText" dangerouslySetInnerHTML={{ __html:after}}/>}
     </div>
 
   </div>

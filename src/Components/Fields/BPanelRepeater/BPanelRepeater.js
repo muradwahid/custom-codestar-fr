@@ -1,11 +1,33 @@
-import { useRef, useState,useEffect } from "react";
+import { produce } from "immer";
+import { useEffect, useRef, useState } from "react";
 import FieldSwitch from "../../Main/Body/FieldSwitch";
-import Repeater from "./Repeater";
 import Button from "../Button/Button";
+import Repeater from "./Repeater";
 
 const BPanelRepeater = (props) => {
   const { value, fields, onChange } = props;
   const [items, setItems] = useState([]);
+
+  const [data, setData] = useState([]);
+
+  const updateData = (index, val, property = null, childProperty = null) => {
+    const newData = produce(data, draft => {
+      if (!draft[index]) {
+        draft[index] = {};
+      }
+      if (!draft[index][property]) {
+        draft[index][property] = {};
+      }
+      if (null !== property && null !== childProperty) {
+        draft[index][property][childProperty] = val;
+      } else if (null !== property) {
+        draft[index][property] = val;
+      } else {
+        draft[index] = val;
+      }
+    });
+    setData(newData);
+  }
 
   const listRef = useRef(null);
   const handleDragOver = (e) => {
@@ -36,22 +58,48 @@ const BPanelRepeater = (props) => {
     }
   });
 
+  useEffect(() => {
+    // console.log({ default: fields.map(field => ({ [field.id]: null })), value });
+    if (undefined == value || !value || value.length === 0) {
+      setData(fields?.map(field => ({ [field.id]: null })));
+    }
 
+
+    // console.log(undefined===typeof value);
+
+    // if (value) {
+    //   setData(value);
+    // }
+  }, [value]);
+
+  // useEffect(() => {
+  //   onChange(data);
+  // }, [data]);
+
+
+  // console.log(fields);
+  // console.log(data);
+
+//   console.log(data);
+
+// console.log(fields)
   return (
     <div ref={listRef} onDragOver={handleDragOver}>
-      {fields?.map((field, i) => {
-        console.log(field);
-        return <div key={i}>
-          <Repeater key={i}>
-          <label>{field.title}</label>
-            <FieldSwitch
-              field={field}
-              value={value}
-              onChange={(val) => console.log(val)}
-            />
-          </Repeater>
-        </div>
-      })}
+      <Repeater>
+        {fields &&fields?.map((field, i) => {
+          const { id, title } = field;
+          // console.log(field)
+          // return <div key={i}>
+          //   <label>{title}</label>
+          //   <FieldSwitch
+          //     {...field}
+          //     value={value?.[i]?.[id]}
+          //     onChange={(val) => updateData(i, val, id)}
+          //   />
+          // </div>
+        })}
+      </Repeater>
+
       <Button variant="primary">Add</Button>
     </div>
   );

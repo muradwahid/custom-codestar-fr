@@ -1,5 +1,5 @@
 import { __experimentalUnitControl as UnitControl } from "@wordpress/components";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import BSelectControl from "../BSelectControl/BSelectControl";
 import ColorPicker from "../ColorPicker/ColorPicker";
 import fontLists from "./fontLists";
@@ -36,8 +36,9 @@ const Typography = ({ value, onChange, defaultValue,
 
   let fontWeight = [];
   const variants = fontLists?.filter(
-    ({ family }) => family === value?.["font-family"]
+    ({ family }) => family === def?.["font-family"]
   )[0]?.variants;
+
   variants?.forEach((val) => {
     const fontVariant = fontVariantsOption.find(
       ({ value: variantValue }) => variantValue === val.toString()
@@ -49,7 +50,7 @@ const Typography = ({ value, onChange, defaultValue,
     }
   });
 
-  const linkQuery = !value?.["font-weight"] || 400 === value?.["font-weight"] ? '' : '400i' === value?.["font-weight"] ? ':ital@1' : value?.["font-weight"]?.includes('00i') ? `: ital, wght@1, ${value?.["font-weight"]?.replace('00i', '00')} ` : `: wght@${value?.["font-weight"]} `;
+  const linkQuery = !def?.["font-weight"] || 400 === def?.["font-weight"] ? '' : '400i' === def?.["font-weight"] ? ':ital@1' : def?.["font-weight"]?.includes('00i') ? `: ital, wght@1, ${def?.["font-weight"]?.replace('00i', '00')} ` : `: wght@${def?.["font-weight"]} `;
 
   const link = `https://fonts.googleapis.com/css2?family=${value?.["font-family"]?.split(' ').join('+')}${linkQuery.replace(/ /g, '')}&display=swap`;
 
@@ -57,6 +58,19 @@ const Typography = ({ value, onChange, defaultValue,
   const id = Math.floor(Math.random() * 99999);
 
   const isUnitShow = font_size || line_height || letter_spacing || word_spacing;
+
+  const [hasChanged, setHasChanged] = useState(false);
+  // Ref to store the previous background state  
+  const previousBackgroundRef = useRef();
+
+
+
+  useEffect(() => {
+    if (value) {
+      setHasChanged(true);
+    }
+  }, [value]);
+
 
   return (
     <div className="bPl-typography-main-wrapper">
@@ -88,7 +102,7 @@ const Typography = ({ value, onChange, defaultValue,
           />
         </div>}
         {
-          fontWeight.length>0 && font_weight && <div className="bPl-typography-selectField">
+          fontWeight.length > 0 && font_weight && <div className="bPl-typography-selectField">
             <label className="bPl-typography-label">Font Style</label>
             <BSelectControl
               options={fontWeight}
@@ -170,14 +184,14 @@ const Typography = ({ value, onChange, defaultValue,
         <div className="bPl-typography-label">Font Size</div>
         <ColorPicker value={def?.["color"]} onChange={val => onChange({ ...def, ["color"]: val })} />
       </div>}
-      <div onClick={() => setToggle(!toggle)} className={`bPl-typography-preview typo-preview-${id} ${toggle ? "black-background" : ""}`}>
+      {hasChanged && <div onClick={() => setToggle(!toggle)} className={`bPl-typography-preview typo-preview-${id} ${toggle ? "black-background" : ""}`}>
         <div className="bPl-typography-icons">
           {
             toggle ? toggleOnIcon : toggleOffIcon
           }
         </div>
         The quick brown fox jumped over the lazy dog.
-      </div>
+      </div>}
     </div>
   );
 };
