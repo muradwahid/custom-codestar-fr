@@ -19,7 +19,7 @@ if( !class_exists('BPLSettings') ){
 				wp_enqueue_media();
 				wp_enqueue_style( 'bpl-settings', CCFR_DIR_URL . 'dist/bpl-settings.css', [], CCFR_VERSION );
 				wp_enqueue_style( 'bpl-settings', CCFR_DIR_URL . 'assets/css/font-awesome.min.css', ['bpl-settings'], CCFR_VERSION );
-        wp_enqueue_script( 'bpl-settings', CCFR_DIR_URL . 'dist/bpl-settings.js', [ 'react', 'react-dom', 'wp-api', 'wp-block-editor', 'wp-components', 'wp-data', 'wp-i18n', 'wp-media-utils', 'wp-util', 'lodash',"wp-compose" ], CCFR_VERSION, true );
+        wp_enqueue_script( 'bpl-settings', CCFR_DIR_URL . 'dist/bpl-settings.js', [ 'react', 'react-dom', 'wp-api', 'wp-block-editor', 'wp-components', 'wp-data', 'wp-i18n', 'wp-media-utils', 'wp-util', 'lodash',"wp-compose",'wp-element'], CCFR_VERSION, true );
 			}
 		}
 

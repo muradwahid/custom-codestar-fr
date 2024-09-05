@@ -1,16 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
-import useWPAjax from '../../../hooks/useWPAjax';
-import "./style.scss";
 import useDynamicData from '../../../hooks/useDynamicData';
+import "./style.scss";
 const BSearchPage = ({
   value = [],
   onChange = () => { },
   type = "page"
 
 }) => {
-  const bPlSettingsEl = document.getElementById('bPlSettings');
-  const nonce = bPlSettingsEl.dataset.nonce;
-  // const { data: dbData = null, saveData, isLoading, error, refetch } = useWPAjax(type==="page"?'getPageList':'getPostList', { _wpnonce: nonce }, true);
   const { data: dbData, isLoading } = useDynamicData(type);
   const [inputVal, setInputVal] = useState("")
   const [toggle, setToggle] = useState(false);
@@ -97,7 +93,7 @@ const BSearchPage = ({
                 className="bPl-multiple-search"
                 onChange={(e) => {
                   setInputVal(e.target.value)
-                  
+
                 }}
               />
             </div>
@@ -108,10 +104,10 @@ const BSearchPage = ({
           <div className="bPl-page-field-dropdown-wrapper">
             {
               inputVal.length < 3 && <div className="bPl-page-field-dropdown-loading">
-                Please enter {3-Number(inputVal.length)} or more characters</div>
+                Please enter {3 - Number(inputVal.length)} or more characters</div>
             }
             {
-              isLoading&& <div className="bPl-page-field-dropdown-loading">Searching...</div>
+              isLoading && <div className="bPl-page-field-dropdown-loading">Searching...</div>
             }
             {
               searchTerm?.length === 0 && inputVal.length > 2 && <div className="bPl-page-field-dropdown-loading">No results found</div>
@@ -135,7 +131,7 @@ const BSearchPage = ({
                         setToggle(false);
                       }
                       if (activeMultipleItem) {
-                        inputRef.current.value=""
+                        inputRef.current.value = ""
                       }
                     }}
                     key={index}

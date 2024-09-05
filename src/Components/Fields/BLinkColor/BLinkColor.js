@@ -38,7 +38,7 @@ const BLinkColor = ({
   const activeColor = [
     { label: "normal", active: normal },
     { label: "hover", active: hover },
-    { label: "active", active: active },
+    { label: "active", active },
     { label: "visited", active: visited },
     { label: "focus", active: focus },
   ];
@@ -63,8 +63,6 @@ const BLinkColor = ({
   //   onChange(updatedValue);
   // };
 
-
-console.log(value)
   return (
     <div className="link-color-container">
       {options?.map((option, index) => {

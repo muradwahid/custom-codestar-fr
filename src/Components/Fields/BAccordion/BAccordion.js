@@ -8,7 +8,7 @@ const BAccordion = ({ fields, value, onChange }) => {
     const titleWrapper = document.querySelectorAll(".bPl-accordion-title-wrapper");
     const bodyWrapper = document.querySelectorAll(".bPl-accordion-body-wrapper");
     Array.from(titleWrapper)?.forEach((el,idx)=> {
-      el.onclick = (e) => {
+      el.onclick = () => {
         const toggleEl = bodyWrapper[idx]
         const svg = el.querySelector("h4>svg");
           if (toggleEl.classList.contains("hidden")) {

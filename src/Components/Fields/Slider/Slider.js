@@ -1,10 +1,28 @@
-import React, { useState, useRef, useEffect } from "react";
-import "./style.scss"
-function Slider({ value,onChange,min=0, max=100, step = 1,unit,defaultValue=0 }) {
-  const [sliderValue, setSliderValue] = useState(0);
+import React, { useEffect, useRef, useState } from "react";
+import "./style.scss";
+function Slider({
+  value,
+  onChange,
+  min = 0,
+  max = 100,
+  step = 1,
+  unit,
+  defaultValue = 0,
+}) {
   const sliderWrapperRef = useRef(null);
   const controlRef = useRef(null);
+  const [sliderValue, setSliderValue] = useState(0);
   const def = Number(value || defaultValue);
+
+  useEffect(() => {
+    const initialValue = ((def || min) - min) / (max - min);
+    setSliderValue(initialValue);
+    const control = controlRef.current;
+    if (control) {
+      const sliderWrapper = sliderWrapperRef.current;
+      control.style.left = `${initialValue * sliderWrapper.offsetWidth}px`;
+    }
+  }, [def, min, max]);
 
   const formatValue = (value) => {
     // Convert to number and check if it is an integer
@@ -13,7 +31,6 @@ function Slider({ value,onChange,min=0, max=100, step = 1,unit,defaultValue=0 })
       ? numValue.toString()
       : numValue.toFixed(1);
   };
-
 
   useEffect(() => {
     const sliderWrapper = sliderWrapperRef.current;
@@ -37,30 +54,24 @@ function Slider({ value,onChange,min=0, max=100, step = 1,unit,defaultValue=0 })
       );
 
       const newSliderValue =
-        (Math.round(((newX / sliderWrapper.offsetWidth) * (max - min)) / step) *
-          step) /
-        (max - min);
+        Math.round(((newX / sliderWrapper.offsetWidth) * (max - min)) / step) *
+        step;
 
-      const clampedSliderValue = Math.min(newSliderValue, 100);
-
-      control.style.left = `${clampedSliderValue * 100}%`;
-      setSliderValue(clampedSliderValue);
+      setSliderValue(newSliderValue / (max - min));
+      const calculatedValue = newSliderValue + min;
+      onChange(formatValue(calculatedValue));
     };
 
     const startClick = (event) => {
       const offsetX = event.clientX - sliderWrapper.offsetLeft;
       const newSliderValue =
-        (Math.round(
+        Math.round(
           ((offsetX / sliderWrapper.offsetWidth) * (max - min)) / step
-        ) *
-          step) /
-        (max - min);
+        ) * step;
 
-      const clampedSliderValue = Math.min(newSliderValue, 0.98); 
-
-      const newX = clampedSliderValue * sliderWrapper.offsetWidth; 
-      control.style.left = `${newX}px`;
-      setSliderValue(formatValue(clampedSliderValue));
+      setSliderValue(newSliderValue / (max - min));
+      const calculatedValue = newSliderValue + min;
+      onChange(formatValue(calculatedValue));
     };
 
     const endDrag = () => {
@@ -78,22 +89,10 @@ function Slider({ value,onChange,min=0, max=100, step = 1,unit,defaultValue=0 })
       window.removeEventListener("mousemove", drag);
       window.removeEventListener("mouseup", endDrag);
     };
-  }, []);
-
-  useEffect(() => {
-    const initialValue = ((def || 0) - min) / (max - min);
-    setSliderValue(initialValue);
-    const control = controlRef.current;
-    if (control) {
-      const sliderWrapper = sliderWrapperRef.current;
-      control.style.left = `${initialValue * sliderWrapper.offsetWidth}px`;
-    }
-  }, [def, min, max]);
+  }, [max, min]);
 
   const calculatedValue = formatValue(sliderValue * (max - min) + min);
-  useEffect(() => {
-  onChange(calculatedValue)
-  }, [calculatedValue])
+
   return (
     <div className="bPl-range-control-main-wrapper">
       <div className="bPl-range-control-wrapper" ref={sliderWrapperRef}>
@@ -110,16 +109,21 @@ function Slider({ value,onChange,min=0, max=100, step = 1,unit,defaultValue=0 })
       <div className="bPl-rangeControl-input-field">
         <input
           type="number"
-          value={def}
-          onChange={(e) => onChange(Number(e.target.value))}
+          value={calculatedValue}
+          onChange={(e) => {
+            const newValue = Number(e.target.value);
+            if (newValue >= min && newValue <= max) {
+              onChange(newValue);
+              const newSliderValue = (newValue - min) / (max - min);
+              setSliderValue(newSliderValue);
+            }
+          }}
           className="bPl-rangeControl-input"
           min={min}
           max={max}
           step={step}
         />
-        {unit &&<div className="bPl-rangeControl-unit">
-          {unit}
-        </div>}
+        {unit && <div className="bPl-rangeControl-unit">{unit}</div>}
       </div>
     </div>
   );

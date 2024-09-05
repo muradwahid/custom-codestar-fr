@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import AceEditor from "react-ace";
 
 import "ace-builds/src-noconflict/ext-language_tools";
@@ -20,9 +20,9 @@ import "ace-builds/src-noconflict/mode-typescript";
 //themes
 import "ace-builds/src-noconflict/theme-dracula";
 import "ace-builds/src-noconflict/theme-github";
+import "ace-builds/src-noconflict/theme-merbivore";
 import "ace-builds/src-noconflict/theme-solarized_dark";
 import "ace-builds/src-noconflict/theme-twilight";
-import "ace-builds/src-noconflict/theme-merbivore";
 
 import "./style.scss";
 
@@ -32,9 +32,9 @@ const CodeEditor = ({
   onChange,
   width = "100%",
   height = "350px",
-  settings={}
+  settings = {}
 }) => {
-  const {theme="github",mode="html"} = settings;
+  const { theme = "github", mode = "html" } = settings;
   const id = Math.floor(Math.random() * 999);
   const def = value || defaultValue;
   return (
@@ -71,7 +71,7 @@ const CodeEditor = ({
         theme={theme}
         name={`blah-${id}`}
         height={height}
-        
+
         // onLoad={this.onLoad}
         // onChange={this.onChange}
         onChange={(val) => onChange(val)}

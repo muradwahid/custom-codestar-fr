@@ -1,5 +1,4 @@
 import { Spinner } from '@wordpress/components';
-import { useEffect } from 'react';
 
 import useDynamicData from '../../../hooks/useDynamicData';
 import "./style.scss";

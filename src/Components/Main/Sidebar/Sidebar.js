@@ -3,13 +3,13 @@ import { faCaretLeft, rightAngel } from "../../../utils/icons";
 import "./style.scss";
 
 const Sidebar = (props) => {
-  const { sections, activeSection, setActiveSection, activeChild, setActiveChild, isHidden } = props;
+  const { sections, activeSection, setActiveSection, activeChild, setActiveChild, isHidden, refetch } = props;
   return (
     <aside className={`wp-sidebar-main ${isHidden ? "isHidden" : ""}`}>
       <div className="wp-sidebar-wrapper">
         <div className="wp-sidebar-items-wrapper">
           <div className="wp-sidebar-items">
-            {sections.map((section, index) => {
+            {sections?.map((section, index) => {
               const { name, title, icon, children } = section;
               return (
                 <Fragment key={index}>
@@ -20,9 +20,9 @@ const Sidebar = (props) => {
                         if (children) {
                           setActiveChild(children[0].name);
                         } else {
-                          setActiveChild(null);
+                          setActiveChild('');
                         }
-
+                        refetch()
                         // handleActiveItem(section, index)
                       }}
                       className={`wp-sidebar-item-wrapper ${activeSection === name && !children ? "active" : ""
@@ -50,7 +50,8 @@ const Sidebar = (props) => {
                           <div
                             onClick={() => {
                               setActiveSection(section.name);
-                              setActiveChild(childName)
+                              setActiveChild(childName);
+                              refetch()
                             }}
                             key={i}
                             className={`wp-sidebar-children-wrapper ${activeChild === childName ? "active" : ""}`}

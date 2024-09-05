@@ -59,7 +59,6 @@ const BSelectControl = ({
   const searchTerm = options.filter((option) =>
     option.label.toLowerCase().includes(inputVal.toLowerCase())
   );
-  const id = Math.floor(Math.random() * 999999);
   return (
     <div className="bPl-token-field-main-wrapper">
       <div className="bPl-single-token-field-wrapper" ref={toggleRef}>

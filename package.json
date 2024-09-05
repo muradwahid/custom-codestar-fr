@@ -18,12 +18,15 @@
   "author": "Wasek Billah",
   "license": "ISC",
   "dependencies": {
-    "bpl-gutenberg-panel": "^0.1.2",
+    "@tinymce/tinymce-react": "^5.1.1",
     "immer": "^10.1.1",
-    "luxon": "^3.5.0",
+    "leaflet": "^1.9.4",
+    "leaflet-control-geocoder": "^2.4.0",
+    "leaflet-fullscreen": "^1.0.2",
+    "leaflet.locatecontrol": "^0.81.1",
     "react-ace": "^12.0.0",
     "react-day-picker": "^9.0.8",
-    "react-icons": "^4.12.0"
+    "react-leaflet": "^4.2.1"
   },
   "devDependencies": {
     "@babel/core": "^7.23.7",
@@ -40,6 +43,7 @@
     "@wordpress/i18n": "^4.48.0",
     "@wordpress/media-utils": "^5.5.0",
     "@wordpress/rich-text": "^6.25.0",
+    "@wordpress/scripts": "^28.6.0",
     "@wordpress/server-side-render": "^4.25.0",
     "autoprefixer": "^10.4.16",
     "babel-loader": "^9.1.3",

@@ -1,10 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
-import "./repeaterStyle.css";
+
 
 const Repeater = ({
   children,
   title,
-  length = 2,
   onChange = () => { },
   toggle = false,
   copy = true,
@@ -25,45 +24,28 @@ const Repeater = ({
   useEffect(() => {
     // const iconGroup = document.querySelector(".panel-repeater-icon-group");
     const iconGroup = iconGroupRef.current;
-    console.log();
     setWidth(iconGroup?.clientWidth);
   }, [width]);
 
   const headerTitle = (
     <div
-      draggable={true}
+      // draggable={true}
       onClick={() => setOpen(!open)}
       className="panel-repeater-header-title"
     >
-      {" "}
-      <p style={{ margin: "0px" }}>{title} </p>
       <span>
         {open ? (
-          <svg
-            stroke="currentColor"
-            fill="currentColor"
-            strokeWidth="0"
-            viewBox="0 0 512 512"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M256 217.9L383 345c9.4 9.4 24.6 9.4 33.9 0 9.4-9.4 9.3-24.6 0-34L273 167c-9.1-9.1-23.7-9.3-33.1-.7L95 310.9c-4.7 4.7-7 10.9-7 17s2.3 12.3 7 17c9.4 9.4 24.6 9.4 33.9 0l127.1-127z"></path>
-          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" stroke="currentColor"
+            fill="currentColor" height="1em"
+            width="1em" viewBox="0 0 448 512"><path d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" /></svg>
         ) : (
-          <svg
-            stroke="currentColor"
-            fill="currentColor"
-            strokeWidth="0"
-            viewBox="0 0 512 512"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M256 294.1L383 167c9.4-9.4 24.6-9.4 33.9 0s9.3 24.6 0 34L273 345c-9.1 9.1-23.7 9.3-33.1.7L95 201.1c-4.7-4.7-7-10.9-7-17s2.3-12.3 7-17c9.4-9.4 24.6-9.4 33.9 0l127.1 127z"></path>
-          </svg>
+
+          <svg xmlns="http://www.w3.org/2000/svg" stroke="currentColor"
+            fill="currentColor" height="1em"
+            width="1em" viewBox="0 0 320 512"><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z" /></svg>
         )}
       </span>
+      {title ? <p style={{ margin: "0px" }}>{title}</p> : <p className="repeater-title-placeholder" ></p>}
     </div>
   );
   const iconGroup = (
@@ -72,6 +54,24 @@ const Repeater = ({
         <div
           onMouseEnter={() => setIsDragging(true)}
           onMouseLeave={() => setIsDragging(false)}
+          className="panel-repeater-icon"
+        >
+          <svg
+            style={{ cursor: "all-scroll" }}
+            stroke="currentColor"
+            fill="currentColor"
+            strokeWidth="0"
+            version="1.2"
+            baseProfile="tiny"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M17.707 8.293c-.391-.391-1.023-.391-1.414 0s-.391 1.023 0 1.414l1.293 1.293h-4.586v-4.586l1.293 1.293c.195.195.451.293.707.293s.512-.098.707-.293c.391-.391.391-1.023 0-1.414l-3.707-3.707-3.707 3.707c-.391.391-.391 1.023 0 1.414s1.023.391 1.414 0l1.293-1.293v4.586h-4.586l1.293-1.293c.391-.391.391-1.023 0-1.414s-1.023-.391-1.414 0l-3.707 3.707 3.707 3.707c.195.195.451.293.707.293s.512-.098.707-.293c.391-.391.391-1.023 0-1.414l-1.293-1.293h4.586v4.586l-1.293-1.293c-.391-.391-1.023-.391-1.414 0s-.391 1.023 0 1.414l3.707 3.707 3.707-3.707c.391-.391.391-1.023 0-1.414s-1.023-.391-1.414 0l-1.293 1.293v-4.586h4.586l-1.293 1.293c-.391.391-.391 1.023 0 1.414.195.195.451.293.707.293s.512-.098.707-.293l3.707-3.707-3.707-3.707z"></path>
+          </svg>
+        </div>
+      )}
+      {type === "group" && (
+        <div
           className="panel-repeater-icon"
         >
           <svg
@@ -104,7 +104,7 @@ const Repeater = ({
           </svg>
         </div>
       )}
-      {del && length > 1 && (
+      {del && (
         <div
           onClick={handleDelete ? () => handleDelete(index) : null}
           className="panel-repeater-icon"
@@ -130,16 +130,7 @@ const Repeater = ({
         .panel-repeater-wrapper
           .panel-repeater-header-wrapper
           .panel-repeater-header-title {
-          margin: 0;
-          font-size: 13px;
-          padding-left: 10px;
           width: calc(100% - ${width}px);
-          height: 100%;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          cursor: pointer;
-          transition: all 0.2s ease-in-out;
           }
           .panelChildrenWrapper{
             width: calc(100% - ${width}px);
@@ -150,14 +141,13 @@ const Repeater = ({
       <div className="panel-repeater-wrapper">
         {type === "group" ? (
           <>
-            <div className="panel-repeater-header-wrapper">
+            <div draggable={true} className="panel-repeater-header-wrapper">
               {headerTitle}
               {iconGroup}
             </div>
             {open && (
               <div
                 style={{
-                  padding: "10px",
                   border: "1px solid #ccc",
                   borderTop: "none",
                 }}
@@ -170,7 +160,7 @@ const Repeater = ({
           <div className="panel-without-group-wrapper">
             <div
               style={{ width: `calc(100% - ${width}px)` }}
-                className="panelChildrenWrapper"
+              className="panelChildrenWrapper"
             >
               {children}
             </div>

@@ -18,13 +18,20 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 3px;
-    .navBar-alertBox {
-      color: #8a6d3b;
-      background-color: #faebcc;
+    .bPl-form-result {
       font-size: 12px;
       padding: 5px 6px;
       border-radius: 3px;
+      &.form-warning {
+        color: #8a6d3b;
+        background-color: #faebcc;
+      }
+      &.form-success {
+        color: #fff;
+        background-color: #46b450;
+      }
     }
+
     .navbar-icon {
       svg {
         background: #2c2c2c;
@@ -48,6 +55,7 @@
         background: #323232;
         border: none;
         border-radius: 3px;
+        color: #fff;
         &::placeholder {
           color: #949494;
         }
@@ -60,10 +68,35 @@
         font-size: 13px;
         color: white;
         border-radius: 3px;
+        position: relative;
         cursor: pointer;
         &:hover {
           background-color: #135e96;
           border-color: #135e96;
+        }
+        .saveBtn-loader2 {
+          position: absolute;
+          top: 50%;
+          right: 20px;
+          --d: 7px;
+          width: 2px;
+          height: 2px;
+          border-radius: 50%;
+          color: #fff;
+          box-shadow: calc(1 * var(--d)) calc(0 * var(--d)) 0 0,
+            calc(0.707 * var(--d)) calc(0.707 * var(--d)) 0 0.2px,
+            calc(0 * var(--d)) calc(1 * var(--d)) 0 0.4px,
+            calc(-0.707 * var(--d)) calc(0.707 * var(--d)) 0 0.6px,
+            calc(-1 * var(--d)) calc(0 * var(--d)) 0 0.8px,
+            calc(-0.707 * var(--d)) calc(-0.707 * var(--d)) 0 1px,
+            calc(0 * var(--d)) calc(-1 * var(--d)) 0 1.2px;
+          animation: saveBtnLoader2 1.3s infinite steps(8);
+        }
+
+        @keyframes saveBtnLoader2 {
+          100% {
+            transform: rotate(1turn);
+          }
         }
       }
     }
@@ -110,6 +143,7 @@
         input[type="text"] {
           min-height: 0px;
           height: 28px;
+          color: #fff;
         }
       }
       .navbar-icon {
@@ -124,7 +158,7 @@
 .navBar-wrapper.stickyNav {
   position: -webkit-sticky;
   position: sticky;
-  top:30px;
+  top: 30px;
   background-color: black;
   box-shadow: 0px 2px 2px 0px #101014;
 }

@@ -1,12 +1,12 @@
 import React from 'react';
 import "./style.scss";
-const Footer = ({ onSaveData }) => {
+const Footer = ({ onSaveData, isLoading, handleResetData, handleResetSection }) => {
   return (
     <div className='bpl-codeStart-footer-wrapper'>
       <div className='bpl-footerBtn-wrapper'>
-        <button className="nav-submitBtn" onClick={onSaveData}>Save</button>
-        <button className='reset-sectionBtn'>Reset Section</button>
-        <button className='resetAll-btn'>Reset All</button>
+        <button onClick={onSaveData} className="nav-submitBtn" style={{ paddingRight: isLoading ? "38px" : "17px" }}>Save {isLoading && <span className="saveBtn-loader2"></span>}</button>
+        <button className='reset-sectionBtn' onClick={handleResetSection}>Reset Section</button>
+        <button className='resetAll-btn' onClick={handleResetData}>Reset All</button>
       </div>
     </div>
   );

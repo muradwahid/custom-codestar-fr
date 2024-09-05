@@ -26,6 +26,7 @@ const InlineMediaUpload = ({ value, onChange = () => { }, preview = true, url = 
           </div>
         }
         <div>
+          
           <MediaUpload
             allowedTypes={[type]}
             gallery={false}

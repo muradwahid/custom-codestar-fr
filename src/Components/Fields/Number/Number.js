@@ -2,8 +2,6 @@ import React from "react";
 import "./style.scss";
 const Number = ({ value, unit, onChange, defaultValue }) => {
   const def = value || { number: defaultValue };
-  console.log(unit)
-  console.log(def)
   return (
     <div className="bPl-number-main-wrapper">
       <div className="bPl-number-field-wrapper">

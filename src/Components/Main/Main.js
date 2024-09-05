@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Body from './Body/Body';
+import SearchBodyFields from './Body/SearchBodyFields/SearchBodyFields';
 import Footer from './Footer/Footer';
 import './Main.scss';
-import Navbar from './NavBar/Navbar';
+import Navbar from './Navbar/Navbar';
 import Sidebar from './SideBar/SideBar';
 
-const Main = ({ options, data, setData, onSaveData, isLoading }) => {
+const Main = ({ options, data, setData, onSaveData, isLoading, saveData, refetch, isEqual, setIsEqual, isSaved, setIsSaved }) => {
   const { sections, saveType = 'nested' } = options;
 
   // const items = [
@@ -144,14 +145,21 @@ const Main = ({ options, data, setData, onSaveData, isLoading }) => {
   //   },
   // ];
 
-
   const [isHidden, setIsHidden] = useState(false);
+  const [search, setSearch] = useState("");
 
-  // const [activeSection, setActiveSection] = useState(sections[0].name);
-  // const [activeChild, setActiveChild] = useState(sections[0].children ? sections[0].children[0].name : null);
-  const [activeSection, setActiveSection] = useState("additionalFields");
-  const [activeChild, setActiveChild] = useState('imageSelect'); 
+  const parent = localStorage.getItem('activeSection')
+  const child = localStorage.getItem('activeChild')
 
+  const [activeSection, setActiveSection] = useState(sections[0].name);
+  const [activeChild, setActiveChild] = useState(sections[0].children ? sections[0].children[0].name : '');
+  // const [activeSection, setActiveSection] = useState(parent || sections[0].name);
+  // const [activeChild, setActiveChild] = useState(child || (sections[0].children ? sections[0].children[0].name : ''));
+
+  useEffect(() => {
+    localStorage.setItem('activeSection', activeSection)
+    localStorage.setItem('activeChild', activeChild)
+  }, [activeChild, activeSection])
   const activeProps = { activeSection, setActiveSection, activeChild, setActiveChild };
   // const updateData = (id, val) => {
   //   if (saveType === 'serialized') {
@@ -182,46 +190,128 @@ const Main = ({ options, data, setData, onSaveData, isLoading }) => {
   //     }
   //   }
   // }
+
+
+
   const updateData = (id, val) => {
-    if (saveType === 'serialized') {
-      setData({
-        ...data,
-        [id]: val
-      });
-    } else {
-      if (activeChild) {
-        setData({
-          ...data,
-          [activeSection]: {
-            ...data[activeSection],
-            [activeChild]: {
-              ...(data[activeSection] && data[activeSection][activeChild]) ? data[activeSection][activeChild] : {},
+    if (!isLoading) {
+      if (saveType === 'serialized') {
+        setData(prev => ({
+          ...prev,
+          [id]: val
+        }));
+      } else {
+        if (activeChild !== "null" && activeChild) {
+          setData((prev) => ({
+            ...prev,
+            [activeSection]: {
+              ...prev[activeSection],
+              [activeChild]: {
+                ...(prev[activeSection] && prev[activeSection][activeChild]) ? prev[activeSection][activeChild] : {},
+                [id]: val
+              }
+            }
+          }));
+        } else {
+          setData((prev) => ({
+            ...prev,
+            [activeSection]: {
+              ...(prev[activeSection] || {}),
               [id]: val
             }
-          }
-        });
-      } else {
-        setData({
-          ...data,
-          [activeSection]: {
-            ...(data[activeSection] || {}),
+          }));
+        }
+      }
+    }
+  }
+
+
+
+
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [parent, child])
+  const searchFieldUpdateData = (id, val, parent, child) => {
+    if (child) {
+      setData((prev) => ({
+        ...prev,
+        [parent]: {
+          ...prev[parent],
+          [child]: {
+            ...(prev[parent] && prev[parent][child]) ? prev[parent][child] : {},
             [id]: val
           }
-        });
-      }
+        }
+      }));
+    } else {
+      setData((prev) => ({
+        ...prev,
+        [parent]: {
+          ...(prev[parent] || {}),
+          [id]: val
+        }
+      }));
+    }
+  }
+
+
+  useEffect(() => {
+    if (search.length > 3) {
+      setIsHidden(true);
+    } else {
+      setIsHidden(false);
+    }
+  }, [search])
+
+  const handleResetData = () => {
+    setData({})
+    saveData({ jsdata: JSON.stringify({}) });
+    location.reload()
+  }
+  const handleResetSection = () => {
+    if (activeSection && (activeChild && activeChild !== 'null')) {
+      // saveData({ jsdata: JSON.stringify({ ...data, [activeSection]: { ...data[activeSection], [activeChild]: null} }) })
+      // setData({ ...data, [activeSection]: { ...data[activeSection], [activeChild]: null } })
+      const newData = { ...data };
+      Object.keys(newData?.[activeSection]?.[activeChild]).forEach((key) => {
+        newData[activeSection][activeChild][key] = '';
+
+      })
+      saveData({ jsdata: JSON.stringify(newData) })
+
+
+      location.reload()
+    } else if (!activeChild || activeChild === 'null') {
+      // saveData({ jsdata: JSON.stringify({ ...data, [activeSection]: null }) })
+      // setData({ ...data, [activeSection]: null })
+
+      const newData = { ...data };
+      Object.keys(newData?.[activeSection]).forEach((key) => {
+        newData[activeSection][key] = '';
+
+      })
+      saveData({ jsdata: JSON.stringify(newData) })
+
+      location.reload()
     }
   }
 
   return (
     <div className='bPlSettings'>
-      <Navbar isHidden={isHidden} setIsHidden={setIsHidden} options={options} onSaveData={onSaveData} />
+      <Navbar {...{ search, setSearch, saveData, isLoading, isHidden, setIsHidden, options, onSaveData, setData, data, activeSection, activeChild, isEqual, setIsEqual, isSaved, setIsSaved, handleResetData, handleResetSection }} />
       <div className='bPlSettingsSection'>
-        <Sidebar sections={sections} {...activeProps} isHidden={isHidden} />
+        {search.length < 4 && <Sidebar sections={sections} {...activeProps} isHidden={isHidden} refetch={refetch} />}
         <div className={`bPlSettingsBody ${isHidden ? "bPlWidthFull" : "bPlBodyWidth"}`}>
-          <Body options={options} {...activeProps} updateData={updateData} sections={sections} data={data} setData={setData} />
+          {
+            search.length > 3 ?
+              <SearchBodyFields {...{ search, setSearch, options, sections, data, setData, isLoading, activeSection, activeChild }} updateData={searchFieldUpdateData} />
+              :
+              <Body search={search} setSearch={setSearch} options={options} {...activeProps} updateData={updateData} sections={sections} data={data} setData={setData} isLoading={isLoading} refetch={refetch} />
+          }
         </div>
       </div>
-      <Footer onSaveData={onSaveData} />
+      <Footer saveData={saveData} isLoading={isLoading} onSaveData={onSaveData} handleResetData={handleResetData} handleResetSection={handleResetSection} />
     </div>
   );
 };

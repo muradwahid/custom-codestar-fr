@@ -12,7 +12,7 @@ const BDate = ({
   settings = {}
 }) => {
   const { enableTime = false, calender = true, time_24hr = false, readOnly = false, showWeek = false, weekHeader = "Week", changeYear = false, changeMonth = false, dateFormat = 'dd/MM/yyy', startWeek = 7, mode = "single" } = settings;
-  const [selected, setSelected] = useState(value || {});
+  // const [selected, setSelected] = useState(value || {});
   const [time, setTime] = useState({ time: "PM" });
   const [label, setLabel] = useState(false)
   const [toggle, setToggle] = useState({
@@ -80,22 +80,21 @@ const BDate = ({
     return format(d, dateFormat);
   };
 
-  function formatAnyDate(dateString, outputFormat = 'YYYY-MM-DD HH:mm') {
-    const date = new Date(dateString);
+  // function formatAnyDate(dateString, outputFormat = 'YYYY-MM-DD HH:mm') {
+  //   const date = new Date(dateString);
 
-    if (isNaN(date.getTime())) {
-      throw new Error('Invalid date format');
-    }
+  //   if (isNaN(date.getTime())) {
+  //     throw new Error('Invalid date format');
+  //   }
 
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are zero-indexed  
-    const day = String(date.getDate()).padStart(2, '0');
-    const hours = String(date.getHours()).padStart(2, '0');
-    const minutes = String(date.getMinutes()).padStart(2, '0');
+  //   const year = date.getFullYear();
+  //   const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are zero-indexed  
+  //   const day = String(date.getDate()).padStart(2, '0');
+  //   const hours = String(date.getHours()).padStart(2, '0');
+  //   const minutes = String(date.getMinutes()).padStart(2, '0');
 
-    // const result = format(`${year}-${month}-${day} ${hours}:${minutes}`, outputFormat)
-    console.log(`${year}-${month}-${day} ${hours}:${minutes}`)
-  }
+  //   // const result = format(`${year}-${month}-${day} ${hours}:${minutes}`, outputFormat)
+  // }
 
 
   // console.log(value?.date)
@@ -115,7 +114,7 @@ const BDate = ({
 
   useEffect(() => {
     const captions = document.querySelectorAll('.rdp-month_caption');
-    captions?.forEach((caption, i) => {
+    captions?.forEach((caption) => {
       caption.onclick = () => {
         setToggle({
           ...toggle,
@@ -160,7 +159,7 @@ const BDate = ({
                 readOnly={readOnly}
               />
                 :
-                  mode=== 'range' ? <input
+                mode === 'range' ? <input
                   onClick={() => {
                     // setToggle({ ...toggle, label: true })
                     setLabel(true)
@@ -217,7 +216,6 @@ const BDate = ({
                   // }}
                   selected={value?.fromTo ? value.fromTo : ''}
                   onSelect={(val) => {
-                    console.log(value?.fromTo?.from)
                     onChange({ fromTo: val })
                     // setToggle({...toggle, label: false })
                   }}
@@ -226,7 +224,7 @@ const BDate = ({
                   captionLayout={layout}
                   startMonth={new Date(1915, 6)}
                   endMonth={new Date(2099, 9)}
-                    mode={mode === "range" ? 'single': mode }
+                  mode={mode === "range" ? 'single' : mode}
                   month={month}
                   onMonthChange={setMonth}
                   year={year}
@@ -244,12 +242,12 @@ const BDate = ({
                       : {}),
                   }}
                   onDayClick={(val) => {
-                      setLabel(false)
-                      if (enableTime) {
-                        onChange({ ...value, date: formattedDate(val), time: { ...time, minute, hour } })
-                      } else {
-                        onChange({ date: val })
-                      }
+                    setLabel(false)
+                    if (enableTime) {
+                      onChange({ ...value, date: formattedDate(val), time: { ...time, minute, hour } })
+                    } else {
+                      onChange({ date: val })
+                    }
                     // setToggle({...toggle, label: false })
                   }}
                   selected={value?.date}
@@ -262,8 +260,8 @@ const BDate = ({
                     // setToggle({...toggle, label: false })
                   }}
                 />
-                  
-              }
+
+                }
                 {enableTime && (
                   <div className="bPl-calenderTime-wrapper">
                     <div className="bPl-numberInput-wrapper">
@@ -411,7 +409,7 @@ const BDate = ({
                       onChange({ ...value, from: val })
                       // setToggle({...toggle, label: false })
                     }}
-                  selected={value?.from}
+                    selected={value?.from}
                   />
                 </div>
                 <input
@@ -478,7 +476,7 @@ const BDate = ({
                       onChange({ ...value, to: val })
                       // setToggle({...toggle, label: false })
                     }}
-                  selected={value?.to}
+                    selected={value?.to}
                   />
                 </div>
                 <input
@@ -515,8 +513,8 @@ const BDate = ({
                 ...value,
                 time: {
                   ...value.time,
-                  hour: hour,
-                  minute: minute,
+                  hour,
+                  minute,
                 },
               });
             }}

@@ -1,5 +1,5 @@
 import { __experimentalUnitControl as UnitControl } from "@wordpress/components";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import BSelectControl from "../BSelectControl/BSelectControl";
 import ColorPicker from "../ColorPicker/ColorPicker";
 import fontLists from "./fontLists";
@@ -61,7 +61,6 @@ const Typography = ({ value, onChange, defaultValue,
 
   const [hasChanged, setHasChanged] = useState(false);
   // Ref to store the previous background state  
-  const previousBackgroundRef = useRef();
 
 
 

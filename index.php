@@ -718,55 +718,295 @@ define( 'BPL_OPTIONS', array(
 				array(
 					'name' => 'repeater',
 					'title' => 'Repeater',
-					'icon' => $rectangle,
 					'fields' => array(
 						array(
-							'id' => 'singleRepeater',
-							'title' => 'Single Repeater',
+							'id' => 'repeater',
+							'title' => 'Repeater',
 							'help' => 'My Single repeater here. drag and drop to sort',
 							'field' => 'repeater',
+							'type' =>'repeater',
+							'fields'=>array()
+						),
+						array(
+							'id' => 'repeater_fields_2',
+							'title' => 'Repeater with default',
+							'help' => 'My Single repeater here. drag and drop to sort',
+							'field' => 'repeater',
+							'type' =>'repeater',
 							'fields' => array(
 								array(
-									'id' => 'repeatName1',
-									'title' => 'Repeat Name 1',
-									'help' => 'Enter your repeat name here here',
-									'field' => 'text'
+									'id' => 'repeat_name_11',
+									'fields'=>array(
+										array(
+											'id' => 'text_12',
+											'title' => 'Text',
+											'help' => 'Enter your repeat field 1 data here here',
+											'field' => 'text',
+											'default'=>'Text default 1'
+										),
+									),
 								),
 								array(
-									'id' => 'repeatName4',
-									'title' => 'Repeat Name 1',
-									'help' => 'Enter your repeat name here here',
-									'field' => 'repeater',
+									'id' => 'repeatName13',
 									'fields'=>array(
-									'id' => 'repeatName3',
-									'title' => 'Repeat Name 1',
-									'help' => 'Enter your repeat name here here',
-									'field' => 'text'
+											array(
+												'id' => 'text_14',
+												'title' => 'Text',
+												'help' => 'Enter your repeat field 1 data here here',
+												'field' => 'text',
+												'default'=>'Text default 2'
+												)
 									)
 								)
 							),	
-						),
+						), 
 						array(
-							'id' => 'dual',
-							'title' => 'Dual',
+							'id' => 'multiple_fields',
+							'title' => 'Repeater with multiple fields',
 							'help' => 'My Single repeater here. drag and drop to sort',
 							'field' => 'repeater',
+							'type' =>'repeater',
 							'fields' => array(
 								array(
-									'id' => 'name',
-									'title' => 'Name',
-									'help' => 'Enter your repeat name here here',
-									'field' => 'text'
+									'id' => 'multiple_fields_1',
+									'fields'=>array(
+										array(
+											'id' => 'switcher',
+											'title' => 'Switcher',
+											'field' => 'switcher',
+											'default'=>false
+										),
+										array(
+											'id' => 'color',
+											'title' => 'Color',
+											'field' => 'color',
+											'default'=>'#3498db'
+										),
+										array(
+											'id' => 'text',
+											'title' => 'Text',
+											'field' => 'text',
+											'default' => 'Text default 1'
+										),
+									),
+								),
+							),	
+						), 
+						array(
+							'id' => 'repeater_limit',
+							'title' => 'Repeater with limited (min - max items)',
+							'subtitle' => 'The maximum/minimum number of items the user can add. (In this example min:1, max:3)',
+							'field' => 'repeater',
+							'type' =>'repeater',
+							'button_title'=>'Add Text',
+							'min'=> 1,
+							'max'=>3,
+							'fields' => array(
+								array(
+									'id' => 'repeater_limit_1',
+									'fields'=>array(
+										array(
+											'id' => 'text_1',
+											'title' => 'Text',
+											'field' => 'text',
+											'default' => 'Text default 1'
+										),
+									),
 								),
 								array(
-									'id' => 'bio',
-									'title' => 'Bio',
-									'help' => 'Enter your repeat name here here',
-									'field' => 'textarea'
-								)
+									'id' => 'repeater_limit_2',
+									'fields'=>array(
+										array(
+											'id' => 'text_2',
+											'title' => 'Text',
+											'field' => 'text',
+											'default' => 'Text default 2'
+										),
+									),
+								),
 							),	
-						)
+						), 
 					),
+				),
+				array(
+					'name'=>'group',
+					'title'=>'Group',
+					'fields'=>array(
+						array(
+							'id'=>'group_1',
+							'title'=>'Group',
+							'field'=>'repeater',
+							'type' => 'group',
+							'fields' =>array(),
+							'defaultFields'=>array(
+								array(
+                  'id' => 'text',
+                  'title' => 'Text',
+                  'field' => 'text',
+                ),
+                array(
+                  'id' => 'switcher',
+                  'title' => 'Switcher',
+                  'field' => 'switcher',
+                ),
+                array(
+                  'id' => 'textarea',
+                  'title' => 'Textarea',
+                  'field' => 'textarea',
+                ),
+							)
+						),
+						array(
+							'id'=>'group_2',
+							'title'=>'Group with default',
+							'field'=>'repeater',
+							'type' => 'group',
+							'fields' =>array(
+								array(
+									'id'=>'group_default_1',
+									'title'=>'Some text 1',
+									'fields'=>array(
+										array(
+											'id' => 'text',
+											'title' => 'Text',
+											'field' => 'text',
+											'default'=>'Some text 1',
+										),
+										array(
+											'id' => 'switcher',
+											'title' => 'Switcher',
+											'field' => 'switcher',
+											'default' =>true
+										),
+										array(
+											'id' => 'textarea',
+											'title' => 'Textarea',
+											'field' => 'textarea',
+											'default' => 'Some textarea content 1'
+										),
+									)
+								),
+								array(
+									'id'=>'group_default_2',
+									'title'=>'Some text 2',
+									'fields'=>array(
+										array(
+											'id' => 'text',
+											'title' => 'Text',
+											'field' => 'text',
+											'default'=>'Some text 2',
+										),
+										array(
+											'id' => 'switcher',
+											'title' => 'Switcher',
+											'field' => 'switcher',
+											'default' =>false
+										),
+										array(
+											'id' => 'textarea',
+											'title' => 'Textarea',
+											'field' => 'textarea',
+											'default' => 'Some textarea content 2'
+										),
+									)
+								),
+							),
+						),
+						
+						array(
+							'id'=>'group_3',
+							'title'=>'Group with limited (min - max items)',
+							'subtitle'=>'The maximum/minimum number of items the user can add. (In this example min:1, max:3)',
+							'field'=>'repeater',
+							'type' => 'group',
+							'min' =>1,
+							'max' =>3,
+							'fields' =>array(
+								array(
+									'id'=>'group_default_1',
+									'title'=>'Limited text 1',
+									'fields'=>array(
+										array(
+											'id' => 'text',
+											'title' => 'Text',
+											'field' => 'text',
+											'default'=>'Limited text 1',
+										),
+										array(
+											'id' => 'textarea',
+											'title' => 'Textarea',
+											'field' => 'textarea',
+											'default' => 'Limited textarea content 1'
+										),
+									)
+								),
+								array(
+									'id'=>'group_default_2',
+									'title'=>'Limited text 2',
+									'fields'=>array(
+										array(
+											'id' => 'text',
+											'title' => 'Text',
+											'field' => 'text',
+											'default'=>'Limited text 2',
+										),
+										array(
+											'id' => 'textarea',
+											'title' => 'Textarea',
+											'field' => 'textarea',
+											'default' => 'Limited textarea content 2'
+										),
+									)
+								),
+							),
+						),
+						array(
+							'id'=>'group_4',
+							'title'=>'Group with WP Editor',
+							'subtitle'=>'WP Editor integrated.',
+							'field'=>'repeater',
+							'type' => 'group',
+							'fields' =>array(
+								array(
+									'id'=>'group_default_1',
+									'title'=>'WP Editor 1',
+									'fields'=>array(
+										array(
+											'id' => 'text',
+											'title' => 'Text',
+											'field' => 'text',
+											'default' => 'WP Editor 1'
+										),
+										array(
+											'id' => 'wpEditor',
+											'title' => 'WP Editor',
+											'field' => 'wp_editor',
+											'default' =>'Editor content 1'
+										),
+									)
+								),
+								array(
+									'id'=>'group_default_2',
+									'title'=>'WP Editor 2',
+									'fields'=>array(
+										array(
+											'id' => 'text',
+											'title' => 'Text',
+											'field' => 'text',
+											'default' => 'WP Editor 2'
+										),
+										array(
+											'id' => 'wpEditor',
+											'title' => 'WP Editor',
+											'field' => 'wp_editor',
+											'default' =>'Editor content 2'
+										),
+									)
+								),
+							),
+						),
+
+					)
 				)
 			)
 		),
@@ -1863,12 +2103,10 @@ define( 'BPL_OPTIONS', array(
 				'title' => 'Sorter',
 				'icon'=>$sortNumericDown,
 				'fields' => array(
-				array(
-					'id' => 'wpEditorName',
-					'title' => 'WP Editor Name',
-					'help' => 'Enter your wp editor name here',
-					'field' => 'textarea',
-				),
+						array(
+							'field' => 'content',
+							'content' => '<h2>Coming soon.</h2>'
+						),
 				),
 			),
 			array(
@@ -1876,12 +2114,53 @@ define( 'BPL_OPTIONS', array(
 				'title' => 'Sortable',
 				'icon'=>$arrowAlt,
 				'fields' => array(
-				array(
-					'id' => 'wpEditorName',
-					'title' => 'WP Editor Name',
-					'help' => 'Enter your wp editor name here',
-					'field' => 'textarea',
-				),
+					array(
+						'id' => 'sortable_1',
+						'title' => 'Sortable',
+						'field' => 'sortable',
+						'fields' => array(
+							array(
+								'id'=>'text_1',
+								'field' =>'text',
+								'title' => 'Text 1'
+							),
+							array(
+								'id'=>'text_2',
+								'field' =>'text',
+								'title' => 'Text 2'
+							),
+							array(
+								'id'=>'text_3',
+								'field' =>'text',
+								'title' => 'Text 3'
+							),
+						)
+					),
+					array(
+						'id' => 'sortable_2',
+						'title' => 'Sortable with default',
+						'field' => 'sortable',
+						'fields' => array(
+							array(
+								'id'=>'text_1',
+								'field' =>'text',
+								'title' => 'Text 1',
+								'default' =>'This is text 1 default'
+							),
+							array(
+								'id'=>'text_2',
+								'field' =>'text',
+								'title' => 'Text 2',
+								'default' =>'This is text 2 default'
+							),
+							array(
+								'id'=>'text_3',
+								'field' =>'text',
+								'title' => 'Text 3',
+								'default' =>'This is text 3 default'
+							),
+						)
+					),
 				),
 			),
 			array(
@@ -1900,27 +2179,27 @@ define( 'BPL_OPTIONS', array(
 						'field' => 'switcher',
 						'default' => true
 					),
-					array(
-						'id' => 'switcher_3',
-						'title' => 'Switcher with label',
-						'field' => 'switcher',
-						'label' => 'The label text of the switcher.',
-					),
-					array(
-						'id' => 'switcher_4',
-						'title' => 'Switcher with Yes/No',
-						'field' => 'switcher',
-						'text_on' => 'Yes',
-						'text_off' => 'No'
-					),
-					array(
-						'id' => 'switcher_5',
-						'title' => 'Switcher with custom text Enabled/Disabled',
-						'field' => 'switcher',
-						'text_on' => 'Enabled',
-						'text_off' => 'Disabled',
-						'text_width'=>'100'
-					),
+					// array(
+					// 	'id' => 'switcher_3',
+					// 	'title' => 'Switcher with label',
+					// 	'field' => 'switcher',
+					// 	'label' => 'The label text of the switcher.',
+					// ),
+					// array(
+					// 	'id' => 'switcher_4',
+					// 	'title' => 'Switcher with Yes/No',
+					// 	'field' => 'switcher',
+					// 	'text_on' => 'Yes',
+					// 	'text_off' => 'No'
+					// ),
+					// array(
+					// 	'id' => 'switcher_5',
+					// 	'title' => 'Switcher with custom text Enabled/Disabled',
+					// 	'field' => 'switcher',
+					// 	'text_on' => 'Enabled',
+					// 	'text_off' => 'Disabled',
+					// 	'text_width'=>'100'
+					// ),
 				),
 			),
 			array(
@@ -1928,12 +2207,10 @@ define( 'BPL_OPTIONS', array(
 				'title' => 'Icons',
 				'icon'=>$faStar,
 				'fields' => array(
-				array(
-					'id' => 'wpEditorName',
-					'title' => 'WP Editor Name',
-					'help' => 'Enter your wp editor name here',
-					'field' => 'textarea',
-				),
+					array(
+						'field' => 'content',
+						'content' => '<h2>Coming soon.</h2>'
+					),
 				),
 			),
 			array(
@@ -1941,12 +2218,22 @@ define( 'BPL_OPTIONS', array(
 				'title' => 'Map',
 				'icon'=>$faMap,
 				'fields' => array(
-				array(
-					'id' => 'wpEditorName',
-					'title' => 'WP Editor Name',
-					'help' => 'Enter your wp editor name here',
-					'field' => 'textarea',
-				),
+					array(
+						'id' => 'map_1',
+						'title' => 'Map',
+						'field' => 'map',
+					),
+					array(
+						'id' => 'map_2',
+						'title' => 'Map with Default',
+						'field' => 'map',
+						'default'       => array(
+							'address'     => 'New York, United States of America',
+							'latitude'    => '40.7127281',
+							'longitude'   => '-74.0060152',
+							'zoom'        => '12',
+						)
+					),
 				),
 			),
 			array(
@@ -2166,6 +2453,36 @@ define( 'BPL_OPTIONS', array(
 							array('label'=>'http://codestarframework.com/assets/images/placeholder/80x80-2ecc71.gif','value'=>'opt_4')
 						)
 					),
+					array(
+						'id' => 'selectImage_4',
+						'title' => 'Image Select with multiple choice and default',
+						'field' => 'image_select',
+						'multiple' => true,
+						'options' => array(
+							array('label'=>'http://codestarframework.com/assets/images/placeholder/80x80-2c3e50.gif','value'=>'opt_1'),
+							array('label'=>'http://codestarframework.com/assets/images/placeholder/80x80-2c3e50.gif','value'=>'opt_2'),
+							array('label'=>'http://codestarframework.com/assets/images/placeholder/80x80-e74c3c.gif','value'=>'opt_3'),
+							array('label'=>'http://codestarframework.com/assets/images/placeholder/80x80-ffbc00.gif','value'=>'opt_4'),
+							array('label'=>'http://codestarframework.com/assets/images/placeholder/80x80-3498db.gif','value'=>'opt_5'),
+							array('label'=>'http://codestarframework.com/assets/images/placeholder/80x80-2ecc71.gif','value'=>'opt_6'),
+							array('label'=>'http://codestarframework.com/assets/images/placeholder/80x80-2c3e50.gif','value'=>'opt_7'),
+							array('label'=>'http://codestarframework.com/assets/images/placeholder/80x80-2c3e50.gif','value'=>'opt_8')
+						),
+						'default'	=> array('opt_3','opt_4','opt_5','opt_6')
+					),
+					array(
+						'id' => 'selectImage_5',
+						'title' => 'Image Select inline style',
+						'field' => 'image_select',
+						'inline' => true,
+						'options' => array(
+							array('label'=>'http://codestarframework.com/assets/images/placeholder/80x80-e74c3c.gif','value'=>'opt_1'),
+							array('label'=>'http://codestarframework.com/assets/images/placeholder/80x80-ffbc00.gif','value'=>'opt_2'),
+							array('label'=>'http://codestarframework.com/assets/images/placeholder/80x80-3498db.gif','value'=>'opt_3'),
+							array('label'=>'http://codestarframework.com/assets/images/placeholder/80x80-2ecc71.gif','value'=>'opt_4')
+						),
+						'default'	=> 'opt_1'
+					),
 				),
 			),
 			array(
@@ -2173,12 +2490,73 @@ define( 'BPL_OPTIONS', array(
 				'title' => 'Button Set',
 				'icon'=>$faEllipsis,
 				'fields' => array(
-				array(
-					'id' => 'wpEditorName',
-					'title' => 'WP Editor Name',
-					'help' => 'Enter your wp editor name here',
-					'field' => 'textarea',
-				),
+					array(
+						'id' => 'button_set_1',
+						'title' => 'Button Set',
+						'field' => 'button_set',
+						'options' => array(
+							array('label'=> 'Enabled','value'=>'enabled'),
+							array('label'=> 'Disabled','value'=>'disabled'),
+						)
+					),
+					array(
+						'id' => 'button_set_2',
+						'title' => 'Button Set with default',
+						'field' => 'button_set',
+						'options' => array(
+							array('label'=> 'Enabled','value'=>'enabled'),
+							array('label'=> 'Default','value'=>'default'),
+							array('label'=> 'Disabled','value'=>'disabled'),
+						),
+						'default' => 'default'
+					),
+					array(
+						'id' => 'button_set_3',
+						'title' => 'Button Set',
+						'field' => 'button_set',
+						'options' => array(
+							array('label'=> 'Activate','value'=>'activate'),
+							array('label'=> 'Deactivate','value'=>'deactivate')
+						),
+						'default' => 'activate'
+					),
+					array(
+						'id' => 'button_set_4',
+						'title' => 'Button Set',
+						'field' => 'button_set',
+						'options' => array(
+							array('label'=> 'ON','value'=>'on'),
+							array('label'=> 'OFF','value'=>'off')
+						),
+						'default' => 'on'
+					),
+					array(
+						'id' => 'button_set_5',
+						'title' => 'Button Set',
+						'field' => 'button_set',
+						'multiple' =>true,
+						'options' => array(
+							array('label'=> 'Option 1','value'=>'opt_1'),
+							array('label'=> 'Option 2','value'=>'opt_2'),
+							array('label'=> 'Option 3','value'=>'opt_3'),
+							array('label'=> 'Option 4','value'=>'opt_4'),
+							array('label'=> 'Option 5','value'=>'opt_5'),
+						)
+					),
+					array(
+						'id' => 'button_set_6',
+						'title' => 'Button Set with multiple choice and default',
+						'field' => 'button_set',
+						'multiple' =>true,
+						'options' => array(
+							array('label'=> 'Option 1','value'=>'opt_1'),
+							array('label'=> 'Option 2','value'=>'opt_2'),
+							array('label'=> 'Option 3','value'=>'opt_3'),
+							array('label'=> 'Option 4','value'=>'opt_4'),
+							array('label'=> 'Option 5','value'=>'opt_5'),
+						),
+						'default' => array('opt_2','opt_4')
+					),
 				),
 			),
 			)
@@ -2188,12 +2566,10 @@ define( 'BPL_OPTIONS', array(
 			'title' => 'Dependencies',
 			'icon' => $faBranch,
 			'fields' => array(
-			array(
-				'id' => 'wpEditorName',
-				'title' => 'WP Editor Name',
-				'help' => 'Enter your wp editor name here',
-				'field' => 'textarea',
-			),
+				array(
+						'field' => 'content',
+						'content' => '<h2>Coming soon.</h2>'
+				),
 			),
 		),
 		array(
@@ -2201,12 +2577,37 @@ define( 'BPL_OPTIONS', array(
 			'title' => 'Validate',
 			'icon' => $faCircleCheck,
 			'fields' => array(
-			array(
-				'id' => 'wpEditorName',
-				'title' => 'WP Editor Name',
-				'help' => 'Enter your wp editor name here',
-				'field' => 'textarea',
-			),
+				array(
+					'id' => 'validate_1',
+					'title' => 'Email validate',
+					'field' => 'validate',
+					'default'=>'info@domain.com',
+					'validate'=>'email'
+				),
+				array(
+					'id' => 'validate_2',
+					'title' => 'Numeric validate',
+					'field' => 'validate',
+					'subtitle'=>'This text field only allows numbers',
+					'default'=>'123456',
+					'validate'=>'numeric'
+				),
+				array(
+					'id' => 'validate_3',
+					'title' => 'Required validate',
+					'field' => 'validate',
+					'subtitle'=>'This text field is required, cannot be pass empty.',
+					'default'=>'Lorem ipsum value',
+					'validate'=>'required'
+				),
+				array(
+					'id' => 'validate_4',
+					'title' => 'URL validate',
+					'field' => 'validate',
+					'subtitle'=>'This text field only allows validated url address.',
+					'default'=>'http://bplugins.com',
+					'validate'=>'url'
+				),
 			),
 		),
 		array(
@@ -2214,12 +2615,20 @@ define( 'BPL_OPTIONS', array(
 			'title' => 'Sanitize',
 			'icon' => $faRotateRight,
 			'fields' => array(
-			array(
-				'id' => 'wpEditorName',
-				'title' => 'WP Editor Name',
-				'help' => 'Enter your wp editor name here',
-				'field' => 'textarea',
-			),
+				array(
+					'id' => 'sanitize_1',
+					'title' => 'Sanitize (a) to (b)',
+					'subtitle' => 'Replacing letter (a) to letter (b). for eg. apple to bpple',
+					'field' => 'sanitize',
+					'sanitize' => 'a_to_b'
+				),
+				array(
+					'id' => 'sanitize_2',
+					'title' => 'Sanitize Title',
+					'subtitle' => 'Converting (space) to (-) and (uppercase) letters to (lowercase) letters. for eg. Hello World to hello-world',
+					'field' => 'sanitize',
+					'sanitize' => 'title'
+				),
 			),
 		),
 		array(
@@ -2227,12 +2636,9 @@ define( 'BPL_OPTIONS', array(
 			'title' => 'Backup',
 			'icon' => $faShieldHalf,
 			'fields' => array(
-			array(
-				'id' => 'wpEditorName',
-				'title' => 'WP Editor Name',
-				'help' => 'Enter your wp editor name here',
-				'field' => 'textarea',
-			),
+				array(
+					'field' => 'backup'
+				),
 			),
 		),
 		array(
@@ -2240,12 +2646,77 @@ define( 'BPL_OPTIONS', array(
 			'title' => 'Other',
 			'icon' => $faBold,
 			'fields' => array(
-			array(
-				'id' => 'wpEditorName',
-				'title' => 'WP Editor Name',
-				'help' => 'Enter your wp editor name here',
-				'field' => 'textarea',
-			),
+				array(
+						'field'    => 'heading',
+						'content' => 'This is a heading field',
+					),
+				array(
+					'field'    => 'subheading',
+					'content' => 'This is a subheading field',
+				),
+
+				array(
+					'field'    => 'content',
+					'content' => 'This is a content field',
+				),
+
+				array(
+					'field'    => 'submessage',
+					'type'   => 'success',
+					'content' => 'This is a <strong>submessage</strong> field. And using style <strong>success</strong>',
+				),
+
+				array(
+					'field'    => 'content',
+					'content' => 'This is a content field',
+				),
+
+				array(
+					'field'    => 'submessage',
+					'type'   => 'info',
+					'content' => 'This is a <strong>submessage</strong> field. And using style <strong>info</strong>',
+				),
+
+				array(
+					'field'    => 'submessage',
+					'type'   => 'warning',
+					'content' => 'This is a <strong>submessage</strong> field. And using style <strong>warning</strong>',
+				),
+
+				array(
+					'field'    => 'submessage',
+					'type'   => 'danger',
+					'content' => 'This is a <strong>submessage</strong> field. And using style <strong>danger</strong>',
+				),
+
+				array(
+					'field'    => 'notice',
+					'type'   => 'success',
+					'content' => 'This is a <strong>notice</strong> field. And using style <strong>success</strong>',
+				),
+
+				array(
+					'field'    => 'notice',
+					'type'   => 'info',
+					'content' => 'This is a <strong>notice</strong> field. And using style <strong>info</strong>',
+				),
+
+				array(
+					'field'    => 'notice',
+					'type'   => 'warning',
+					'content' => 'This is a <strong>notice</strong> field. And using style <strong>warning</strong>',
+				),
+
+				array(
+					'field'    => 'notice',
+					'type'   => 'danger',
+					'content' => 'This is a <strong>notice</strong> field. And using style <strong>danger</strong>',
+				),
+
+				array(
+					'field'    => 'content',
+					'content' => 'This is a <strong>content</strong> field. You can write some contents here.',
+				),
 			),
 		),
 		),

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 const BTextareaControl = ({
   value,
@@ -13,7 +13,10 @@ const BTextareaControl = ({
   cols,
   maxLength,
 }) => {
-  const [inputVal, setInputVal] = useState(defaultValue);
+  const def = value || defaultValue;
+  // useEffect(() => {
+  //   onChange(inputVal)
+  // }, [inputVal])
   return (
     <div>
       <style>{`
@@ -49,18 +52,17 @@ const BTextareaControl = ({
           minLength={minLength}
           cols={cols}
           maxLength={maxLength}
-          value={value ? value : inputVal}
-          defaultValue={inputVal}
+          value={def}
           placeholder={placeholder}
           readOnly={readOnly}
           onChange={(e) => {
             onChange(e.target.value);
-            setInputVal(e.target.value);
           }}
         ></textarea>
       </div>
     </div>
   );
 };
+
 
 export default BTextareaControl;

@@ -1,10 +1,8 @@
-import React, { useState } from "react";
-import "./style.scss";
+import React from "react";
 import ColorPicker from "../ColorPicker/ColorPicker";
+import "./style.scss";
 const BColorGroup = ({ value, onChange, options, defaultValue }) => {
-  const def =value || defaultValue
-  const [internalValue, setInternalValue] = useState(value || defaultValue || {});
-  console.log(options);
+  const def = value || defaultValue
   // const handleColorChange = (newColor, id) => {
   //   const updatedValue = { ...internalValue };
   //   updatedValue[id] = newColor;

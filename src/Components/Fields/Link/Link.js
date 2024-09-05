@@ -15,7 +15,6 @@ const Link = ({value, onChange, defaultValue }) => {
 
   const initial = data || value || defaultValue;
   const def = value || defaultValue || {}
-  console.log(initial)
   useEffect(() => {
     const handle = (e) => {
       if (!resultRef?.current?.contains(e.target)) {
@@ -46,10 +45,6 @@ const Link = ({value, onChange, defaultValue }) => {
       return option;
     }
   });
-  useEffect(() => {
-    console.log(def)
-  }, [data])
-  // console.log(def)
   return (
     <div className="bPl-link-main-wrapper">
       {
@@ -116,7 +111,7 @@ const Link = ({value, onChange, defaultValue }) => {
                     id="linkType"
                     value={initial?.['target'] === "_blank" ? true : false}
                     checked={initial?.['target'] === "_blank" ? true : false}
-                    onChange={(e) => {
+                    onChange={() => {
                       setData({ ...initial,target:value?.['target'] === "_blank" ? "" : "_blank"})
                       
                     }}

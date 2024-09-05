@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars */
 import { Editor } from "@tinymce/tinymce-react";
 // import { MediaUpload, MediaUploadCheck } from "@wordpress/block-editor";
-import {MediaUpload} from "@wordpress/media-utils"
+import { MediaUpload } from "@wordpress/media-utils";
 import { useEffect, useRef, useState } from "react";
-import "./tinyEditor.scss";
 import Button from "../Button/Button";
+import "./tinyEditor.scss";
 
 // const { Button } = wp.components;
 
@@ -32,10 +32,10 @@ export const TinyEditor = (props) => {
     }
   };
   useEffect(() => {
-    if (media_button) {      
+    if (media_button) {
       const id = tinyRef?.current.id
       setTimeout(() => {
-        const editorWrapper = document.querySelector(`iframe#${id}_ifr`).contentWindow?.document
+        const editorWrapper = document.querySelector(`iframe#${id}_ifr`)?.contentWindow?.document
         const tinymce = editorWrapper?.querySelector(".mce-content-body");
         if (tinymce && media?.url) {
           const createImgEl = document.createElement("img");
@@ -58,7 +58,7 @@ export const TinyEditor = (props) => {
   return (
     <div>
       {
-        media_button&& <MediaUpload
+        media_button && <MediaUpload
           gallery={true}
           onSelect={(value) => setMedia(value)}
           allowedTypes={["image"]}
@@ -72,6 +72,7 @@ export const TinyEditor = (props) => {
         />
       }
       <Editor
+
         ref={tinyRef}
         apiKey="lfuv1x8qkvjpz1rl2vyrxz5h57bn79bxrtiiw3hxpsmifqg8"
         onChange={(evt, editor) => {
@@ -93,7 +94,7 @@ export const TinyEditor = (props) => {
         //     "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
         // }}
         init={{
-          height:height,
+          height,
           menubar: false,
           plugins: [
             "ai preview powerpaste casechange footnotes tinycomments searchreplace autolink autosave save directionality advcode visualblocks visualchars fullscreen image link media mediaembed advtemplate codesample table charmap pagebreak nonbreaking anchor tableofcontents insertdatetime advlist lists checklist wordcount tinymcespellchecker mergetags a11ychecker editimage help formatpainter permanentpen pageembed charmap quickbars linkchecker emoticons advtable export mentions typography markdown importword",

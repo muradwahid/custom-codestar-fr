@@ -1,13 +1,12 @@
-import React, { useState,useEffect } from 'react';
-import "./style.css";
+import React, { useEffect, useState } from 'react';
 import FieldSwitch from '../../Main/Body/FieldSwitch';
+import "./style.css";
 const BTabbed = ({ fields, value, onChange }) => {
-  console.log(value);
   const [activeTab, setActiveTab] = useState(0);
-  const [data,setData]=useState(value || {})
-  const { id = "", title = "", fields: child = "" } = fields?.[activeTab];
+  const [data, setData] = useState(value || {})
+  const { id = "", fields: child = "" } = fields?.[activeTab];
   useEffect(() => {
-  onChange(data)
+    onChange(data)
   }, [data])
   return (
     <div className="bPl-tabbed-main-wrapper">
@@ -17,9 +16,9 @@ const BTabbed = ({ fields, value, onChange }) => {
             <div
               key={index}
               onClick={() => setActiveTab(index)}
-              className={`bPl-single-tabBtn ${activeTab === index? 'activeTab' : ''}`}
+              className={`bPl-single-tabBtn ${activeTab === index ? 'activeTab' : ''}`}
             >
-              {item?.icon && <span style={{display:"flex"}} dangerouslySetInnerHTML={{__html:item?.icon}}/> }
+              {item?.icon && <span style={{ display: "flex" }} dangerouslySetInnerHTML={{ __html: item?.icon }} />}
               <span>{item?.title}</span>
             </div>
           ))

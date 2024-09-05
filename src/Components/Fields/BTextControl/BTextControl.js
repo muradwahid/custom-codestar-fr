@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 const BTextControl = ({
   type = "text",
@@ -13,9 +13,11 @@ const BTextControl = ({
   minLength,
   max,
   maxLength,
-  padding="0 8px"
+  padding = "0 8px",
+  name
 }) => {
-  const [inputVal, setInputVal] = useState(defaultValue);
+  const def = value || defaultValue
+  // const [inputVal, setInputVal] = useState(defaultValue);
   const id = Math.floor(Math.random() * 999999);
   return (
     <div>
@@ -38,6 +40,7 @@ const BTextControl = ({
         .bPl-textControl-${id}>.bPl-textControl-${id}-input:focus {
           outline: 1px solid ${outline};
           transition:all 0.2s ease-in-out;
+          border: 1px solid ${outline};
         }
         .bPl-textControl-${id}>.bPl-textControl-${id}-input:read-only {
           background:#ccc;
@@ -46,6 +49,7 @@ const BTextControl = ({
 
       <div className={`bPl-textControl-${id}`}>
         <input
+          name={name}
           className={`bPl-textControl-${id}-input`}
           style={{ ...style }}
           type={type}
@@ -53,14 +57,14 @@ const BTextControl = ({
           minLength={minLength}
           max={max}
           maxLength={maxLength}
-          value={value}
-          {...(!value ? { defaultValue: inputVal }:{})}
-          
+          value={def}
+          // {...(!value ? { defaultValue: inputVal }:{})}
+
           placeholder={placeholder}
           readOnly={readOnly}
           onChange={(e) => {
             onChange(e.target.value)
-            setInputVal(e.target.value)
+            // setInputVal(e.target.value)
           }}
         />
       </div>

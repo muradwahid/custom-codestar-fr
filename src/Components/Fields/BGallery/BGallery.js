@@ -1,9 +1,9 @@
 import { MediaUpload } from "@wordpress/media-utils";
-import React, { useState } from 'react';
+import React from 'react';
 import Button from '../Button/Button';
 import "./style.scss";
-const BGallery = ({ value = [], onChange, add_title = "Add Gallery", edit_title = "Edit Gallery", clear_title = "Clear",...props }) => {
-  
+const BGallery = ({ value = [], onChange, add_title = "Add Gallery", edit_title = "Edit Gallery", clear_title = "Clear", ...props }) => {
+
   return (
     <div className='bPl-gallery-main-wrapper'>
       {
@@ -19,8 +19,9 @@ const BGallery = ({ value = [], onChange, add_title = "Add Gallery", edit_title 
           addToGallery={true}
           onSelect={(val) => onChange(val)}
           value={value}
+          {...props}
           render={({ open }) => (
-            <Button variant='primary' onClick={open}>{ add_title}</Button>
+            <Button variant='primary' onClick={open}>{add_title}</Button>
           )}
         />
         {value && <>
@@ -31,6 +32,7 @@ const BGallery = ({ value = [], onChange, add_title = "Add Gallery", edit_title 
             filesList={[]}
             addToGallery={false}
             onSelect={(val) => onChange(val)}
+            {...props}
             value={Array.isArray(value) ? value?.map(item => item.id) : value}
             render={({ open }) => (
               <Button variant='secondary' onClick={open}>{edit_title}</Button>
