@@ -41,6 +41,7 @@ import Spinner from "../../Fields/Spinner/Spinner"
 import { TinyEditor } from "../../Fields/TinyEditor/TinyEditor"
 import ToggleControl from "../../Fields/ToggleControl/ToggleControl"
 import Typography from "../../Fields/Typography/Typography"
+import BWPEditor from "../../Fields/BWPEditor/BWPEditor"
 
 const FieldSwitch = (props) => {
   const { extraFields, label, help, field, labelPosition, value, onChange, placeholder, options = [], default: defaultValue, attributes, content, variant, type, fields, data, setData, isLoading, name } = props;
@@ -111,7 +112,7 @@ const FieldSwitch = (props) => {
     case "palette": return <BColorPalette options={options} {...fieldProps} onChange={val => onChange(val)} />
     case "typography": return <Typography options={options} {...fieldProps} {...extraFields} onChange={val => onChange(val)} />
     case 'validate': return <BValidateInput {...fieldProps} {...extraFields} onChange={val => onChange(val)} />
-    case "wp_editor": return <TinyEditor {...fieldProps} {...attributes} {...extraFields} onChange={val => onChange(val)} />
+    case "wp_editor": return <BWPEditor {...fieldProps} {...attributes} {...extraFields} onChange={val => onChange(val)} />
     default:
       return <BTextControl  {...fieldProps} {...attributes} placeholder={placeholder} onChange={val => onChange(val)} name={name} />
   }

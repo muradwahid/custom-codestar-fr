@@ -1,6 +1,8 @@
 import React from 'react';
-const BWPEditor = ({ value = '', onChange, defaultValue = '', media_button = true, quicktags=true,height='180px'}) => {
+const BWPEditor = ({ value = '', onChange, defaultValue = '', media_button = true, quicktags = true, height = '180px',isLoading }) => {
   const def = value || defaultValue;
+  // console.log(value)
+  // const [data, setData] = React.useState(def || "");
   const editorSettings = {
     tinymce: {
       selector: "bpl-wp-editor",
@@ -22,19 +24,45 @@ const BWPEditor = ({ value = '', onChange, defaultValue = '', media_button = tru
 
 
 
-
-  React.useEffect(() => {
+  window.onload = () => {
     wp.editor.initialize(`bpl-wp-editor`, editorSettings);
-    const editor = window.tinymce.editors['bpl-wp-editor'];
-    editor.setContent(def);
+  }
+
+  const editor = window.tinymce.editors['bpl-wp-editor'];
+  if (editor) {
+    // editor.on('focus', () => {
+    //   console.log("focused");
+    // })
+    // editor.on('blur', () => {
+    //   // const content = editor?.getContent();
+    //   // console.log(content);
+    //   // onChange(JSON.stringify(content))
+    //   editor.setContent(def);
+    //   console.log("blur")
+    // })
+    // editor.setContent(JSON.parse(def));
     editor.on('keyup', () => {
-      const content = editor.getContent();
-      onChange(content);
+      const content = editor?.getContent();
+      onChange(content)
+      
     });
+  }
+  React.useEffect(() => {
     return () => {
       wp.editor.remove('bpl-wp-editor');
     };
   }, [])
+
+  React.useEffect(() => {
+    if (editor) {
+      editor.setContent(def);
+    }
+  }, [isLoading])
+  // React.useEffect(() => {
+  //   if (editor) {
+  //     editor.setContent(value);
+  //   }
+  // }, [])
   return (
     <div>
       <style>{`
@@ -46,12 +74,9 @@ const BWPEditor = ({ value = '', onChange, defaultValue = '', media_button = tru
           outline: none !important;
           box-shadow:none !important;
         }
-        .wp-editor-tabs >button{
-          height:30px !important;
-        }
       `}</style>
       <textarea style={{ width: "100%" }} id={`bpl-wp-editor`} className='bpl-wp-editor' ></textarea>
-      </div>
+    </div>
   )
 }
 export default BWPEditor

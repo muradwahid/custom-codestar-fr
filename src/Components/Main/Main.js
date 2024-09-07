@@ -151,10 +151,10 @@ const Main = ({ options, data, setData, onSaveData, isLoading, saveData, refetch
   const parent = localStorage.getItem('activeSection')
   const child = localStorage.getItem('activeChild')
 
-  const [activeSection, setActiveSection] = useState(sections[0].name);
-  const [activeChild, setActiveChild] = useState(sections[0].children ? sections[0].children[0].name : '');
-  // const [activeSection, setActiveSection] = useState(parent || sections[0].name);
-  // const [activeChild, setActiveChild] = useState(child || (sections[0].children ? sections[0].children[0].name : ''));
+  // const [activeSection, setActiveSection] = useState(sections[0].name);
+  // const [activeChild, setActiveChild] = useState(sections[0].children ? sections[0].children[0].name : '');
+  const [activeSection, setActiveSection] = useState(parent || sections[0].name);
+  const [activeChild, setActiveChild] = useState(child || (sections[0].children ? sections[0].children[0].name : ''));
 
   useEffect(() => {
     localStorage.setItem('activeSection', activeSection)

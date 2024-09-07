@@ -17,9 +17,10 @@ if( !class_exists('BPLSettings') ){
 		function adminEnqueueScripts( $hook ){
 			if( strpos( $hook, 'bplugins-settings' ) ){
 				wp_enqueue_media();
+				wp_enqueue_editor();
 				wp_enqueue_style( 'bpl-settings', CCFR_DIR_URL . 'dist/bpl-settings.css', [], CCFR_VERSION );
 				wp_enqueue_style( 'bpl-settings', CCFR_DIR_URL . 'assets/css/font-awesome.min.css', ['bpl-settings'], CCFR_VERSION );
-        wp_enqueue_script( 'bpl-settings', CCFR_DIR_URL . 'dist/bpl-settings.js', [ 'react', 'react-dom', 'wp-api', 'wp-block-editor', 'wp-components', 'wp-data', 'wp-i18n', 'wp-media-utils', 'wp-util', 'lodash',"wp-compose",'wp-element'], CCFR_VERSION, true );
+        wp_enqueue_script( 'bpl-settings', CCFR_DIR_URL . 'dist/bpl-settings.js', [ 'react', 'react-dom', 'wp-api', 'wp-block-editor', 'wp-components', 'wp-data', 'wp-i18n', 'wp-media-utils', 'wp-util', 'lodash',"wp-compose",'wp-element','wp-editor'], CCFR_VERSION, true );
 			}
 		}
 
@@ -30,7 +31,8 @@ if( !class_exists('BPLSettings') ){
 				wp_send_json_error( 'Invalid Request' );
 			}
 
-			$js_data = json_decode( wp_kses_stripslashes( sanitize_text_field( $_POST['jsdata'] ) ), true );
+			// $js_data = json_decode( wp_kses_stripslashes( sanitize_text_field( $_POST['jsdata'] ) ), true );
+			$js_data = json_decode( wp_kses_stripslashes($_POST['jsdata']), true );
 			$db_data = get_option( BPL_OPTIONS['id'], [] );
 			if( !$js_data && $db_data ){
 				wp_send_json_success($db_data);
