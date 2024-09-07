@@ -32,8 +32,6 @@ $borderColor: #404040;
             &:hover {
               // background-color: $hoverBgColor;
               .wp-sidebar-item-logo {
-                display: flex;
-                align-items: center;
                 color: #fff;
                 fill: #fff;
               }
@@ -62,6 +60,8 @@ $borderColor: #404040;
             .wp-sidebar-item-logo {
               color: $sidebarLogoColor;
               fill: $sidebarLogoColor;
+              display: flex;
+              align-items: center;
               svg,
               i,
               span {

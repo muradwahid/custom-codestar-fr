@@ -1555,10 +1555,19 @@ define( 'BPL_OPTIONS', array(
 					array(
 						'id' => 'wp_editor_2',
 						'title' => 'WP Editor with Custom Height and No Media Buttons',
-						'subtitle'      => 'Settings:<br />height => 250px,<br />media_buttons => false',
+						'subtitle'      => 'Settings:<br />height => 100px,<br />media_buttons => false',
 						'field' => 'wp_editor',
-						'height' => '250px',
+						'height' => '100px',
 						'media_button'=>false,
+					),
+					array(
+						'id' => 'wp_editor_3',
+						'title' => 'WP Editor without QuickTags and Media Buttons',
+						'subtitle'      => 'Settings:<br />height => 100px,<br />media_buttons => false, <br/> quicktags => false',
+						'field' => 'wp_editor',
+						'height' => '100px',
+						'media_button'=>false,
+						'quicktags'=> false
 					),
 				),
 			),
@@ -2179,27 +2188,27 @@ define( 'BPL_OPTIONS', array(
 						'field' => 'switcher',
 						'default' => true
 					),
-					// array(
-					// 	'id' => 'switcher_3',
-					// 	'title' => 'Switcher with label',
-					// 	'field' => 'switcher',
-					// 	'label' => 'The label text of the switcher.',
-					// ),
-					// array(
-					// 	'id' => 'switcher_4',
-					// 	'title' => 'Switcher with Yes/No',
-					// 	'field' => 'switcher',
-					// 	'text_on' => 'Yes',
-					// 	'text_off' => 'No'
-					// ),
-					// array(
-					// 	'id' => 'switcher_5',
-					// 	'title' => 'Switcher with custom text Enabled/Disabled',
-					// 	'field' => 'switcher',
-					// 	'text_on' => 'Enabled',
-					// 	'text_off' => 'Disabled',
-					// 	'text_width'=>'100'
-					// ),
+					array(
+						'id' => 'switcher_3',
+						'title' => 'Switcher with label',
+						'field' => 'switcher',
+						'label' => 'The label text of the switcher.',
+					),
+					array(
+						'id' => 'switcher_4',
+						'title' => 'Switcher with Yes/No',
+						'field' => 'switcher',
+						'text_on' => 'Yes',
+						'text_off' => 'No'
+					),
+					array(
+						'id' => 'switcher_5',
+						'title' => 'Switcher with custom text Enabled/Disabled',
+						'field' => 'switcher',
+						'text_on' => 'Enabled',
+						'text_off' => 'Disabled',
+						'text_width'=>'100'
+					),
 				),
 			),
 			array(
